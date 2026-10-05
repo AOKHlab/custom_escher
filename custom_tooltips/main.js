@@ -123,7 +123,7 @@ class Tooltip2 extends Component {
 // Load the Escher map
 //---------------------
 
-escher.libs.d3_json('iJO1366.Central metabolism.json', function (e, data) {
+escher.libs.d3_json('syn3_metabolism.json', function (e, data) {
   if (e) console.warn(e)
   var options = {
     menu: 'zoom',
@@ -131,7 +131,7 @@ escher.libs.d3_json('iJO1366.Central metabolism.json', function (e, data) {
     never_ask_before_quit: true,
     // --------------------------------------------------
     // CHANGE ME
-    tooltip_component: Tooltip2
+    tooltip_component: Tooltip1
     // --------------------------------------------------
   };
   escher.Builder(data, null, null, escher.libs.d3_select('#map_container'), options);
