@@ -35,7 +35,7 @@ THE SOFTWARE.
     <div id="map_container"></div>
 
     <script>
-     escher.libs.d3_json('iJO1366.Central metabolism.json', function (error, data) {
+     escher.libs.d3_json('syn3_metavolism.json', function (error, data) {
        if (error) console.warn(error);
        var options = { menu: 'all', fill_screen: true };
        var b = escher.Builder(data, null, null, escher.libs.d3_select('#map_container'), options);
