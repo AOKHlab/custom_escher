@@ -24,7 +24,7 @@ const Tooltip1 = props => {
   var type = props.type;
   var id = props.biggId;
   if (type === 'gene') {
-    id = id.substring(7,11);
+    id = h('a',{href:"https://synwiki.uni-goettingen.de/v1/gene?keyword="+id.substring(7,11),target:'_blank'},id);
   }
   return (
     // Style the text based on our tooltip_style object
