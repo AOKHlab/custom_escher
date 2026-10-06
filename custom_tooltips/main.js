@@ -54,6 +54,8 @@ const Tooltip1 = props => {
        fill_screen: true,
        never_ask_before_quit: true,
        show_gene_reaction_rules: true,
+       first_load_callback:null,
+       gene_font_size:24,
        tooltip_component: Tooltip1
      };
      var b = escher.Builder(map_data, model_data, null, escher.libs.d3_select('#map_container'), options);
