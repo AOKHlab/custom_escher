@@ -1,14 +1,13 @@
+import * as d3 from "d3";
 const preact = escher.libs.preact;
 const h = preact.createElement;
 const Component = preact.Component;
-const geneData = d3.csvParse('geneData.csv');
-console.log(geneData);
 async function file_get_contents(uri, callback) {
     let res = await fetch(uri),
         ret = await res.text();
     return callback ? callback(ret) : ret; // a Promise() actually.
 }
-
+const geneData = d3.csvParse(await file_get_contents('geneData.csv')); //working only on console
 var tooltipStyle = {
   'min-width': '40px',
   'min-height': '10px',
@@ -30,16 +29,16 @@ var tooltipStyle = {
 const Tooltip = props => {
   var type = props.type;
   var id = props.biggId;
-  function find_coordinates(gene){
-
-  }
+  var coordinates = genedata[0][2]
   return (
     // Style the text based on our tooltip_style object
     h('div', { style: tooltipStyle},
       // Update the text to read out the identifier biggId
-      id,
+      coordinates,
       h('br'),
       type,
+      h('br'),
+      id,
      )
   );
 };
