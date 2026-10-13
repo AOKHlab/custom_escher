@@ -1,6 +1,11 @@
 const preact = escher.libs.preact;
 const h = preact.createElement;
 const Component = preact.Component;
+async function file_get_contents(uri, callback) {
+    let res = await fetch(uri),
+        ret = await res.text();
+    return callback ? callback(ret) : ret; // a Promise() actually.
+}
 
 var tooltipStyle = {
   'min-width': '40px',
@@ -24,7 +29,7 @@ const Tooltip1 = props => {
   var type = props.type;
   var id = props.biggId;
   if (type === 'gene') {
-    id = h('a',{href:"https://synwiki.uni-goettingen.de/v1/gene?keyword="+id.substring(7,11),target:'_blank'},id);
+    id = h('iframe',{src:"https://synwiki.uni-goettingen.de/v1/gene?keyword="+id.substring(7,11),style:"width:500px; height: 300px;"},id);
   }
   return (
     // Style the text based on our tooltip_style object
