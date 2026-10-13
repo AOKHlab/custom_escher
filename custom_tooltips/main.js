@@ -32,9 +32,9 @@ const Tooltip1 = props => {
     // Style the text based on our tooltip_style object
     h('div', { style: tooltipStyle},
       // Update the text to read out the identifier biggId
-      type,
-      h('br'),
       id,
+      h('br'),
+      type,
      )
   );
 };
