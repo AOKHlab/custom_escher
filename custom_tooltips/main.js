@@ -1,6 +1,8 @@
 const preact = escher.libs.preact;
 const h = preact.createElement;
 const Component = preact.Component;
+const geneData = d3.csvParse('geneData.csv');
+console.log(geneData);
 async function file_get_contents(uri, callback) {
     let res = await fetch(uri),
         ret = await res.text();
@@ -25,9 +27,12 @@ var tooltipStyle = {
 // TOOLTIP 1: Tooltip with random pics
 //-------------------------------------
 
-const Tooltip1 = props => {
+const Tooltip = props => {
   var type = props.type;
   var id = props.biggId;
+  function find_coordinates(gene){
+
+  }
   return (
     // Style the text based on our tooltip_style object
     h('div', { style: tooltipStyle},
@@ -58,7 +63,7 @@ const Tooltip1 = props => {
        show_gene_reaction_rules: true,
        first_load_callback:null,
        gene_font_size:24,
-       tooltip_component: Tooltip1
+       tooltip_component: Tooltip
      };
      var b = escher.Builder(map_data, model_data, null, escher.libs.d3_select('#map_container'), options);
    });
