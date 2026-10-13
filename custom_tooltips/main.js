@@ -25,7 +25,7 @@ var tooltipStyle = {
 // TOOLTIP 1: Tooltip with random pics
 //-------------------------------------
 
-const Tooltip1 = props => {
+const Tooltip = props => {
   var type = props.type;
   var id = props.biggId;
   if (type === 'gene') {
@@ -61,7 +61,7 @@ const Tooltip1 = props => {
        show_gene_reaction_rules: true,
        first_load_callback:null,
        gene_font_size:24,
-       tooltip_component: Tooltip1
+       tooltip_component: Tooltip
      };
      var b = escher.Builder(map_data, model_data, null, escher.libs.d3_select('#map_container'), options);
    });
