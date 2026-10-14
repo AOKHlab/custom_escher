@@ -1,4 +1,3 @@
-import * as d3 from "d3";
 const preact = escher.libs.preact;
 const h = preact.createElement;
 const Component = preact.Component;
@@ -7,7 +6,10 @@ async function file_get_contents(uri, callback) {
         ret = await res.text();
     return callback ? callback(ret) : ret; // a Promise() actually.
 }
-const geneData = d3.csvParse(await file_get_contents('geneData.csv')); //working only on console
+function call(txt){
+  console.log(txt);
+}
+d3.csvParse(await file_get_contents('geneData.csv',call)); //working only on console
 var tooltipStyle = {
   'min-width': '40px',
   'min-height': '10px',
