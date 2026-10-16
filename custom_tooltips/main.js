@@ -1,15 +1,5 @@
 const preact = escher.libs.preact;
 const h = preact.createElement;
-const Component = preact.Component;
-async function file_get_contents(uri, callback) {
-    let res = await fetch(uri),
-        ret = await res.text();
-    return callback ? callback(ret) : ret; // a Promise() actually.
-}
-function call(txt){
-  console.log(txt);
-}
-d3.csvParse(await file_get_contents('geneData.csv',call)); //working only on console
 var tooltipStyle = {
   'min-width': '40px',
   'min-height': '10px',
@@ -27,45 +17,37 @@ var tooltipStyle = {
 //-------------------------------------
 // TOOLTIP 1: Tooltip with random pics
 //-------------------------------------
+// load model and gene data
+Promise.all([d3.json('syn3_metabolism.json'), d3.json('syn3_model.json'), d3.csv("geneData.csv")]).then(([mapData, modelData, geneData]) => {
+  const Tooltip = props => {
+    const type = props.type;
+    const id = props.biggId;
+    const locus = id.slice(-4); // Get the last 4 characters of the id
+    const gene = geneData.find(row => row.locus === id);
+    const coordinates = gene ? gene.coordinates : 'No gene data found';
 
-const Tooltip = props => {
-  var type = props.type;
-  var id = props.biggId;
-  var coordinates = genedata[0][2]
-  return (
-    // Style the text based on our tooltip_style object
-    h('div', { style: tooltipStyle},
-      // Update the text to read out the identifier biggId
+    return h('div', { style: tooltipStyle },
       coordinates,
       h('br'),
       type,
       h('br'),
-      id,
-     )
-  );
-};
-
-
-//---------------------
-// Load the Escher map
-//---------------------
-
- // fech map data
- escher.libs.d3_json('syn3_metabolism.json', function (e, map_data) {
-   if (e) console.warn(e);
-   // fech model data
-   escher.libs.d3_json('syn3_model.json', function (e, model_data) {
-     if (e) console.warn(e);
-
-     var options = { //set options
-       menu: 'all',
-       fill_screen: true,
-       never_ask_before_quit: true,
-       show_gene_reaction_rules: true,
-       first_load_callback:null,
-       gene_font_size:24,
-       tooltip_component: Tooltip
-     };
-     var b = escher.Builder(map_data, model_data, null, escher.libs.d3_select('#map_container'), options);
-   });
- });
+      id
+      );
+    };
+    var options = {
+      menu: 'all',
+      fill_screen: true,
+      never_ask_before_quit: true,
+      show_gene_reaction_rules: true,
+      first_load_callback: null,
+      gene_font_size: 24,
+      tooltip_component: Tooltip
+    };
+     escher.Builder(
+       mapData,
+       modelData,
+       null,
+       escher.libs.d3_select('#map_container'),
+       options
+     );
+  });
