@@ -25,11 +25,12 @@ Promise.all([d3.json('syn3_metabolism.json'), d3.json('syn3_model.json'), d3.csv
     let locus;
     if (type === 'gene'){
       locus = id.slice(-4); // Get the last 4 characters of the id
+      const gene_info = myArray.findIndex(x => x.id === locus);
     }
 
     return h('div', { style: tooltipStyle },
       h('br'),
-      locus,
+      gene_info.coordinates,
       h('br'),
       type,
       h('br'),
