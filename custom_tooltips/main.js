@@ -22,12 +22,14 @@ Promise.all([d3.json('syn3_metabolism.json'), d3.json('syn3_model.json'), d3.csv
   const Tooltip = props => {
     const type = props.type;
     const id = props.biggId;
-    const locus = id.slice(-4); // Get the last 4 characters of the id
-    const gene = geneData.find(row => row.locus === id);
-    const coordinates = gene ? gene.coordinates : 'No gene data found';
+    let locus;
+    if (type === 'gene'){
+      locus = id.slice(-4); // Get the last 4 characters of the id
+    }
 
     return h('div', { style: tooltipStyle },
-      coordinates,
+      h('br'),
+      locus,
       h('br'),
       type,
       h('br'),
