@@ -22,16 +22,37 @@ Promise.all([d3.json('syn3_metabolism.json'), d3.json('syn3_model.json'), d3.csv
   const Tooltip = props => {
     const type = props.type;
     const id = props.biggId;
-    let locus;
+    let geneId;
     let printedInfo;
     const isGene = (type === 'gene');
     if (isGene){
-      locus = id.slice(-4); // Get the last 4 characters of the id
-      const gene_info = d3.index(geneData, (d) => d.id).get(locus);
+      geneId = id.slice(-4); // Get the last 4 characters of the id
+      const gene_info = d3.index(geneData, (d) => d.id).get(geneId);
       printedInfo = h('div', { style: tooltipStyle },
-      locus,
+      'id: ',
+      gene_info.id,
       h('br'),
-      gene_info.coordinates
+      'locus: ',
+      gene_info.locus,
+      h('br'),
+      'name: ',
+      gene_info.name,
+      h('br'),
+      'coordinates: ',
+      gene_info.Start,
+      '-',
+      gene_info.End,
+      h('br'),
+      'Essentiality: ',
+      gene_info.essentiality,
+      h('br'),
+      '# of W: ',
+      gene_info.number_of_W,
+      h('br'),
+      'Category: ',
+      gene_info.Category,
+      h('br'),
+      //synWiky link??
       )
     } else {
       printedInfo = h('div', { style: tooltipStyle },
