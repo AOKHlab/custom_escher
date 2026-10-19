@@ -52,7 +52,7 @@ Promise.all([d3.json('syn3_metabolism.json'), d3.json('syn3_model.json'), d3.csv
       'Category: ',
       gene_info.category,
       h('br'),
-      //synWiky link??
+      h('a',{href:"https://synwiki.uni-goettingen.de/v1/gene?keyword="+gene_info.id, target:'_blank'},'SynWiki')
       )
     } else {
       printedInfo = h('div', { style: tooltipStyle },
