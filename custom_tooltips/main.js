@@ -23,19 +23,24 @@ Promise.all([d3.json('syn3_metabolism.json'), d3.json('syn3_model.json'), d3.csv
     const type = props.type;
     const id = props.biggId;
     let locus;
-    if (type === 'gene'){
+    let printedInfo;
+    const isGene = (type === 'gene');
+    if (isGene){
       locus = id.slice(-4); // Get the last 4 characters of the id
-      const gene_info = myArray.findIndex(x => x.id === locus);
-    }
-
-    return h('div', { style: tooltipStyle },
+      const gene_info = d3.index(geneData, (d) => d.id).get(locus);
+      printedInfo = h('div', { style: tooltipStyle },
+      locus,
       h('br'),
-      gene_info.coordinates,
-      h('br'),
+      gene_info.coordinates
+      )
+    } else {
+      printedInfo = h('div', { style: tooltipStyle },
       type,
       h('br'),
       id
       );
+    };
+    return printedInfo;
     };
     var options = {
       menu: 'all',
