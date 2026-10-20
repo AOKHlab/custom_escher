@@ -21,6 +21,7 @@ function geneCoordinatesToAngle(pos){
 }
 // load model and gene data
 Promise.all([d3.json('syn3_metabolism.json'), d3.json('syn3_model.json'), d3.csv("geneData.csv")]).then(([mapData, modelData, geneData]) => {
+  let genomeCountLabel;
   const Tooltip = props => {
     const type = props.type;
     const id = props.biggId;
@@ -57,8 +58,8 @@ Promise.all([d3.json('syn3_metabolism.json'), d3.json('syn3_model.json'), d3.csv
       h('br'),
       h('a',{href:"https://synwiki.uni-goettingen.de/v1/gene?keyword="+gene_info.id, target:'_blank'},'SynWiki')
       )
-      Wcounter = parseInt(gene_info.numberOfW) + Wcounter; // Update the W counter with the number of W for this gene
-      console.log(`Total number of W for all genes: ${Wcounter}`); // Log the total number of W for all genes
+      Wcounter += parseInt(gene_info.numberOfW);
+      genomeCountLabel.text(Wcounter);
       // draw the gene on the genome map
        const gene = d3.arc()
           .innerRadius(60)
@@ -97,13 +98,23 @@ Promise.all([d3.json('syn3_metabolism.json'), d3.json('syn3_model.json'), d3.csv
           .startAngle(0)
           .endAngle(Math.PI * 2);
 
-        d3.select('body')
+        const genomeMap = d3.select('body')
           .append('svg')
           .attr('class', 'genome-map')
-          .attr('viewBox', '-100 -100 200 200') // Set viewBox origin at the center and set width and height to 200 (for coding it can be scaled at css)
-          .append('path')
+          .attr('viewBox', '-100 -100 200 200');
+
+        genomeMap.append('path')
           .attr('d', genome())
           .attr('fill', '#aaaa');
+
+        genomeCountLabel = genomeMap.append('text')
+          .attr('text-anchor', 'middle')
+          .attr('dominant-baseline', 'central')
+          .attr('font-family', 'sans-serif')
+          .attr('font-size', 24)
+          .attr('font-weight', 'bold')
+          .attr('fill', '#222')
+          .text(Wcounter);
       },
       tooltip_component: Tooltip
     };
