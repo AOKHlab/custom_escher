@@ -1,6 +1,7 @@
 const preact = escher.libs.preact;
 const h = preact.createElement;
 let Wcounter = 0;
+let genomeCountLabel;
 var tooltipStyle = {
   'min-width': '40px',
   'min-height': '10px',
@@ -21,7 +22,6 @@ function geneCoordinatesToAngle(pos){
 }
 // load model and gene data
 Promise.all([d3.json('syn3_metabolism.json'), d3.json('syn3_model.json'), d3.csv("geneData.csv")]).then(([mapData, modelData, geneData]) => {
-  let genomeCountLabel;
   const Tooltip = props => {
     const type = props.type;
     const id = props.biggId;
@@ -89,32 +89,10 @@ Promise.all([d3.json('syn3_metabolism.json'), d3.json('syn3_model.json'), d3.csv
       never_ask_before_quit: true,
       show_gene_reaction_rules: true,
       gene_font_size: 24,
+      background_image_url: 'Background.png',
       first_load_callback: builder => {
         builder.map.convert_map();
-
-        const genome = d3.arc()
-          .innerRadius(60)
-          .outerRadius(90)
-          .startAngle(0)
-          .endAngle(Math.PI * 2);
-
-        const genomeMap = d3.select('body')
-          .append('svg')
-          .attr('class', 'genome-map')
-          .attr('viewBox', '-100 -100 200 200');
-
-        genomeMap.append('path')
-          .attr('d', genome())
-          .attr('fill', '#aaaa');
-
-        genomeCountLabel = genomeMap.append('text')
-          .attr('text-anchor', 'middle')
-          .attr('dominant-baseline', 'central')
-          .attr('font-family', 'sans-serif')
-          .attr('font-size', 24)
-          .attr('font-weight', 'bold')
-          .attr('fill', '#222')
-          .text(Wcounter);
+        createGenomeMap();
       },
       tooltip_component: Tooltip
     };
@@ -126,3 +104,28 @@ Promise.all([d3.json('syn3_metabolism.json'), d3.json('syn3_model.json'), d3.csv
        options
      );
   });
+function createGenomeMap() {
+  const genome = d3.arc()
+    .innerRadius(60)
+    .outerRadius(90)
+    .startAngle(0)
+    .endAngle(Math.PI * 2);
+
+  const genomeMap = d3.select('body')
+    .append('svg')
+    .attr('class', 'genome-map')
+    .attr('viewBox', '-100 -100 200 200');
+
+  genomeMap.append('path')
+    .attr('d', genome())
+    .attr('fill', '#aaaa');
+
+  genomeCountLabel = genomeMap.append('text')
+    .attr('text-anchor', 'middle')
+    .attr('dominant-baseline', 'central')
+    .attr('font-family', 'sans-serif')
+    .attr('font-size', 24)
+    .attr('font-weight', 'bold')
+    .attr('fill', '#222')
+    .text(Wcounter);
+}
