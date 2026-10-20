@@ -70,6 +70,7 @@ Promise.all([d3.json('syn3_metabolism.json'), d3.json('syn3_model.json'), d3.csv
       show_gene_reaction_rules: true,
       first_load_callback: null,
       gene_font_size: 24,
+      first_load_callback: builder => builder.map.convert_map(), // update ids to gene names
       tooltip_component: Tooltip
     };
      escher.Builder(
