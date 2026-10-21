@@ -37,6 +37,7 @@ Promise.all([d3.json('syn3_metabolism.json'), d3.json('syn3_model.json'), d3.csv
         selectedGenes.delete(geneId);
       }
       console.log('Selected genes:', Array.from(selectedGenes));
+      // Redraw the genome map to reflect the updated selection
     };
     if (isGene){
       // create tooltip info
