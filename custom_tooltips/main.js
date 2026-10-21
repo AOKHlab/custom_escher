@@ -1,5 +1,6 @@
 const preact = escher.libs.preact;
 const h = preact.createElement;
+const selectedGenes = new Set();
 let Wcounter = 0;
 let genomeCountLabel;
 var tooltipStyle = {
@@ -27,12 +28,21 @@ Promise.all([d3.json('syn3_metabolism.json'), d3.json('syn3_model.json'), d3.csv
     const id = props.biggId;
     let geneId;
     let printedInfo;
+    let clickedGene = false;
     const isGene = (type === 'gene');
+    const addGeneToSelected = (geneId) => {
+      if (!selectedGenes.has(geneId)) {
+        selectedGenes.add(geneId);
+      } else {
+        selectedGenes.delete(geneId);
+      }
+      console.log('Selected genes:', Array.from(selectedGenes));
+    };
     if (isGene){
       // create tooltip info
       geneId = id.slice(-4); // Get the last 4 characters of the id
       const gene_info = d3.index(geneData, (d) => d.id).get(geneId);
-      printedInfo = h('div', { style: tooltipStyle },
+      printedInfo = h('div', { style: tooltipStyle, onclick: () => addGeneToSelected(geneId) },
       'id: ',
       gene_info.id,
       h('br'),
@@ -92,6 +102,7 @@ Promise.all([d3.json('syn3_metabolism.json'), d3.json('syn3_model.json'), d3.csv
       background_image_url: 'Background.png',
       first_load_callback: builder => {
         builder.map.convert_map();
+        builder.map.callback_manager.set('delay_hide_tooltip.custom_handler', () => onTooltipHide(geneData)); //generate custom event for tooltip hide
         createGenomeMap();
       },
       tooltip_component: Tooltip
@@ -128,4 +139,24 @@ function createGenomeMap() {
     .attr('font-weight', 'bold')
     .attr('fill', '#222')
     .text(Wcounter);
+}
+function onTooltipHide(geneData) {
+  // redraw the genome map to remove any highlighted genes
+  createGenomeMap();
+  // draw in selected genes
+  selectedGenes.forEach(geneId => {
+    const gene_info = d3.index(geneData, (d) => d.id).get(geneId);
+    const gene = d3.arc()
+      .innerRadius(60)
+      .outerRadius(90)
+      .startAngle(geneCoordinatesToAngle(gene_info.start))
+      .endAngle(geneCoordinatesToAngle(gene_info.end));
+    d3.select('body')
+      .append('svg')
+      .attr('class', 'genome-map')
+      .attr('viewBox', '-100 -100 200 200')
+      .append('path')
+      .attr('d', gene())
+      .attr('fill', '#51ff00');
+  });
 }
