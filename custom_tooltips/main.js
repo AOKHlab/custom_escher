@@ -67,11 +67,7 @@ Promise.all([d3.json('syn3_metabolism.json'), d3.json('syn3_model.json'), d3.csv
           .startAngle(geneCoordinatesToAngle(gene_info.start))
           .endAngle(geneCoordinatesToAngle(gene_info.end));
       // draw the gene on the genome map
-      d3.select('.genome-map') // Set viewBox origin at the center and set width and height to 200 (for coding it can be scaled at css)
-    .append('path')
-    .attr('d', geneArc())
-    .attr('class', 'temp-gene-path')
-    .attr('fill', highlightcolor); 
+      drawGene(geneArc, highlightcolor,'temp-gene-path'); 
     } else {
       printedInfo = h('div', { style: tooltipStyle },
       type,
@@ -135,11 +131,11 @@ function createGenomeMap() {
     .attr('fill', '#222')
     .text(Wcounter);
 }
-function drawGene(geneArc,color) {
+function drawGene(geneArc,color, id) {
   d3.select('.genome-map') // Set viewBox origin at the center and set width and height to 200 (for coding it can be scaled at css)
     .append('path')
     .attr('d', geneArc())
-    .attr('class', 'gene-path')
+    .attr('class', id)
     .attr('fill', color);
 }
 function geneCoordinatesToAngle(pos){
@@ -152,12 +148,12 @@ function onclickGene(geneId, geneArc,numberOfW) {
     selectedGenes.add(geneId);
     highlightGene(geneId, onclickcolor); //highlight the gene label in the map
     Wcounter += parseInt(numberOfW);
-    drawGene(geneArc, color = onclickcolor);
+    drawGene(geneArc, color = onclickcolor, id = geneId); //draw the gene with the onclick color
   } else {
     selectedGenes.delete(geneId);
     highlightGene(geneId, null); //un-highlight the gene label in the map
     Wcounter -= parseInt(numberOfW);
-    drawGene(geneArc, null); //remove the gene color property
+    d3.select('.genome-map').select('[class="' + geneId + '"]').remove(); //remove the gene color property
   }
   genomeCountLabel.text(Wcounter);
   console.log('Selected genes:', Array.from(selectedGenes));
@@ -166,7 +162,6 @@ function onclickGene(geneId, geneArc,numberOfW) {
 function onTooltipHide() {
 d3.selectAll(".temp-gene-path").remove()
 }
-function eraseGene(geneArc) {}
 function highlightGene(id,color) { //change the color of the gene label (and all instances of the same gene) if highlighted
   const targetLabel = d3.selectAll(".gene-label")
   .filter(function () {
