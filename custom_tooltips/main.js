@@ -148,21 +148,21 @@ function geneCoordinatesToAngle(pos){
   return angle;
 }
 function onclickGene(geneId, geneArc,numberOfW) {
-  highlightGene(geneId, onclickcolor); //highlight the gene label in the map
-  addGeneToSelected(geneId);
-  Wcounter += parseInt(numberOfW);
+  if (!selectedGenes.has(geneId)) {
+    selectedGenes.add(geneId);
+    highlightGene(geneId, onclickcolor); //highlight the gene label in the map
+    Wcounter += parseInt(numberOfW);
+    drawGene(geneArc, color = onclickcolor);
+  } else {
+    selectedGenes.delete(geneId);
+    highlightGene(geneId, null); //un-highlight the gene label in the map
+    Wcounter -= parseInt(numberOfW);
+    drawGene(geneArc, null); //remove the gene color property
+  }
   genomeCountLabel.text(Wcounter);
-  drawGene(geneArc, color = onclickcolor); //draw the gene on the genome map
+  console.log('Selected genes:', Array.from(selectedGenes));
 }
-function addGeneToSelected(geneId) {
-      if (!selectedGenes.has(geneId)) {
-        selectedGenes.add(geneId);
-      } else {
-        selectedGenes.delete(geneId);
-      }
-      console.log('Selected genes:', Array.from(selectedGenes));
-      // Redraw the genome map to reflect the updated selection
-}
+
 function onTooltipHide() {
 d3.selectAll(".temp-gene-path").remove()
 }
