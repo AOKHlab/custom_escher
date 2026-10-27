@@ -86,8 +86,20 @@ Promise.all([d3.json('syn3_metabolism.json'), d3.json('syn3_model.json'), d3.csv
       background_image_url: 'Background.png',
       first_load_callback: builder => {
         builder.map.convert_map();
-       builder.map.callback_manager.set('delay_hide_tooltip.custom_handler', () => onTooltipHide()); //generate custom event for tooltip hide
+        builder.map.callback_manager.set('delay_hide_tooltip.custom_handler', () => onTooltipHide()); //generate custom event for tooltip hide
         createGenomeMap();
+        d3.select('#map_container').on('click.gene-label', function (event) {
+          const label = event.target.closest('.gene-label');
+          const geneId = label.textContent.trim().slice(-4);
+          const geneInfo = d3.index(geneData, d => d.id).get(geneId);
+          const geneArc = d3.arc()
+            .innerRadius(60)
+            .outerRadius(90)
+            .startAngle(geneCoordinatesToAngle(geneInfo.start))
+            .endAngle(geneCoordinatesToAngle(geneInfo.end));
+
+          onclickGene(geneId, geneArc, geneInfo.numberOfW);
+});
       },
       tooltip_component: Tooltip
     };
