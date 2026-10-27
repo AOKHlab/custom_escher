@@ -5740,6 +5740,26 @@
 "link":"http://identifiers.org/kegg.compound/C00155"
 }
 }
+},
+{
+"id":"Peptide_c",
+"name":"Peptide",
+"compartment":"c"
+},
+{
+"id":"Peptide_e",
+"name":"Peptide",
+"compartment":"e"
+},
+{
+"id":"AA_c",
+"name":"Amino acids",
+"compartment":"c"
+},
+{
+"id":"AA_e",
+"name":"Amino acids",
+"compartment":"e"
 }
 ],
 "reactions":[
@@ -8952,8 +8972,8 @@
 "subsystem":"Cofactor metabolism"
 },
 {
-"id":"Protein_transl",
-"name":"Protein_transl",
+"id":"Translation",
+"name":"translation",
 "metabolites":{
 "adp_c":896,
 "alatrna_c":-23,
@@ -9201,8 +9221,8 @@
 }
 },
 {
-"id":"Protein_degrad",
-"name":"Protein_degrad",
+"id":"Protein degradation",
+"name":"Protein degradation",
 "metabolites":{
 "adp_c":225,
 "ala__L_c":23,
@@ -11793,6 +11813,56 @@
 "upper_bound":1000,
 "gene_reaction_rule":"",
 "subsystem":"Exchange"
+},
+{
+"id":"Opp",
+"name":"Opp",
+"metabolites":{
+"adp_c":1,
+"atp_c":-1,
+"h2o_c":-1,
+"h_c":1,
+"Peptide_c":1,
+"Peptide_e":-1,
+"pi_c":1
+},
+"lower_bound":0,
+"upper_bound":1000,
+"gene_reaction_rule":"MMSYN1_0165 and MMSYN1_0166 and MMSYN1_0167 and MMSYN1_0168 and MMSYN1_0169",
+"subsystem":"Transport",
+"notes":{
+"EC number":{
+"id":"3.6.3.23",
+"link":"http://identifiers.org/ec-code/3.6.3.23"
+}
+}
+},
+{
+"id":"Peptidases",
+"name":"Peptidases",
+"metabolites":{
+"AA_c":4,
+"Peptide_c":-1,
+"h2o_c":-3
+},
+"lower_bound":0,
+"upper_bound":1000,
+"gene_reaction_rule":"MMSYN1_0133 or MMSYN1_0305 or MMSYN1_0444 or MMSYN1_0479",
+"subsystem":"Metabolism"
+},
+{
+"id":"AA permeases; GltP",
+"name":"AA permeases; GltP",
+"metabolites":{
+"AA_c":1,
+"AA_e":-1,
+"h_c":1,
+"h_e":-1
+},
+"lower_bound":0,
+"upper_bound":1000,
+"gene_reaction_rule":"MMSYN1_0876 or MMSYN1_0878 or MMSYN1_0886",
+"subsystem":"Transport"
 }
 ],
 "genes":[
