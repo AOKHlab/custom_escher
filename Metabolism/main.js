@@ -2,6 +2,7 @@
 const preact = escher.libs.preact;
 const h = preact.createElement;
 const selectedGenes = new Set();
+const selectedPathways = new Set();
 let Wcounter = 0;
 let genomeCountLabel;
 const onclickcolor = '#ff0000';
@@ -28,8 +29,8 @@ Promise.all([d3.json('syn3_metabolism.json'), d3.json('syn3_model.json'), d3.csv
     let clicked = false;
     let geneId;
     let printedInfo;
-    const isGene = (type === 'gene');
-    if (isGene){
+    switch(type) {
+    case 'gene':
       // create tooltip info
       geneId = id.slice(-4); // Get the last 4 characters of the id
       const gene_info = d3.index(geneData, (d) => d.id).get(geneId);
@@ -68,49 +69,77 @@ Promise.all([d3.json('syn3_metabolism.json'), d3.json('syn3_model.json'), d3.csv
           .endAngle(geneCoordinatesToAngle(gene_info.end));
       // draw the gene on the genome map
       drawGene(geneArc, highlightcolor,'temp-gene-path'); 
-    } else {
+    break; 
+    case 'reaction':
+      const pathway = getPathway(id, modelData);
+      console.log(pathway);
+      const reactionData = pathway.reactionData;
+      const reactions = pathway.reactions;
+      const genes = pathway.genes;
+      const subsystem = reactionData.subsystem;
+      const EC = reactionData.notes?.['EC number'];
+      printedInfo = h('div', { style: tooltipStyle },
+      id,
+      h('br'),
+      type,
+      h('br'),
+      h('button', {
+        type: 'highlight pathway',
+        onclick: () => selectPathway(genes, geneData, highlightcolor, subsystem),
+        onmouseenter: () => drawPathway(genes, geneData, highlightcolor, 'temp-' + subsystem),
+        onmouseleave: () => d3.select('.genome-map').selectAll('[class="temp-' + subsystem + '"]').remove()
+      }, 
+        subsystem),
+      h('br'),
+      h('a',{href:EC?.link, target:'_blank'},EC?.id)
+      );
+    break;
+    case 'metabolite':
+      const name = props.name;
       printedInfo = h('div', { style: tooltipStyle },
       type,
       h('br'),
-      id
+      id,
+      h('br'),
+      name
       );
-    };
-    return printedInfo;
-    };
-    var options = {
-      menu: 'all',
-      fill_screen: true,
-      never_ask_before_quit: true,
-      show_gene_reaction_rules: true,
-      gene_font_size: 24,
-      background_image_url: 'Background.png',
-      first_load_callback: builder => {
-        builder.map.convert_map();
-        builder.map.callback_manager.set('delay_hide_tooltip.custom_handler', () => onTooltipHide()); //generate custom event for tooltip hide
-        createGenomeMap();
-        d3.select('#map_container').on('click.gene-label', function (event) {
-          const label = event.target.closest('.gene-label');
-          const geneId = label.textContent.trim().slice(-4);
-          const geneInfo = d3.index(geneData, d => d.id).get(geneId);
-          const geneArc = d3.arc()
-            .innerRadius(60)
-            .outerRadius(90)
-            .startAngle(geneCoordinatesToAngle(geneInfo.start))
-            .endAngle(geneCoordinatesToAngle(geneInfo.end));
-
-          onclickGene(geneId, geneArc, geneInfo.numberOfW);
+    }
+      return printedInfo;
+  }
+  var options = {
+    menu: 'all',
+    fill_screen: true,
+    never_ask_before_quit: true,
+    show_gene_reaction_rules: true,
+    gene_font_size: 24,
+    background_image_url: 'Background.png',
+    first_load_callback: builder => {
+      builder.map.convert_map();
+      builder.map.callback_manager.set('delay_hide_tooltip.custom_handler', () => onTooltipHide()); //generate custom event for tooltip hide
+      createGenomeMap();
+      d3.select('#map_container').on('click.gene-label', function (event) {
+        const label = event.target.closest('.gene-label');
+        if (!label) return; // Exit if the click was not on a gene label
+        const geneId = label.textContent.trim().slice(-4);
+        const geneInfo = d3.index(geneData, d => d.id).get(geneId);
+        const geneArc = d3.arc()
+          .innerRadius(60)
+          .outerRadius(90)
+          .startAngle(geneCoordinatesToAngle(geneInfo.start))
+          .endAngle(geneCoordinatesToAngle(geneInfo.end));
+        onclickGene(geneId, geneArc, geneInfo.numberOfW);
+      });
+    },
+    tooltip_component: Tooltip
+  };
+  escher.Builder(
+    mapData,
+    modelData,
+    null,
+    escher.libs.d3_select('#map_container'),
+    options
+  );
 });
-      },
-      tooltip_component: Tooltip
-    };
-     escher.Builder(
-       mapData,
-       modelData,
-       null,
-       escher.libs.d3_select('#map_container'),
-       options
-     );
-  });
 
 
 //###Function definition### currently in global space so beware!!
@@ -163,7 +192,6 @@ function onclickGene(geneId, geneArc,numberOfW) {
     drawGene(geneArc, color = onclickcolor, id = geneId); //draw the gene with the onclick color
   } else {
     selectedGenes.delete(geneId);
-    highlightGene(geneId, null); //un-highlight the gene label in the map
     Wcounter -= parseInt(numberOfW);
     d3.select('.genome-map').select('[class="' + geneId + '"]').remove(); //remove the gene color property
   }
@@ -182,3 +210,78 @@ function highlightGene(id,color) { //change the color of the gene label (and all
 
 targetLabel.style("fill", color);
 }
+function getPathway (reactionId, modelData) {
+const reactionData = d3.group(modelData.reactions, d => d.id).get(reactionId)[0]; // get the reaction data from the given ID
+const subsystem = reactionData.subsystem; // get reaction group
+const subsystemReactions = d3.group(modelData.reactions, d => d.subsystem).get(subsystem); // get all reactions in the same group
+const subsystemGenes = new Set();
+for (const reaction of subsystemReactions) { // add all genes from the same reaction group to set
+  const genes = reaction.gene_reaction_rule.split(/\s+(?:and|or)\s+/i); // Split the gene_reaction_rule by "and" or "or"
+  for (const gene of genes) {
+  subsystemGenes.add(gene);
+  }
+}
+subsystemGenes.delete("")
+return {
+        reactionData: reactionData,
+        reactions: subsystemReactions.map(d => d.id),
+        genes: subsystemGenes,
+    }
+}
+function testlog(test){
+  console.log(test);
+}
+function drawPathway(genes, geneData, color, pathway){
+  for (const gene of genes){
+    const geneId = gene.slice(-4);
+    const gene_info = d3.index(geneData, (d) => d.id).get(geneId);
+    const geneArc = d3.arc()
+          .innerRadius(60)
+          .outerRadius(90)
+          .startAngle(geneCoordinatesToAngle(gene_info.start))
+          .endAngle(geneCoordinatesToAngle(gene_info.end));
+      // draw the gene on the genome map
+      drawGene(geneArc, color, pathway);
+
+  }
+}
+function selectPathway(genes, geneData, color, pathway){
+if (!selectedPathways.has(pathway)) {
+    selectedPathways.add(pathway);
+    for (const gene of genes){
+      const geneId = gene.slice(-4);
+      const gene_info = d3.index(geneData, (d) => d.id).get(geneId);
+      let numberOfW = gene_info.numberOfW;
+      if(selectedGenes.has(geneId)) numberOfW = 0;
+      selectedGenes.add(geneId);
+      highlightGene(geneId, onclickcolor); //highlight the gene label in the map
+      Wcounter += parseInt(numberOfW);
+      const geneArc = d3.arc()
+          .innerRadius(60)
+          .outerRadius(90)
+          .startAngle(geneCoordinatesToAngle(gene_info.start))
+          .endAngle(geneCoordinatesToAngle(gene_info.end));
+      drawGene(geneArc, color = onclickcolor, id = geneId); //draw the gene with the onclick color
+    }
+  } else {
+    selectedPathways.delete(pathway);
+    for (const gene of genes){
+      const geneId = gene.slice(-4);
+      const gene_info = d3.index(geneData, (d) => d.id).get(geneId);
+      let numberOfW = gene_info.numberOfW;
+      selectedGenes.delete(geneId);
+      Wcounter -= parseInt(numberOfW);
+      d3.select('.genome-map').selectAll('[class="' + geneId + '"]').remove(); //remove the gene color property
+    }
+  }
+  genomeCountLabel.text(Wcounter);
+  console.log('Selected genes:', Array.from(selectedGenes));
+}
+
+
+/////-----------TESTING CENTER---------////////
+// // import models in console
+// const mapData = await d3.json('syn3_metabolism.json')
+// const modelData = await d3.json('syn3_model.json')
+// const geneData = await d3.csv('geneData.csv')
+// const gene_info = d3.index(geneData, (d) => d.id).get(locus);
