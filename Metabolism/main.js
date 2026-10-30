@@ -85,7 +85,7 @@ Promise.all([d3.json('syn3_metabolism.json'), d3.json('syn3_model.json'), d3.csv
       h('br'),
       h('button', {
         type: 'highlight pathway',
-        onclick: () => selectPathway(genes, geneData, highlightcolor, subsystem),
+        onclick: () => selectPathway(genes, geneData, onclickcolor, subsystem, reactions),
         onmouseenter: () => drawPathway(genes, geneData, highlightcolor, 'temp-' + subsystem),
         onmouseleave: () => d3.select('.genome-map').selectAll('[class="temp-' + subsystem + '"]').remove()
       }, 
@@ -192,6 +192,7 @@ function onclickGene(geneId, geneArc,numberOfW) {
     drawGene(geneArc, color = onclickcolor, id = geneId); //draw the gene with the onclick color
   } else {
     selectedGenes.delete(geneId);
+    highlightGene(geneId, null); //un-highlight the gene label in the map
     Wcounter -= parseInt(numberOfW);
     d3.select('.genome-map').select('[class="' + geneId + '"]').remove(); //remove the gene color property
   }
@@ -206,6 +207,14 @@ function highlightGene(id,color) { //change the color of the gene label (and all
   const targetLabel = d3.selectAll(".gene-label")
   .filter(function () {
     return this.textContent.trim().slice(-4) === id;
+  });
+
+targetLabel.style("fill", color);
+}
+function highlightReactions(reactions,color) { //change the color of the gene label (and all instances of the same gene) if highlighted
+  const targetLabel = d3.selectAll(".reaction-label")
+  .filter(function () {
+    return reactions.includes(this.textContent);
   });
 
 targetLabel.style("fill", color);
@@ -245,8 +254,9 @@ function drawPathway(genes, geneData, color, pathway){
 
   }
 }
-function selectPathway(genes, geneData, color, pathway){
+function selectPathway(genes, geneData, color, pathway, reactions){
 if (!selectedPathways.has(pathway)) {
+    highlightReactions(reactions, onclickcolor)
     selectedPathways.add(pathway);
     for (const gene of genes){
       const geneId = gene.slice(-4);
@@ -261,14 +271,17 @@ if (!selectedPathways.has(pathway)) {
           .outerRadius(90)
           .startAngle(geneCoordinatesToAngle(gene_info.start))
           .endAngle(geneCoordinatesToAngle(gene_info.end));
-      drawGene(geneArc, color = onclickcolor, id = geneId); //draw the gene with the onclick color
+      drawGene(geneArc, color = color, id = geneId); //draw the gene with the onclick color
     }
   } else {
+    highlightReactions(reactions, null)
     selectedPathways.delete(pathway);
     for (const gene of genes){
       const geneId = gene.slice(-4);
       const gene_info = d3.index(geneData, (d) => d.id).get(geneId);
       let numberOfW = gene_info.numberOfW;
+      if(!selectedGenes.has(geneId)) numberOfW = 0;
+      highlightGene(geneId, null); //un-highlight the gene label in the map
       selectedGenes.delete(geneId);
       Wcounter -= parseInt(numberOfW);
       d3.select('.genome-map').selectAll('[class="' + geneId + '"]').remove(); //remove the gene color property
@@ -279,9 +292,8 @@ if (!selectedPathways.has(pathway)) {
 }
 
 
-/////-----------TESTING CENTER---------////////
+// ///-----------TESTING CENTER---------////////
 // // import models in console
 // const mapData = await d3.json('syn3_metabolism.json')
 // const modelData = await d3.json('syn3_model.json')
 // const geneData = await d3.csv('geneData.csv')
-// const gene_info = d3.index(geneData, (d) => d.id).get(locus);
