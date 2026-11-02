@@ -1,7 +1,8 @@
+const random_seed = 42;
 const colors = {
-    'SW.1': d3.lch(47.36, 41.14, 257.55), // blue #1f77b4 250-280 crhoma 60?
+    'SW.1': d3.lch(57.96, 80.01, 136.29), // green #2ca02c 122-140
     'SW.2': d3.lch(67.64, 86.08, 57.67), // orange #ff7f0e 50-70
-    'SW.3': d3.lch(57.96, 69.01, 136.29), // green #2ca02c 122-140
+    'SW.3': d3.lch(47.36, 80.14, 257.55), // blue #1f77b4 250-280 crhoma 60?
     'SW.4': d3.lch(47.68, 80.45, 35.08) // red #d62728 25-45
 };
 Promise.all([d3.csv('categories.csv'), d3.csv("Metabolism/geneData.csv")]).then(([categories, geneData]) => {
@@ -25,13 +26,16 @@ Promise.all([d3.csv('categories.csv'), d3.csv("Metabolism/geneData.csv")]).then(
     const rootNode = d3.hierarchy(data).sum(weightAccessor);
     for (element of rootNode.children){
         const subgroups = element.descendants().filter( //find all lowest level subgroups
-            node => node.children && // nodes with children
-            node.children.every(child => !child.children) // that only contain leaves
+            node =>node.children?.some(child => child.data.type === "gene") // that only contain leaves
         );
         const branchColor = colors[element.data.id]
+        const step = 60/subgroups.length;
+        let i = 0;
+        subgroups.sort(() => Math.random(random_seed) - 0.5) // randomize the order of the subgroups
         for (subelement of subgroups){
-            subelement.data.color = branchColor;
-            console.log(subelement);
+            const chroma = branchColor.c + (i*step) - (step*(subgroups.length-1)/2); // center the hues around the branch color
+            subelement.data.color = d3.lch(branchColor.l, chroma, branchColor.h);
+            i++;
         }
     }
     const voronoiTreemap = d3.voronoiTreemap().clip([
@@ -43,9 +47,10 @@ Promise.all([d3.csv('categories.csv'), d3.csv("Metabolism/geneData.csv")]).then(
     voronoiTreemap(rootNode);
     
     function leafColoring(leaf) {
-        const hue = leaf.parent.data.color;
-        console.log(hue)
-        const color = hue.darker
+        const hue = leaf.parent.data.color.h; 
+        const lightness = leaf.parent.data.color.l - (parseInt(leaf.data.geneInfo.numberOfW) * 2); // adjust lightness based on number of W's
+        const chroma = leaf.parent.data.color.c //+ (parseInt(leaf.data.geneInfo.numberOfW) * 2)
+        const color = d3.lch(lightness, chroma, hue);
     return color;
     }
 
