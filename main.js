@@ -1,3 +1,9 @@
+const colors = {
+    'SW.1': d3.lch(47.36, 41.14, 257.55), // blue #1f77b4 250-280 crhoma 60?
+    'SW.2': d3.lch(67.64, 86.08, 57.67), // orange #ff7f0e 50-70
+    'SW.3': d3.lch(57.96, 69.01, 136.29), // green #2ca02c 122-140
+    'SW.4': d3.lch(47.68, 80.45, 35.08) // red #d62728 25-45
+};
 Promise.all([d3.csv('categories.csv'), d3.csv("Metabolism/geneData.csv")]).then(([categories, geneData]) => {
     const data = {
         type: 'root',
@@ -16,20 +22,18 @@ Promise.all([d3.csv('categories.csv'), d3.csv("Metabolism/geneData.csv")]).then(
     function weightAccessor(d) {
     return d.weight;
     }
-    let angle = 0
     const rootNode = d3.hierarchy(data).sum(weightAccessor);
-    for (branch of rootNode.children){
-        const subgroups = branch.descendants().filter( //find all lowest level subgroups
+    for (element of rootNode.children){
+        const subgroups = element.descendants().filter( //find all lowest level subgroups
             node => node.children && // nodes with children
             node.children.every(child => !child.children) // that only contain leaves
         );
-        for (subranch of subgroups){
-            subranch.data.angle = angle
-            angle = angle + 7.2
+        const branchColor = colors[element.data.id]
+        for (subelement of subgroups){
+            subelement.data.color = branchColor;
+            console.log(subelement);
         }
-        angle = angle + 7.2
     }
-
     const voronoiTreemap = d3.voronoiTreemap().clip([
     [0, 0],
     [0, 100],
@@ -39,8 +43,9 @@ Promise.all([d3.csv('categories.csv'), d3.csv("Metabolism/geneData.csv")]).then(
     voronoiTreemap(rootNode);
     
     function leafColoring(leaf) {
-        const hue = leaf.parent.data.angle;
-        const color = d3.lch(100,230,hue);
+        const hue = leaf.parent.data.color;
+        console.log(hue)
+        const color = hue.darker
     return color;
     }
 
