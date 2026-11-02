@@ -1,3 +1,10 @@
+const random_seed = 42;
+const colors = {
+    'SW.1': d3.lch(57.96, 80.01, 136.29), // green #2ca02c 122-140
+    'SW.2': d3.lch(67.64, 86.08, 57.67), // orange #ff7f0e 50-70
+    'SW.3': d3.lch(47.36, 80.14, 257.55), // blue #1f77b4 250-280 crhoma 60?
+    'SW.4': d3.lch(47.68, 80.45, 35.08) // red #d62728 25-45
+};
 Promise.all([d3.csv('categories.csv'), d3.csv("Metabolism/geneData.csv")]).then(([categories, geneData]) => {
     const data = {
         type: 'root',
@@ -6,21 +13,31 @@ Promise.all([d3.csv('categories.csv'), d3.csv("Metabolism/geneData.csv")]).then(
     for (element of categories){
         addToHierarchy(data, element.id, element.category, 'category');
     }
-    console.log(data);
         for (gene of geneData){
             const length = Math.abs(parseInt(gene.start)-parseInt(gene.end))
-            addToHierarchy(data, gene.categoryId, gene.name, 'gene', gene.id, length)
+            addToHierarchy(data, gene.categoryId, gene.name, 'gene', gene.id, length, gene)
         }
-    console.log(data);
 
     removeEmptyCategories(data);
 
     function weightAccessor(d) {
     return d.weight;
     }
-
     const rootNode = d3.hierarchy(data).sum(weightAccessor);
-
+    for (element of rootNode.children){
+        const subgroups = element.descendants().filter( //find all lowest level subgroups
+            node =>node.children?.some(child => child.data.type === "gene") // that only contain leaves
+        );
+        const branchColor = colors[element.data.id]
+        const step = 60/subgroups.length;
+        let i = 0;
+        subgroups.sort(() => Math.random(random_seed) - 0.5) // randomize the order of the subgroups
+        for (subelement of subgroups){
+            const chroma = branchColor.c + (i*step) - (step*(subgroups.length-1)/2); // center the hues around the branch color
+            subelement.data.color = d3.lch(branchColor.l, chroma, branchColor.h);
+            i++;
+        }
+    }
     const voronoiTreemap = d3.voronoiTreemap().clip([
     [0, 0],
     [0, 100],
@@ -28,21 +45,13 @@ Promise.all([d3.csv('categories.csv'), d3.csv("Metabolism/geneData.csv")]).then(
     [100, 0]
     ]).prng(d3.randomLcg(42)); // seed generation of map
     voronoiTreemap(rootNode);
-
-    const groupColor = d3.scaleOrdinal(d3.schemeCategory10)
-    .domain(data.children.map(group => group.id));
-
-    function fillForLeaf(leaf) {
-    const group = leaf.ancestors().find(node => node.depth === 1);
-    const groupLeaves = group.leaves();
-    const shadeIndex = groupLeaves.indexOf(leaf);
-    const shadePosition = groupLeaves.length === 1
-        ? 0.5
-        : shadeIndex / (groupLeaves.length - 1);
-    const color = d3.hsl(groupColor(group.data.id));
-
-    color.l = 0.3 + shadePosition * 0.5;
-    return color.formatHex();
+    
+    function leafColoring(leaf) {
+        const hue = leaf.parent.data.color.h; 
+        const lightness = leaf.parent.data.color.l - (parseInt(leaf.data.geneInfo.numberOfW) * 2); // adjust lightness based on number of W's
+        const chroma = leaf.parent.data.color.c //+ (parseInt(leaf.data.geneInfo.numberOfW) * 2)
+        const color = d3.lch(lightness, chroma, hue);
+    return color;
     }
 
     const svg = d3.select("body")
@@ -61,7 +70,7 @@ Promise.all([d3.csv('categories.csv'), d3.csv("Metabolism/geneData.csv")]).then(
         .attr("id", d => `${d.data.type}-${d.data.id}`)
         .attr("data-name", d => d.data.name)
         .attr("d", d => `${d3.line()(d.polygon)}Z`)
-        .style("fill", fillForLeaf);
+        .style("fill", leafColoring);
 
     svg.append("g")
         .attr("class", "category-borders")
@@ -75,7 +84,7 @@ Promise.all([d3.csv('categories.csv'), d3.csv("Metabolism/geneData.csv")]).then(
         .attr("stroke-linejoin", "round");
 });
 
-function addToHierarchy(data, SW, Name, type, locus = null, length = null){
+function addToHierarchy(data, SW, Name, type, locus = null, length = null, geneInfo = null){
     const idList = SW.split('.')
     idList.shift()
     let numList = []
@@ -95,7 +104,7 @@ function addToHierarchy(data, SW, Name, type, locus = null, length = null){
             pointer.children.push({type: 'category', id: SW, name: Name});
         break;
         case 'gene':
-            pointer.children.push({type: 'gene', id: locus, name: Name, weight:length});  
+            pointer.children.push({type: 'gene', id: locus, name: Name, weight:length, geneInfo: geneInfo});  
     }
 }
 
@@ -109,3 +118,7 @@ function removeEmptyCategories(node) {
 
     return node.type === 'root' || node.children.length > 0;
 }
+// ///-----------TESTING CENTER---------////////
+// // import models in console
+// const geneData = await d3.csv('Metabolism/geneData.csv')
+// const categories = await d3.csv('categories.csv')
