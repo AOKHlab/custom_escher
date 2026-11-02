@@ -6,20 +6,29 @@ Promise.all([d3.csv('categories.csv'), d3.csv("Metabolism/geneData.csv")]).then(
     for (element of categories){
         addToHierarchy(data, element.id, element.category, 'category');
     }
-    console.log(data);
         for (gene of geneData){
             const length = Math.abs(parseInt(gene.start)-parseInt(gene.end))
-            addToHierarchy(data, gene.categoryId, gene.name, 'gene', gene.id, length)
+            addToHierarchy(data, gene.categoryId, gene.name, 'gene', gene.id, length, gene)
         }
-    console.log(data);
 
     removeEmptyCategories(data);
 
     function weightAccessor(d) {
     return d.weight;
     }
-
+    let angle = 0
     const rootNode = d3.hierarchy(data).sum(weightAccessor);
+    for (branch of rootNode.children){
+        const subgroups = branch.descendants().filter( //find all lowest level subgroups
+            node => node.children && // nodes with children
+            node.children.every(child => !child.children) // that only contain leaves
+        );
+        for (subranch of subgroups){
+            subranch.data.angle = angle
+            angle = angle + 7.2
+        }
+        angle = angle + 7.2
+    }
 
     const voronoiTreemap = d3.voronoiTreemap().clip([
     [0, 0],
@@ -28,21 +37,11 @@ Promise.all([d3.csv('categories.csv'), d3.csv("Metabolism/geneData.csv")]).then(
     [100, 0]
     ]).prng(d3.randomLcg(42)); // seed generation of map
     voronoiTreemap(rootNode);
-
-    const groupColor = d3.scaleOrdinal(d3.schemeCategory10)
-    .domain(data.children.map(group => group.id));
-
-    function fillForLeaf(leaf) {
-    const group = leaf.ancestors().find(node => node.depth === 1);
-    const groupLeaves = group.leaves();
-    const shadeIndex = groupLeaves.indexOf(leaf);
-    const shadePosition = groupLeaves.length === 1
-        ? 0.5
-        : shadeIndex / (groupLeaves.length - 1);
-    const color = d3.hsl(groupColor(group.data.id));
-
-    color.l = 0.3 + shadePosition * 0.5;
-    return color.formatHex();
+    
+    function leafColoring(leaf) {
+        const hue = leaf.parent.data.angle;
+        const color = d3.lch(100,230,hue);
+    return color;
     }
 
     const svg = d3.select("body")
@@ -61,7 +60,7 @@ Promise.all([d3.csv('categories.csv'), d3.csv("Metabolism/geneData.csv")]).then(
         .attr("id", d => `${d.data.type}-${d.data.id}`)
         .attr("data-name", d => d.data.name)
         .attr("d", d => `${d3.line()(d.polygon)}Z`)
-        .style("fill", fillForLeaf);
+        .style("fill", leafColoring);
 
     svg.append("g")
         .attr("class", "category-borders")
@@ -75,7 +74,7 @@ Promise.all([d3.csv('categories.csv'), d3.csv("Metabolism/geneData.csv")]).then(
         .attr("stroke-linejoin", "round");
 });
 
-function addToHierarchy(data, SW, Name, type, locus = null, length = null){
+function addToHierarchy(data, SW, Name, type, locus = null, length = null, geneInfo = null){
     const idList = SW.split('.')
     idList.shift()
     let numList = []
@@ -95,7 +94,7 @@ function addToHierarchy(data, SW, Name, type, locus = null, length = null){
             pointer.children.push({type: 'category', id: SW, name: Name});
         break;
         case 'gene':
-            pointer.children.push({type: 'gene', id: locus, name: Name, weight:length});  
+            pointer.children.push({type: 'gene', id: locus, name: Name, weight:length, geneInfo: geneInfo});  
     }
 }
 
@@ -109,3 +108,7 @@ function removeEmptyCategories(node) {
 
     return node.type === 'root' || node.children.length > 0;
 }
+// ///-----------TESTING CENTER---------////////
+// // import models in console
+// const geneData = await d3.csv('Metabolism/geneData.csv')
+// const categories = await d3.csv('categories.csv')
