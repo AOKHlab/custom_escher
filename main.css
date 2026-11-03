@@ -113,5 +113,12 @@
   z-index: 1001; /* map is at z = 1000 */
   width: 500px;
   height: 500px;
-  pointer-events: none;
+  pointer-events: all;
+  cursor: grab;
+}
+
+.genome-map:active {
+  cursor: grabbing;
+  outline: 3px solid #333;
+  background: #fff;
 }
