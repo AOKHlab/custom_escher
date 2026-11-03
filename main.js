@@ -83,24 +83,6 @@ Promise.all([d3.csv('categories.csv'), d3.csv("Metabolism/geneData.csv")]).then(
         .append("div")
         .attr("class", "legend-list");
 
-    function addLegendCategory(container, category, topCategoryId) {
-        const subcategories = (category.children || [])
-            .filter(child => child.data.type === "category");
-        const item = container.append(subcategories.length ? "details" : "div")
-            .attr("class", "legend-category");
-        const label = subcategories.length ? item.append("summary") : item;
-
-        label.append("span")
-            .attr("class", "legend-swatch")
-            .style("background-color", category.data.color || colors[topCategoryId]);
-        label.append("span")
-            .text(category.data.name);
-
-        subcategories.forEach(child => {
-            addLegendCategory(item, child, topCategoryId);
-        });
-    }
-
     rootNode.children.forEach(category => {
         addLegendCategory(legend, category, category.data.id);
     });
@@ -140,6 +122,23 @@ function removeEmptyCategories(node) {
 
     return node.type === 'root' || node.children.length > 0;
 }
+function addLegendCategory(container, category, topCategoryId) {
+        const subcategories = (category.children || [])
+            .filter(child => child.data.type === "category");
+        const item = container.append(subcategories.length ? "details" : "div")
+            .attr("class", "legend-category");
+        const label = subcategories.length ? item.append("summary") : item;
+
+        label.append("span")
+            .attr("class", "legend-swatch")
+            .style("background-color", category.data.color || colors[topCategoryId]);
+        label.append("span")
+            .text(category.data.name);
+
+        subcategories.forEach(child => {
+            addLegendCategory(item, child, topCategoryId);
+        });
+    }
 // ///-----------TESTING CENTER---------////////
 // // import models in console
 // const geneData = await d3.csv('Metabolism/geneData.csv')
