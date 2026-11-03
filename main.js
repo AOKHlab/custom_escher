@@ -79,6 +79,31 @@ Promise.all([d3.csv('categories.csv'), d3.csv("Metabolism/geneData.csv")]).then(
         .attr("stroke-width", d => 1 / (d.depth**2))
         .attr("stroke-linejoin", "round");
     
+    const legend = d3.select("#legend")
+        .append("div")
+        .attr("class", "legend-list");
+
+    function addLegendCategory(container, category, topCategoryId) {
+        const subcategories = (category.children || [])
+            .filter(child => child.data.type === "category");
+        const item = container.append(subcategories.length ? "details" : "div")
+            .attr("class", "legend-category");
+        const label = subcategories.length ? item.append("summary") : item;
+
+        label.append("span")
+            .attr("class", "legend-swatch")
+            .style("background-color", colors[topCategoryId]);
+        label.append("span")
+            .text(category.data.name);
+
+        subcategories.forEach(child => {
+            addLegendCategory(item, child, topCategoryId);
+        });
+    }
+
+    rootNode.children.forEach(category => {
+        addLegendCategory(legend, category, category.data.id);
+    });
 });
 
 function addToHierarchy(data, SW, Name, type, locus = null, length = null, geneInfo = null){

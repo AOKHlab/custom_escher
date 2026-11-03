@@ -16,6 +16,56 @@
   background: #fff;
 }
 
+.legend-list > .legend-category {
+  margin-left: 0;
+}
+
+.legend-category > .legend-category {
+  margin-left: 20px;
+}
+
+.legend-category > summary,
+.legend-category:not(details) {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 24px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.legend-category > summary {
+  list-style: none;
+}
+
+.legend-category > summary::-webkit-details-marker {
+  display: none;
+}
+
+.legend-category > summary::before {
+  content: "+";
+  width: 12px;
+  flex: 0 0 12px;
+  text-align: center;
+}
+
+.legend-category:not(details)::before {
+  content: "";
+  width: 12px;
+  flex: 0 0 12px;
+}
+
+.legend-category[open] > summary::before {
+  content: "-";
+}
+
+.legend-swatch {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  flex: 0 0 14px;
+}
+
 #voronoiTreemap svg {
   position: fixed;
   top: 50%;
