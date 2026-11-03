@@ -92,7 +92,7 @@ Promise.all([d3.csv('categories.csv'), d3.csv("Metabolism/geneData.csv")]).then(
 
         label.append("span")
             .attr("class", "legend-swatch")
-            .style("background-color", colors[topCategoryId]);
+            .style("background-color", category.data.color || colors[topCategoryId]);
         label.append("span")
             .text(category.data.name);
 
