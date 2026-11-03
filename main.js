@@ -95,7 +95,7 @@ Promise.all([d3.csv('categories.csv'), d3.csv("Metabolism/geneData.csv")]).then(
         .attr("stroke", "#000")
         .attr("stroke-width", d => 1 / (d.depth ** 1.2))
         .attr("stroke-linejoin", "round");
-
+    svg.selectAll('.category-borders path[id="Syn3 genome"]').attr("stroke-width", 2);
     const legendContainer = d3.select("#legend");
     legendContainer.append("h2")
         .attr("class", "legend-title")
