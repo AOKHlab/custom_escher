@@ -54,15 +54,11 @@ Promise.all([d3.csv('categories.csv'), d3.csv("Metabolism/geneData.csv")]).then(
     return color;
     }
 
-    const svg = d3.select("body")
+    const svg = d3.select("body").select("#voronoiTreemap")
         .append("svg")
         .attr("width", "min(90vw, 90vh, 900px)")
         .attr("height", "min(90vw, 90vh, 900px)")
         .attr("viewBox", '0 0 100 100')
-        .style("position", "fixed")
-        .style("top", "50%")
-        .style("left", "50%")
-        .style("transform", "translate(-50%, -50%)")
 
     svg.selectAll("path")
         .data(rootNode.leaves().filter(d => d.data.type === "gene")) // filter out non/genes
@@ -82,6 +78,7 @@ Promise.all([d3.csv('categories.csv'), d3.csv("Metabolism/geneData.csv")]).then(
         .attr("stroke", "#000")
         .attr("stroke-width", d => 1 / (d.depth**2))
         .attr("stroke-linejoin", "round");
+    
 });
 
 function addToHierarchy(data, SW, Name, type, locus = null, length = null, geneInfo = null){
