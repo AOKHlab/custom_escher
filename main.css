@@ -1,0 +1,108 @@
+:root {
+  --map-size: min(90vw, 90vh, 900px);
+  --map-half-size: min(45vw, 45vh, 450px);
+}
+
+#legend {
+  position: fixed;
+  top: calc(50% - var(--map-half-size));
+  right: calc(50% + var(--map-half-size) + 1rem);
+  width: 500px;
+  max-height: var(--map-size);
+  overflow-y: auto;
+  box-sizing: border-box;
+  padding: 8px;
+  outline: 3px solid #333;
+  background: #fff;
+}
+
+.legend-list > .legend-category {
+  margin-left: 0;
+}
+
+.legend-category > .legend-category {
+  margin-left: 20px;
+}
+
+.legend-category > summary,
+.legend-category:not(details) {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 24px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.legend-category > summary {
+  list-style: none;
+}
+
+.legend-category > summary::-webkit-details-marker {
+  display: none;
+}
+
+.legend-category > summary::before {
+  content: "+";
+  width: 12px;
+  flex: 0 0 12px;
+  text-align: center;
+}
+
+.legend-category:not(details)::before {
+  content: "";
+  width: 12px;
+  flex: 0 0 12px;
+}
+
+.legend-category[open] > summary::before {
+  content: "-";
+}
+
+.legend-swatch {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  flex: 0 0 14px;
+}
+
+.legend-label {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.legend-title {
+  margin: 0 0 5px;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+#voronoiTreemap svg {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: var(--map-size);
+  height: var(--map-size);
+  transform: translate(-50%, -50%);
+}
+#gene_info {
+  position: fixed;
+  top: calc(50% - var(--map-half-size));
+  left: calc(50% + var(--map-half-size) + 1rem);
+  width: 500px;
+  max-height: var(--map-size);
+  overflow-y: auto;
+  box-sizing: border-box;
+  padding: 8px;
+  outline: 3px solid #333;
+  background: #fff;
+}
+.gene_info-title {
+  margin: 0 0 5px;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+.gene_info-content {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
