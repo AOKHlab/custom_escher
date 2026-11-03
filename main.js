@@ -46,14 +46,6 @@ Promise.all([d3.csv('categories.csv'), d3.csv("Metabolism/geneData.csv")]).then(
     ]).prng(d3.randomLcg(42)); // seed generation of map
     voronoiTreemap(rootNode);
 
-    function leafColoring(leaf) {
-        const hue = leaf.parent.data.color.h;
-        const lightness = leaf.parent.data.color.l - (parseInt(leaf.data.geneInfo.numberOfW) * 2); // adjust lightness based on number of W's
-        const chroma = leaf.parent.data.color.c //+ (parseInt(leaf.data.geneInfo.numberOfW) * 2)
-        const color = d3.lch(lightness, chroma, hue);
-        return color;
-    }
-
     const svg = d3.select("body").select("#voronoiTreemap")
         .append("svg")
         .attr("width", "min(90vw, 90vh, 900px)")
@@ -71,7 +63,9 @@ Promise.all([d3.csv('categories.csv'), d3.csv("Metabolism/geneData.csv")]).then(
             const tile = d3.select(event.currentTarget);
             const isHighlighted = tile.classed("highlighted");
             svg.selectAll('path.highlighted')
-                    .style("fill", leafColoring);
+                .classed("highlighted", false)
+                .style("fill", leafColoring);
+            d3.select('.genome-map').selectAll('path.gene').remove()
             if (isHighlighted) {
                 tile.classed("highlighted", false)
                     .style("fill", leafColoring(d));
@@ -80,6 +74,13 @@ Promise.all([d3.csv('categories.csv'), d3.csv("Metabolism/geneData.csv")]).then(
                 tile.classed("highlighted", true)
                     .style("fill", "#ffff00");
                 displayGeneInfo(d.data.geneInfo);
+                const geneArc = d3.arc()
+                    .innerRadius(60)
+                    .outerRadius(90)
+                    .startAngle(geneCoordinatesToAngle(d.data.geneInfo.start))
+                    .endAngle(geneCoordinatesToAngle(d.data.geneInfo.end));
+                // draw the gene on the genome map
+                drawGene(geneArc, "#ffff00");
             }
         });
 
@@ -89,15 +90,17 @@ Promise.all([d3.csv('categories.csv'), d3.csv("Metabolism/geneData.csv")]).then(
         .data(rootNode.descendants())
         .join("path")
         .attr("d", d => `${d3.line()(d.polygon)}Z`)
+        .attr('id', d => d.data.name)
         .attr("fill", "none")
         .attr("stroke", "#000")
-        .attr("stroke-width", d => 1 / (d.depth ** 2))
+        .attr("stroke-width", d => 1 / (d.depth ** 1.2))
         .attr("stroke-linejoin", "round");
-
+    svg.selectAll('.category-borders path[id="Syn3 genome"]').attr("stroke-width", 2);
     const legendContainer = d3.select("#legend");
     legendContainer.append("h2")
         .attr("class", "legend-title")
-        .text("Legend");
+        .on("click", () => { drawBranch(rootNode) })
+        .text("Syn3 Genome");
 
     const legend = legendContainer
         .append("div")
@@ -115,7 +118,15 @@ Promise.all([d3.csv('categories.csv'), d3.csv("Metabolism/geneData.csv")]).then(
         .attr("href", "/Metabolism")
         .text("(Metabolic Map)");
     renderGeneInfo();
+    createGenomeMap();
 });
+function leafColoring(leaf) {
+        const hue = leaf.parent.data.color.h;
+        const lightness = leaf.parent.data.color.l - (parseInt(leaf.data.geneInfo.numberOfW) * 2); // adjust lightness based on number of W's
+        const chroma = leaf.parent.data.color.c //+ (parseInt(leaf.data.geneInfo.numberOfW) * 2)
+        const color = d3.lch(lightness, chroma, hue);
+        return color;
+    }
 
 function addToHierarchy(data, SW, Name, type, locus = null, length = null, geneInfo = null) {
     const idList = SW.split('.')
@@ -163,6 +174,7 @@ function addLegendCategory(container, category, topCategoryId) {
         .style("background-color", category.data.color || colors[topCategoryId]);
     label.append("span")
         .attr("class", "legend-label")
+        .on('click', () => { drawBranch(category) })
         .text(category.data.name);
 
     subcategories.forEach(child => {
@@ -208,7 +220,109 @@ function displayGeneInfo(geneInfo) {
         .attr("href", "https://synwiki.uni-goettingen.de/v1/gene?keyword=" + geneInfo.id)
         .text("SynWiki")
 }
+
 // ///-----------TESTING CENTER---------////////
 // // import models in console
 // const geneData = await d3.csv('Metabolism/geneData.csv')
 // const categories = await d3.csv('categories.csv')
+//###Function definition### currently in global space so beware!!
+function createGenomeMap() {
+    // Create the SVG container
+    const genomeMap = d3.select('body')
+        .append('svg')
+        .attr('class', 'genome-map')
+        .attr('viewBox', '-100 -100 200 200');
+    const genomeViewport = genomeMap.append('g')
+        .attr('class', 'genome-viewport');
+    const genomeContent = genomeViewport.append('g')
+        .attr('class', 'genome-content');
+    const zoomFocus = [0, -89];
+    let rotation = 0;
+
+    genomeMap.call(
+        d3.zoom()
+            .filter(event => event.type === 'wheel')
+            .scaleExtent([1, 6])
+            .on('zoom', event => {
+                const scale = event.transform.k;
+                genomeViewport.attr(
+                    'transform',
+                    d3.zoomIdentity
+                        .translate(
+                            zoomFocus[0] * (1 - scale),
+                            zoomFocus[1] * (1 - scale)
+                        )
+                        .scale(scale)
+                );
+            })
+    ).call(
+        d3.drag()
+            .on('drag', event => {
+                rotation += event.dx * 0.5;
+                genomeContent.attr('transform', `rotate(${rotation})`);
+            })
+    );
+
+    // Define the full genome arc  
+    const genome = d3.arc()
+        .innerRadius(60)
+        .outerRadius(90)
+        .startAngle(0)
+        .endAngle(Math.PI * 2);
+
+    // Draw the full genome arc  
+    genomeContent.append('path')
+        .attr('d', genome())
+        .attr('class', 'genome-path')
+        .attr('fill', '#aaaa');
+}
+function drawGene(geneArc, color) {
+    d3.select('.genome-content')
+        .append('path')
+        .attr('class', 'gene')
+        .attr('d', geneArc())
+        .attr('fill', color);
+}
+function geneCoordinatesToAngle(pos) {
+    const genomeLength = 543379;
+    const angle = (pos / genomeLength) * 2 * Math.PI;
+    return angle;
+}
+function drawBranch(category){
+    const borders = d3.select("body").select("#voronoiTreemap").select(".category-borders").selectAll("path");
+    borders.attr("stroke", "#000")
+    const categoryBorders = borders.filter(d => d.data.name === category.data.name);
+    console.log(category);
+    categoryBorders
+        .attr("stroke", "#fffb00")
+        .raise();
+    d3.select('.genome-content').selectAll('path.gene').remove()
+    let Wcount = 0;
+    let geneCount = 0;
+    for (const leaf of category.leaves()){
+        if (leaf.data.type === "gene") {
+            const geneArc = d3.arc()
+                .innerRadius(60)
+                .outerRadius(90)
+                .startAngle(geneCoordinatesToAngle(leaf.data.geneInfo.start))
+                .endAngle(geneCoordinatesToAngle(leaf.data.geneInfo.end));
+            drawGene(geneArc, leafColoring(leaf));
+            geneCount++;
+            Wcount += parseInt(leaf.data.geneInfo.numberOfW);
+        }
+    }
+    displayBranchInfo(category.data.name, geneCount, Wcount);
+}
+function displayBranchInfo(categoryName, geneCount, Wcount) {
+    d3.select('#gene_info').selectAll(".gene-info-content").remove();
+    const geneInfoContainer = d3.select("#gene_info");
+    geneInfoContainer.append("h2")
+        .attr("class", "gene-info-content")
+        .text(categoryName);
+    geneInfoContainer.append("h3")
+        .attr("class", "gene-info-content")
+        .text(`Genes: ${geneCount}`);
+    geneInfoContainer.append("h3")
+        .attr("class", "gene-info-content")
+        .text(`Total W: ${Wcount}`);
+}
