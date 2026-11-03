@@ -106,3 +106,12 @@
   font-size: 1.25rem;
   font-weight: 700;
 }
+.genome-map {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  z-index: 1001; /* map is at z = 1000 */
+  width: 500px;
+  height: 500px;
+  pointer-events: none;
+}

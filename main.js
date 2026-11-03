@@ -71,7 +71,9 @@ Promise.all([d3.csv('categories.csv'), d3.csv("Metabolism/geneData.csv")]).then(
             const tile = d3.select(event.currentTarget);
             const isHighlighted = tile.classed("highlighted");
             svg.selectAll('path.highlighted')
-                    .style("fill", leafColoring);
+                .classed("highlighted", false)
+                .style("fill", leafColoring);
+            d3.select('.genome-map').selectAll('path.gene').remove()
             if (isHighlighted) {
                 tile.classed("highlighted", false)
                     .style("fill", leafColoring(d));
@@ -80,6 +82,13 @@ Promise.all([d3.csv('categories.csv'), d3.csv("Metabolism/geneData.csv")]).then(
                 tile.classed("highlighted", true)
                     .style("fill", "#ffff00");
                 displayGeneInfo(d.data.geneInfo);
+                const geneArc = d3.arc()
+                    .innerRadius(60)
+                    .outerRadius(90)
+                    .startAngle(geneCoordinatesToAngle(d.data.geneInfo.start))
+                    .endAngle(geneCoordinatesToAngle(d.data.geneInfo.end));
+                // draw the gene on the genome map
+                drawGene(geneArc, "#ffff00");
             }
         });
 
@@ -115,6 +124,7 @@ Promise.all([d3.csv('categories.csv'), d3.csv("Metabolism/geneData.csv")]).then(
         .attr("href", "/Metabolism")
         .text("(Metabolic Map)");
     renderGeneInfo();
+    createGenomeMap();
 });
 
 function addToHierarchy(data, SW, Name, type, locus = null, length = null, geneInfo = null) {
@@ -212,3 +222,36 @@ function displayGeneInfo(geneInfo) {
 // // import models in console
 // const geneData = await d3.csv('Metabolism/geneData.csv')
 // const categories = await d3.csv('categories.csv')
+//###Function definition### currently in global space so beware!!
+function createGenomeMap() {
+    // Create the SVG container
+    const genomeMap = d3.select('body')
+        .append('svg')
+        .attr('class', 'genome-map')
+        .attr('viewBox', '-100 -100 200 200');
+
+    // Define the full genome arc  
+    const genome = d3.arc()
+        .innerRadius(60)
+        .outerRadius(90)
+        .startAngle(0)
+        .endAngle(Math.PI * 2);
+
+    // Draw the full genome arc  
+    genomeMap.append('path')
+        .attr('d', genome())
+        .attr('class', 'genome-path')
+        .attr('fill', '#aaaa');
+}
+function drawGene(geneArc, color) {
+    d3.select('.genome-map') // Set viewBox origin at the center and set width and height to 200 (for coding it can be scaled at css)
+        .append('path')
+        .attr('class', 'gene')
+        .attr('d', geneArc())
+        .attr('fill', color);
+}
+function geneCoordinatesToAngle(pos) {
+    const genomeLength = 543379;
+    const angle = (pos / genomeLength) * 2 * Math.PI;
+    return angle;
+}

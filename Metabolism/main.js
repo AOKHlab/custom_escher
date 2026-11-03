@@ -237,9 +237,7 @@ function getPathway(reactionId, modelData) {
     genes: subsystemGenes,
   }
 }
-function testlog(test) {
-  console.log(test);
-}
+
 function drawPathway(genes, geneData, color, pathway) {
   for (const gene of genes) {
     const geneId = gene.slice(-4);
