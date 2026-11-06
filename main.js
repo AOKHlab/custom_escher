@@ -80,7 +80,7 @@ Promise.all([d3.csv('categories.csv'), d3.csv("Metabolism/geneData.csv")]).then(
                     .startAngle(geneCoordinatesToAngle(d.data.geneInfo.start))
                     .endAngle(geneCoordinatesToAngle(d.data.geneInfo.end));
                 // draw the gene on the genome map
-                drawGene(geneArc, "#ffff00");
+                drawGene(geneArc, "#ffff00", d.data.geneInfo);
             }
         });
 
@@ -214,6 +214,9 @@ function displayGeneInfo(geneInfo) {
     geneInfoContainer.append("p")
         .attr("class", "gene-info-content")
         .text(`Coordinates: ${geneInfo.coordinates}`);
+    geneInfoContainer.append("p")
+        .attr("class", "gene-info-content")
+        .text(`Essentiality: ${geneInfo.essentiality}`);
     geneInfoContainer.append("a")
         .attr("class", "gene-info-content")
         .attr("target", "_blank")
@@ -237,12 +240,40 @@ function createGenomeMap() {
     const genomeContent = genomeViewport.append('g')
         .attr('class', 'genome-content');
     const zoomFocus = [0, -89];
+    
     let rotation = 0;
+
+    const formatValue = d3.formatPrefix(",.0", 10000);
+    const groupTick = genomeContent.append("g")
+    .selectAll()
+    .data(groupTicks(10000))
+    .join("g")
+      .attr("transform", d => `rotate(${d.angle * 180 / Math.PI - 90}) translate(60,0)`);
+
+    groupTick.append("line")
+      .attr("stroke", "currentColor")
+      .attr("x2", -3)
+      .attr("stroke-width", 0.5);
+    
+    groupTick.selectAll("line")
+    .filter(d => d.value % 100000 === 0)
+    .attr("x2", -6)
+    .attr("stroke-width", 1);
+    
+    groupTick
+    .filter(d => d.value % 100000 === 0)
+    .append("text")
+      .attr('font-size', "5px")
+      .attr("x", -18)
+      .attr("dy", ".35em")
+      .attr("transform", d => d.angle > Math.PI ? "translate(9)" : null)
+      .attr("text-anchor", d => d.angle > Math.PI ? "end" : null)
+      .text(d => formatValue(d.value));
 
     genomeMap.call(
         d3.zoom()
             .filter(event => event.type === 'wheel')
-            .scaleExtent([1, 6])
+            .scaleExtent([1, 3.5])
             .on('zoom', event => {
                 const scale = event.transform.k;
                 genomeViewport.attr(
@@ -263,25 +294,37 @@ function createGenomeMap() {
             })
     );
 
-    // Define the full genome arc  
+    // Define the full genome arc 
     const genome = d3.arc()
         .innerRadius(60)
         .outerRadius(90)
         .startAngle(0)
         .endAngle(Math.PI * 2);
-
-    // Draw the full genome arc  
+        // Draw the full genome arc 
     genomeContent.append('path')
         .attr('d', genome())
         .attr('class', 'genome-path')
-        .attr('fill', '#aaaa');
+        .attr('fill', '#aaaa'); 
 }
-function drawGene(geneArc, color) {
+function drawGene(geneArc, color, geneInfo) {
     d3.select('.genome-content')
         .append('path')
         .attr('class', 'gene')
+        .attr('id',geneInfo?.id)
         .attr('d', geneArc())
-        .attr('fill', color);
+        .attr('fill', color)
+        .on('click', event => {
+            displayGeneInfo(geneInfo);
+            d3.select(event.currentTarget).style('fill', '#ffff00')
+           const map = d3.select("#voronoiTreemap svg");
+           map.selectAll('path.highlighted')
+                .classed("highlighted", false)
+                .style("fill", leafColoring);
+            const geneTile = map.select(`path[id="gene-${geneInfo.id}"]`);
+            geneTile
+                .classed("highlighted", true)
+                .style("fill", "#ffff00");
+        });
 }
 function geneCoordinatesToAngle(pos) {
     const genomeLength = 543379;
@@ -306,7 +349,7 @@ function drawBranch(category){
                 .outerRadius(90)
                 .startAngle(geneCoordinatesToAngle(leaf.data.geneInfo.start))
                 .endAngle(geneCoordinatesToAngle(leaf.data.geneInfo.end));
-            drawGene(geneArc, leafColoring(leaf));
+            drawGene(geneArc, leafColoring(leaf), leaf.data.geneInfo);
             geneCount++;
             Wcount += parseInt(leaf.data.geneInfo.numberOfW);
         }
@@ -325,4 +368,10 @@ function displayBranchInfo(categoryName, geneCount, Wcount) {
     geneInfoContainer.append("h3")
         .attr("class", "gene-info-content")
         .text(`Total W: ${Wcount}`);
+}
+function groupTicks(step) {
+  const k = 2*Math.PI / 543379;
+  return d3.range(0, 543379, step).map(value => {
+    return {value: value, angle: value * k + 0};
+  });
 }
