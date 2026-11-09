@@ -5,7 +5,7 @@ const colors = {
     'SW.3': d3.lch(47.36, 80.14, 257.55), // blue #1f77b4 250-280 crhoma 60?
     'SW.4': d3.lch(47.68, 80.45, 35.08) // red #d62728 25-45
 };
-Promise.all([d3.csv('categories.csv'), d3.csv("geneDataFiltered.csv")]).then(([categories, geneData]) => {
+Promise.all([d3.csv('categories.csv'), d3.csv("geneDataFiltered.csv"), d3.csv('geneCategories.csv')]).then(([categories, geneData, geneCategories]) => {
     const data = {
         type: 'root',
         name: 'Syn3 genome'
@@ -13,9 +13,10 @@ Promise.all([d3.csv('categories.csv'), d3.csv("geneDataFiltered.csv")]).then(([c
     for (element of categories) {
         addToHierarchy(data, element.id, element.category, 'category');
     }
+    addGeneCategory(geneData,geneCategories,categories);
     for (gene of geneData) {
         const length = Math.abs(parseInt(gene.start) - parseInt(gene.end))
-        addToHierarchy(data, gene.categoryId, gene.name, 'gene', gene.id, length, gene)
+        addToHierarchy(data, gene.categories[0].id, gene.name, 'gene', gene.id, length, gene)
     }
 
     removeEmptyCategories(data);
@@ -196,15 +197,20 @@ function displayGeneInfo(geneInfo) {
     d3.select('#gene_info').selectAll(".gene-info-content").remove();
     const geneInfoContainer = d3.select("#gene_info");
     console.log(geneInfo);
-    geneInfoContainer.append("h2")
+    geneInfoContainer.append("a")
         .attr("class", "gene-info-content")
+        .attr("target", "_blank")
+        .attr("href", "https://synwiki.uni-goettingen.de/v1/gene?keyword=" + geneInfo.id)
+        .append("h2")
         .text(geneInfo.name);
     geneInfoContainer.append("h4")
         .attr("class", "gene-info-content")
         .text(geneInfo.locus);
+    for (category of geneInfo.categories){
     geneInfoContainer.append("p")
         .attr("class", "gene-info-content")
-        .text(`Category: ${geneInfo.category}`);
+        .text(`Category: ${category.category} (${category.id})`);
+    }
     geneInfoContainer.append("p")
         .attr("class", "gene-info-content")
         .text(`Annotation: ${geneInfo.annotation}`);
@@ -217,17 +223,13 @@ function displayGeneInfo(geneInfo) {
     geneInfoContainer.append("p")
         .attr("class", "gene-info-content")
         .text(`Essentiality: ${geneInfo.essentiality}`);
-    geneInfoContainer.append("a")
-        .attr("class", "gene-info-content")
-        .attr("target", "_blank")
-        .attr("href", "https://synwiki.uni-goettingen.de/v1/gene?keyword=" + geneInfo.id)
-        .text("SynWiki")
 }
 
 // ///-----------TESTING CENTER---------////////
 // // import models in console
-// const geneData = await d3.csv('Metabolism/geneDataFiltered.csv')
+// const geneData = await d3.csv('geneDataFiltered.csv')
 // const categories = await d3.csv('categories.csv')
+// const geneCategories = await d3.csv('geneCategories.csv')
 //###Function definition### currently in global space so beware!!
 function createGenomeMap() {
     // Create the SVG container
@@ -374,4 +376,14 @@ function groupTicks(step) {
   return d3.range(0, 543379, step).map(value => {
     return {value: value, angle: value * k + 0};
   });
+}
+function addGeneCategory(geneData, geneCategories, categoryList){
+    for (gene of geneData) {
+        const categories = geneCategories.filter(cat => cat.locus === gene.locus);
+        for (category of categories){
+        category.priority = categoryList.find(cat => cat.id === category.id).priotity
+        }
+        gene.categories = categories.sort((a, b) =>
+        parseInt(a.priority) - parseInt(b.priority) || a.id.localeCompare(b.id));
+    }
 }
