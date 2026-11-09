@@ -5,7 +5,7 @@ const colors = {
     'SW.3': d3.lch(47.36, 80.14, 257.55), // blue #1f77b4 250-280 crhoma 60?
     'SW.4': d3.lch(47.68, 80.45, 35.08) // red #d62728 25-45
 };
-Promise.all([d3.csv('categories.csv'), d3.csv("Metabolism/geneDataFiltered.csv")]).then(([categories, geneData]) => {
+Promise.all([d3.csv('categories.csv'), d3.csv("geneDataFiltered.csv")]).then(([categories, geneData]) => {
     const data = {
         type: 'root',
         name: 'Syn3 genome'

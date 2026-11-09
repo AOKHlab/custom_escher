@@ -22,7 +22,7 @@ var tooltipStyle = {
 };
 //###Main body###
 // load model and gene data
-Promise.all([d3.json('syn3_metabolism.json'), d3.json('syn3_model.json'), d3.csv("geneData.csv")]).then(([mapData, modelData, geneData]) => {
+Promise.all([d3.json('syn3_metabolism.json'), d3.json('syn3_model.json'), d3.csv("../geneDataFiltered.csv")]).then(([mapData, modelData, geneData]) => {
   const Tooltip = props => {
     const type = props.type;
     const id = props.biggId;
