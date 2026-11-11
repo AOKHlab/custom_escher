@@ -22,13 +22,14 @@ var tooltipStyle = {
 };
 //###Main body###
 // load model and gene data
-Promise.all([d3.json('syn3_metabolism.json'), d3.json('syn3_model.json'), d3.csv("../geneDataFiltered.csv")]).then(([mapData, modelData, geneData]) => {
+Promise.all([d3.json('syn3_metabolism.json'), d3.json('syn3_model.json'), d3.csv("../geneDataFiltered.csv"), d3.csv("../segments.csv")]).then(([mapData, modelData, geneData, segments]) => {
   const Tooltip = props => {
     const type = props.type;
     const id = props.biggId;
     let clicked = false;
     let geneId;
     let printedInfo;
+    console.log(geneData);
     switch (type) {
       case 'gene':
         // create tooltip info
@@ -116,7 +117,7 @@ Promise.all([d3.json('syn3_metabolism.json'), d3.json('syn3_model.json'), d3.csv
     first_load_callback: builder => {
       builder.map.convert_map();
       builder.map.callback_manager.set('delay_hide_tooltip.custom_handler', () => onTooltipHide()); //generate custom event for tooltip hide
-      createGenomeMap();
+      createGenomeMap(segments);
       d3.select('#map_container').on('click.gene-label', function (event) {
         const label = event.target.closest('.gene-label');
         if (!label) return; // Exit if the click was not on a gene label
@@ -143,34 +144,93 @@ Promise.all([d3.json('syn3_metabolism.json'), d3.json('syn3_model.json'), d3.csv
 
 
 //###Function definition### currently in global space so beware!!
-function createGenomeMap() {
-  // Create the SVG container
-  const genomeMap = d3.select('body')
-    .append('svg')
-    .attr('class', 'genome-map')
-    .attr('viewBox', '-100 -100 200 200');
+function createGenomeMap(segments) {
+    // Create the SVG container
+    const genomeMap = d3.select('body')
+        .append('svg')
+        .attr('class', 'genome-map')
+        .attr('viewBox', '-100 -100 200 200');
+    const genomeViewport = genomeMap.append('g')
+        .attr('class', 'genome-viewport');
+    const genomeContent = genomeViewport.append('g')
+        .attr('class', 'genome-content');
+    const zoomFocus = [0, -89];
 
-  // Define the full genome arc  
-  const genome = d3.arc()
-    .innerRadius(60)
-    .outerRadius(90)
-    .startAngle(0)
-    .endAngle(Math.PI * 2);
+    let rotation = 0;
 
-  // Draw the full genome arc  
-  genomeMap.append('path')
-    .attr('d', genome())
-    .attr('class', 'genome-path')
-    .attr('fill', '#aaaa');
-  // Draw genome counter
-  genomeCountLabel = genomeMap.append('text')
-    .attr('text-anchor', 'middle')
-    .attr('dominant-baseline', 'central')
-    .attr('font-family', 'sans-serif')
-    .attr('font-size', 24)
-    .attr('font-weight', 'bold')
-    .attr('fill', '#222')
-    .text(Wcounter);
+    const formatValue = d3.formatPrefix(",.0", 10000);
+    const groupTick = genomeContent.append("g")
+        .selectAll()
+        .data(groupTicks(10000))
+        .join("g")
+        .attr("transform", d => `rotate(${d.angle * 180 / Math.PI - 90}) translate(60,0)`);
+
+    groupTick.append("line")
+        .attr("stroke", "currentColor")
+        .attr("x2", -3)
+        .attr("stroke-width", 0.5);
+
+    groupTick.selectAll("line")
+        .filter(d => d.value % 100000 === 0)
+        .attr("x2", -6)
+        .attr("stroke-width", 1);
+
+    groupTick
+        .filter(d => d.value % 100000 === 0)
+        .append("text")
+        .attr('font-size', "5px")
+        .attr("x", -18)
+        .attr("dy", ".35em")
+        .attr("transform", d => d.angle > Math.PI ? "translate(9)" : null)
+        .attr("text-anchor", d => d.angle > Math.PI ? "end" : null)
+        .text(d => formatValue(d.value));
+
+    genomeMap.call(
+        d3.zoom()
+            .filter(event => event.type === 'wheel')
+            .scaleExtent([1, 3.5])
+            .on('zoom', event => {
+                const scale = event.transform.k;
+                genomeViewport.attr(
+                    'transform',
+                    d3.zoomIdentity
+                        .translate(
+                            zoomFocus[0] * (1 - scale),
+                            zoomFocus[1] * (1 - scale)
+                        )
+                        .scale(scale)
+                );
+            })
+    ).call(
+        d3.drag()
+            .on('drag', event => {
+                rotation += event.dx * 0.5;
+                genomeContent.attr('transform', `rotate(${rotation})`);
+            })
+    );
+
+    // Define the full genome arc 
+    for (segment of segments) {
+        const startAngle = geneCoordinatesToAngle(segment.start);
+        let endAngle = geneCoordinatesToAngle(segment.end);
+        if (endAngle < startAngle) endAngle += 2 * Math.PI;
+        const genome = d3.arc()
+            .innerRadius(60)
+            .outerRadius(90)
+            .startAngle(startAngle)
+            .endAngle(endAngle);
+        // Draw the full genome arc 
+        genomeContent.append('path')
+            .attr('d', genome())
+            .attr('class', 'genome-path')
+            .attr('fill', '#aaaa');
+        if (parseInt(segment.num) % 2 === 0) { //draw it again if segment number is even
+            genomeContent.append('path')
+                .attr('d', genome())
+                .attr('class', 'genome-path')
+                .attr('fill', '#9999');
+        }
+    }
 }
 function drawGene(geneArc, color, id) {
   d3.select('.genome-map') // Set viewBox origin at the center and set width and height to 200 (for coding it can be scaled at css)
@@ -288,7 +348,12 @@ function selectPathway(genes, geneData, color, pathway, reactions) {
   genomeCountLabel.text(Wcounter);
   console.log('Selected genes:', Array.from(selectedGenes));
 }
-
+function groupTicks(step) {
+    const k = 2 * Math.PI / 543379;
+    return d3.range(0, 543379, step).map(value => {
+        return { value: value, angle: value * k + 0 };
+    });
+}
 
 // ///-----------TESTING CENTER---------////////
 // // import models in console

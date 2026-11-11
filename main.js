@@ -298,8 +298,6 @@ function createGenomeMap(segments) {
 
     // Define the full genome arc 
     for (segment of segments) {
-        console.log(segment)
-        console.log(parseInt(segment.num) % 2 === 0)
         const startAngle = geneCoordinatesToAngle(segment.start);
         let endAngle = geneCoordinatesToAngle(segment.end);
         if (endAngle < startAngle) endAngle += 2 * Math.PI;
@@ -318,7 +316,6 @@ function createGenomeMap(segments) {
                 .attr('d', genome())
                 .attr('class', 'genome-path')
                 .attr('fill', '#9999');
-            console.log(parseInt(segment.num) % 2 === 0)
         }
     }
 }
