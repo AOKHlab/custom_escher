@@ -326,7 +326,11 @@ function drawGene(geneArc, color, geneInfo) {
         .attr('id', geneInfo?.id)
         .attr('d', geneArc())
         .attr('fill', color)
-        .on('click', event => {
+        .on('click', event => { //only allow one gene to be highlited from branches
+            d3.select('.genome-content').selectAll('path.gene').filter(function () { //find all yellow colored genes (there should only be one) 
+                    return d3.select(this).style('fill') === 'rgb(255, 255, 0)'; // style returns colors in rgb so its compared to yellow in rgb
+                }).style("fill", null); // remove the styling (this returns the original fill color as that is added as an attribute and not a style)
+            console.log(d3.color(d3.select('.genome-map').selectAll('path.gene')))
             displayGeneInfo(geneInfo);
             d3.select(event.currentTarget).style('fill', '#ffff00')
             const map = d3.select("#voronoiTreemap svg");
