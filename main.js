@@ -5,7 +5,7 @@ const colors = {
     'SW.3': d3.lch(47.36, 80.14, 257.55), // blue #1f77b4 250-280 crhoma 60?
     'SW.4': d3.lch(47.68, 80.45, 35.08) // red #d62728 25-45
 };
-Promise.all([d3.csv('categories.csv'), d3.csv("geneDataFiltered.csv"), d3.csv('geneCategories.csv')]).then(([categories, geneData, geneCategories]) => {
+Promise.all([d3.csv('categories.csv'), d3.csv("geneDataFiltered.csv"), d3.csv('geneCategories.csv'), d3.csv('segments.csv')]).then(([categories, geneData, geneCategories, segments]) => {
     const data = {
         type: 'root',
         name: 'Syn3 genome'
@@ -13,7 +13,7 @@ Promise.all([d3.csv('categories.csv'), d3.csv("geneDataFiltered.csv"), d3.csv('g
     for (element of categories) {
         addToHierarchy(data, element.id, element.category, 'category');
     }
-    addGeneCategory(geneData,geneCategories,categories);
+    addGeneCategory(geneData, geneCategories, categories);
     for (gene of geneData) {
         const length = Math.abs(parseInt(gene.start) - parseInt(gene.end))
         addToHierarchy(data, gene.categories[0].id, gene.name, 'gene', gene.id, length, gene)
@@ -119,15 +119,15 @@ Promise.all([d3.csv('categories.csv'), d3.csv("geneDataFiltered.csv"), d3.csv('g
         .attr("href", "/Metabolism")
         .text("(Metabolic Map)");
     renderGeneInfo();
-    createGenomeMap();
+    createGenomeMap(segments);
 });
 function leafColoring(leaf) {
-        const hue = leaf.parent.data.color.h;
-        const lightness = leaf.parent.data.color.l - (parseInt(leaf.data.geneInfo.numberOfW) * 2); // adjust lightness based on number of W's
-        const chroma = leaf.parent.data.color.c //+ (parseInt(leaf.data.geneInfo.numberOfW) * 2)
-        const color = d3.lch(lightness, chroma, hue);
-        return color;
-    }
+    const hue = leaf.parent.data.color.h;
+    const lightness = leaf.parent.data.color.l - (parseInt(leaf.data.geneInfo.numberOfW) * 2); // adjust lightness based on number of W's
+    const chroma = leaf.parent.data.color.c //+ (parseInt(leaf.data.geneInfo.numberOfW) * 2)
+    const color = d3.lch(lightness, chroma, hue);
+    return color;
+}
 
 function addToHierarchy(data, SW, Name, type, locus = null, length = null, geneInfo = null) {
     const idList = SW.split('.')
@@ -206,10 +206,10 @@ function displayGeneInfo(geneInfo) {
     geneInfoContainer.append("h4")
         .attr("class", "gene-info-content")
         .text(geneInfo.locus);
-    for (category of geneInfo.categories){
-    geneInfoContainer.append("p")
-        .attr("class", "gene-info-content")
-        .text(`Category: ${category.category} (${category.id})`);
+    for (category of geneInfo.categories) {
+        geneInfoContainer.append("p")
+            .attr("class", "gene-info-content")
+            .text(`Category: ${category.category} (${category.id})`);
     }
     geneInfoContainer.append("p")
         .attr("class", "gene-info-content")
@@ -231,7 +231,7 @@ function displayGeneInfo(geneInfo) {
 // const categories = await d3.csv('categories.csv')
 // const geneCategories = await d3.csv('geneCategories.csv')
 //###Function definition### currently in global space so beware!!
-function createGenomeMap() {
+function createGenomeMap(segments) {
     // Create the SVG container
     const genomeMap = d3.select('body')
         .append('svg')
@@ -242,35 +242,35 @@ function createGenomeMap() {
     const genomeContent = genomeViewport.append('g')
         .attr('class', 'genome-content');
     const zoomFocus = [0, -89];
-    
+
     let rotation = 0;
 
     const formatValue = d3.formatPrefix(",.0", 10000);
     const groupTick = genomeContent.append("g")
-    .selectAll()
-    .data(groupTicks(10000))
-    .join("g")
-      .attr("transform", d => `rotate(${d.angle * 180 / Math.PI - 90}) translate(60,0)`);
+        .selectAll()
+        .data(groupTicks(10000))
+        .join("g")
+        .attr("transform", d => `rotate(${d.angle * 180 / Math.PI - 90}) translate(60,0)`);
 
     groupTick.append("line")
-      .attr("stroke", "currentColor")
-      .attr("x2", -3)
-      .attr("stroke-width", 0.5);
-    
+        .attr("stroke", "currentColor")
+        .attr("x2", -3)
+        .attr("stroke-width", 0.5);
+
     groupTick.selectAll("line")
-    .filter(d => d.value % 100000 === 0)
-    .attr("x2", -6)
-    .attr("stroke-width", 1);
-    
+        .filter(d => d.value % 100000 === 0)
+        .attr("x2", -6)
+        .attr("stroke-width", 1);
+
     groupTick
-    .filter(d => d.value % 100000 === 0)
-    .append("text")
-      .attr('font-size', "5px")
-      .attr("x", -18)
-      .attr("dy", ".35em")
-      .attr("transform", d => d.angle > Math.PI ? "translate(9)" : null)
-      .attr("text-anchor", d => d.angle > Math.PI ? "end" : null)
-      .text(d => formatValue(d.value));
+        .filter(d => d.value % 100000 === 0)
+        .append("text")
+        .attr('font-size', "5px")
+        .attr("x", -18)
+        .attr("dy", ".35em")
+        .attr("transform", d => d.angle > Math.PI ? "translate(9)" : null)
+        .attr("text-anchor", d => d.angle > Math.PI ? "end" : null)
+        .text(d => formatValue(d.value));
 
     genomeMap.call(
         d3.zoom()
@@ -297,29 +297,43 @@ function createGenomeMap() {
     );
 
     // Define the full genome arc 
-    const genome = d3.arc()
-        .innerRadius(60)
-        .outerRadius(90)
-        .startAngle(0)
-        .endAngle(Math.PI * 2);
+    for (segment of segments) {
+        console.log(segment)
+        console.log(parseInt(segment.num) % 2 === 0)
+        const startAngle = geneCoordinatesToAngle(segment.start);
+        let endAngle = geneCoordinatesToAngle(segment.end);
+        if (endAngle < startAngle) endAngle += 2 * Math.PI;
+        const genome = d3.arc()
+            .innerRadius(60)
+            .outerRadius(90)
+            .startAngle(startAngle)
+            .endAngle(endAngle);
         // Draw the full genome arc 
-    genomeContent.append('path')
-        .attr('d', genome())
-        .attr('class', 'genome-path')
-        .attr('fill', '#aaaa'); 
+        genomeContent.append('path')
+            .attr('d', genome())
+            .attr('class', 'genome-path')
+            .attr('fill', '#aaaa');
+        if (parseInt(segment.num) % 2 === 0) { //draw it again if segment number is even
+            genomeContent.append('path')
+                .attr('d', genome())
+                .attr('class', 'genome-path')
+                .attr('fill', '#9999');
+            console.log(parseInt(segment.num) % 2 === 0)
+        }
+    }
 }
 function drawGene(geneArc, color, geneInfo) {
     d3.select('.genome-content')
         .append('path')
         .attr('class', 'gene')
-        .attr('id',geneInfo?.id)
+        .attr('id', geneInfo?.id)
         .attr('d', geneArc())
         .attr('fill', color)
         .on('click', event => {
             displayGeneInfo(geneInfo);
             d3.select(event.currentTarget).style('fill', '#ffff00')
-           const map = d3.select("#voronoiTreemap svg");
-           map.selectAll('path.highlighted')
+            const map = d3.select("#voronoiTreemap svg");
+            map.selectAll('path.highlighted')
                 .classed("highlighted", false)
                 .style("fill", leafColoring);
             const geneTile = map.select(`path[id="gene-${geneInfo.id}"]`);
@@ -333,7 +347,7 @@ function geneCoordinatesToAngle(pos) {
     const angle = (pos / genomeLength) * 2 * Math.PI;
     return angle;
 }
-function drawBranch(category){
+function drawBranch(category) {
     const borders = d3.select("body").select("#voronoiTreemap").select(".category-borders").selectAll("path");
     borders.attr("stroke", "#000")
     const categoryBorders = borders.filter(d => d.data.name === category.data.name);
@@ -344,7 +358,7 @@ function drawBranch(category){
     d3.select('.genome-content').selectAll('path.gene').remove()
     let Wcount = 0;
     let geneCount = 0;
-    for (const leaf of category.leaves()){
+    for (const leaf of category.leaves()) {
         if (leaf.data.type === "gene") {
             const geneArc = d3.arc()
                 .innerRadius(60)
@@ -372,18 +386,18 @@ function displayBranchInfo(categoryName, geneCount, Wcount) {
         .text(`Total W: ${Wcount}`);
 }
 function groupTicks(step) {
-  const k = 2*Math.PI / 543379;
-  return d3.range(0, 543379, step).map(value => {
-    return {value: value, angle: value * k + 0};
-  });
+    const k = 2 * Math.PI / 543379;
+    return d3.range(0, 543379, step).map(value => {
+        return { value: value, angle: value * k + 0 };
+    });
 }
-function addGeneCategory(geneData, geneCategories, categoryList){
+function addGeneCategory(geneData, geneCategories, categoryList) {
     for (gene of geneData) {
         const categories = geneCategories.filter(cat => cat.locus === gene.locus);
-        for (category of categories){
-        category.priority = categoryList.find(cat => cat.id === category.id).priotity
+        for (category of categories) {
+            category.priority = categoryList.find(cat => cat.id === category.id).priotity
         }
         gene.categories = categories.sort((a, b) =>
-        parseInt(a.priority) - parseInt(b.priority) || a.id.localeCompare(b.id));
+            parseInt(a.priority) - parseInt(b.priority) || a.id.localeCompare(b.id));
     }
 }
