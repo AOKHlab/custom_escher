@@ -122,9 +122,6 @@ Promise.all([d3.csv('categories.csv'), d3.csv("geneDataFiltered.csv"), d3.csv('g
     metabolismLabel.append("a")
         .attr("href", metabolismHref)
         .text("(Metabolic Map)");
-    metabolismLabel.append("a")
-        .attr("href", "/Metabolism")
-        .text("(Metabolic Map)");
     renderGeneInfo();
     createGenomeMap(segments);
 });
