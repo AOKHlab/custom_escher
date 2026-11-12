@@ -115,6 +115,13 @@ Promise.all([d3.csv('categories.csv'), d3.csv("geneDataFiltered.csv"), d3.csv('g
             return d3.select(this).text() === "Metabolism";
         });
     metabolismLabel.text("Metabolism ")
+    const metabolismHref = ["localhost", "127.0.0.1", "::1"].includes(window.location.hostname) // checks if its hosted locally or remotely
+        ? "/Metabolism/" // if its local keeps old behaviour
+        : `${window.location.protocol}//${window.location.hostname}/Metabolism/`; //if its remote changes href to remove port number
+
+    metabolismLabel.append("a")
+        .attr("href", metabolismHref)
+        .text("(Metabolic Map)");
     metabolismLabel.append("a")
         .attr("href", "/Metabolism")
         .text("(Metabolic Map)");
@@ -327,8 +334,8 @@ function drawGene(geneArc, color, geneInfo) {
         .attr('fill', color)
         .on('click', event => { //only allow one gene to be highlited from branches
             d3.select('.genome-content').selectAll('path.gene').filter(function () { //find all yellow colored genes (there should only be one) 
-                    return d3.select(this).style('fill') === 'rgb(255, 255, 0)'; // style returns colors in rgb so its compared to yellow in rgb
-                }).style("fill", null); // remove the styling (this returns the original fill color as that is added as an attribute and not a style)
+                return d3.select(this).style('fill') === 'rgb(255, 255, 0)'; // style returns colors in rgb so its compared to yellow in rgb
+            }).style("fill", null); // remove the styling (this returns the original fill color as that is added as an attribute and not a style)
             displayGeneInfo(geneInfo);
             d3.select(event.currentTarget).style('fill', '#ffff00')
             const map = d3.select("#voronoiTreemap svg");
