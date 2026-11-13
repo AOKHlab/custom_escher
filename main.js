@@ -25,6 +25,7 @@ Promise.all([d3.csv('categories.csv'), d3.csv("geneDataFiltered.csv"), d3.csv('g
         return d.weight;
     }
     const rootNode = d3.hierarchy(data).sum(weightAccessor);
+    keepEssentiality(rootNode,'Nonessential')
     for (element of rootNode.children) {
         const subgroups = element.descendants().filter( //find all lowest level subgroups
             node => node.children?.some(child => child.data.type === "gene") // that only contain leaves
@@ -199,6 +200,7 @@ function renderGeneInfo() {
 function displayGeneInfo(geneInfo) {
 
     d3.select('#gene_info').selectAll(".gene-info-content").remove();
+    console.log(geneInfo);
     const geneInfoContainer = d3.select("#gene_info");
     geneInfoContainer.append("a")
         .attr("class", "gene-info-content")
@@ -402,4 +404,38 @@ function addGeneCategory(geneData, geneCategories, categoryList) {
         gene.categories = categories.sort((a, b) =>
             parseInt(a.priority) - parseInt(b.priority) || a.id.localeCompare(b.id));
     }
+}
+function sortEsentiallity(rootNode) {
+    const essentialities = ['Essential', 'Quasiessential', 'Nonessential']
+    const rootByEssential = [rootNode,rootNode,rootNode]
+
+    for (leaf of rootNode.leaves()) {
+        
+        const essentiality = leaf.data.geneInfo.essentiality
+        switch (essentiality) {
+            case 'Essential':
+                // code block
+                break;
+            case 'Quasiessential':
+                // code block
+                break;
+            case 'Nonessential':
+                break;
+            default:
+                console.log(leaf.data.geneInfo)
+        }
+    }
+}
+function keepEssentiality(node, essentiality) {
+    if (node.data.type === "gene") {
+        return node.data.geneInfo.essentiality === essentiality;
+    }
+
+    if (!node.children) return node.data.type === "root";
+
+    node.children = node.children.filter(child =>
+        keepEssentiality(child, essentiality)
+    );
+
+    return node.data.type === "root" || node.children.length > 0;
 }
