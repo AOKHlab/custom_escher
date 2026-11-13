@@ -1,4 +1,5 @@
 const random_seed = 42;
+const filterBy = 'Essential'
 const colors = {
     'SW.1': d3.lch(57.96, 80.01, 136.29), // green #2ca02c 122-140
     'SW.2': d3.lch(67.64, 86.08, 57.67), // orange #ff7f0e 50-70
@@ -24,8 +25,9 @@ Promise.all([d3.csv('categories.csv'), d3.csv("geneDataFiltered.csv"), d3.csv('g
     function weightAccessor(d) {
         return d.weight;
     }
-    const rootNode = d3.hierarchy(data).sum(weightAccessor);
-    keepEssentiality(rootNode,'Nonessential')
+    const rootNode = d3.hierarchy(data)
+    keepEssentiality(rootNode,filterBy)
+    rootNode.sum(weightAccessor)
     for (element of rootNode.children) {
         const subgroups = element.descendants().filter( //find all lowest level subgroups
             node => node.children?.some(child => child.data.type === "gene") // that only contain leaves
