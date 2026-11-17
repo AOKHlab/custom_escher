@@ -16,15 +16,15 @@
   background: #fff;
 }
 
-.legend-list > .legend-category {
+.legend-list>.legend-category {
   margin-left: 0;
 }
 
-.legend-category > .legend-category {
+.legend-category>.legend-category {
   margin-left: 20px;
 }
 
-.legend-category > summary,
+.legend-category>summary,
 .legend-category:not(details) {
   display: flex;
   align-items: center;
@@ -34,15 +34,15 @@
   white-space: nowrap;
 }
 
-.legend-category > summary {
+.legend-category>summary {
   list-style: none;
 }
 
-.legend-category > summary::-webkit-details-marker {
+.legend-category>summary::-webkit-details-marker {
   display: none;
 }
 
-.legend-category > summary::before {
+.legend-category>summary::before {
   content: "+";
   width: 12px;
   flex: 0 0 12px;
@@ -55,7 +55,7 @@
   flex: 0 0 12px;
 }
 
-.legend-category[open] > summary::before {
+.legend-category[open]>summary::before {
   content: "-";
 }
 
@@ -72,9 +72,15 @@
 }
 
 .legend-title {
-  margin: 0 0 5px;
+  margin: 0;
   font-size: 1.5rem;
   font-weight: 700;
+}
+
+.legend-subtitle {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 200;
 }
 
 #voronoiTreemap svg {
@@ -85,6 +91,7 @@
   height: var(--map-size);
   transform: translate(-50%, -50%);
 }
+
 #gene_info {
   position: fixed;
   top: calc(50% - var(--map-half-size));
@@ -97,20 +104,28 @@
   outline: 3px solid #333;
   background: #fff;
 }
-.gene_info-title {
-  margin: 0 0 5px;
+
+.gene-info-title {
+  margin: 0;
   font-size: 1.5rem;
   font-weight: 700;
 }
+
+.gene-info-title + .gene-info-content {
+  margin: 0;
+}
+
 .gene_info-content {
   font-size: 1.25rem;
   font-weight: 700;
 }
+
 .genome-map {
   position: fixed;
   bottom: 16px;
   right: 16px;
-  z-index: 1001; /* map is at z = 1000 */
+  z-index: 1001;
+  /* map is at z = 1000 */
   width: 500px;
   height: 500px;
   pointer-events: all;
