@@ -1,18 +1,18 @@
 :root {
-  --map-size: min(90vw, 90vh, 900px);
-  --map-half-size: min(45vw, 45vh, 450px);
+  --map-size: min(90vw, 90vh);
+  --map-half-size: min(45vw, 45vh);
 }
 
 #legend {
   position: fixed;
   top: calc(50% - var(--map-half-size));
-  right: calc(50% + var(--map-half-size) + 1rem);
-  width: 500px;
+  right: calc(50% + var(--map-half-size) + 0.5rem);
+  width: max(0px, calc(50vw - var(--map-half-size) - 1rem));
   max-height: var(--map-size);
   overflow-y: auto;
   box-sizing: border-box;
-  padding: 8px;
-  outline: 3px solid #333;
+  padding: 0.5rem;
+  outline: 0.25rem solid #333;
   background: #fff;
 }
 
@@ -21,15 +21,15 @@
 }
 
 .legend-category>.legend-category {
-  margin-left: 20px;
+  margin-left: 1.25rem;
 }
 
 .legend-category>summary,
 .legend-category:not(details) {
   display: flex;
   align-items: center;
-  gap: 8px;
-  min-height: 24px;
+  gap: 0.5rem;
+  min-height: 2rem;
   cursor: pointer;
   white-space: nowrap;
 }
@@ -44,15 +44,15 @@
 
 .legend-category>summary::before {
   content: "+";
-  width: 12px;
-  flex: 0 0 12px;
+  width: 0.75rem;
+  flex: 0 0 0.75rem;
   text-align: center;
 }
 
 .legend-category:not(details)::before {
   content: "";
-  width: 12px;
-  flex: 0 0 12px;
+  width: 0.75rem;
+  flex: 0 0 0.75rem;
 }
 
 .legend-category[open]>summary::before {
@@ -61,9 +61,9 @@
 
 .legend-swatch {
   display: inline-block;
-  width: 14px;
-  height: 14px;
-  flex: 0 0 14px;
+  width: 1rem;
+  height: 1rem;
+  flex: 0 0 1rem;
 }
 
 .legend-label {
@@ -95,13 +95,13 @@
 #gene_info {
   position: fixed;
   top: calc(50% - var(--map-half-size));
-  left: calc(50% + var(--map-half-size) + 1rem);
-  width: 500px;
+  left: calc(50% + var(--map-half-size) + 0.5rem);
+  width: max(0px, calc(50vw - var(--map-half-size) - 1rem));
   max-height: var(--map-size);
   overflow-y: auto;
   box-sizing: border-box;
-  padding: 8px;
-  outline: 3px solid #333;
+  padding: 0.5rem;
+  outline: 0.25rem solid #333;
   background: #fff;
 }
 
@@ -122,18 +122,18 @@
 
 .genome-map {
   position: fixed;
-  bottom: 16px;
-  right: 16px;
+  bottom: 0.5rem;
+  right: 0.5rem;
   z-index: 1001;
   /* map is at z = 1000 */
-  width: 500px;
-  height: 500px;
+  width: max(0px, calc(50vw - var(--map-half-size) - 1rem));
+ width: max(0px, calc(50vw - var(--map-half-size) - 1rem));
   pointer-events: all;
   cursor: grab;
 }
 
 .genome-map:active {
   cursor: grabbing;
-  outline: 3px solid #333;
+  outline: 0.25rem solid #333;
   background: #fff;
 }
