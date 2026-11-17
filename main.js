@@ -1,4 +1,3 @@
-const random_seed = 42;
 const filterBy =
     [
         //{ property: 'essentiality', target: 'Essential', operator: '===' },
@@ -9,14 +8,16 @@ const filterBy =
         //{property:'name', target:'tRNA-Met',operator:'==='}
         //{property:'numberOfW', target:5,operator:'<'}
     ]
+const size = 'proteomics' //What parameter determines the size of polygons
+const shading = 'numberOfW' //What parameter determines the shading of polygons
+const random_seed = 42;
 const colors = {
     'SW.1': d3.lch(57.96, 80.01, 136.29), // green #2ca02c 122-140
     'SW.2': d3.lch(67.64, 86.08, 57.67), // orange #ff7f0e 50-70
     'SW.3': d3.lch(47.36, 80.14, 257.55), // blue #1f77b4 250-280 crhoma 60?
     'SW.4': d3.lch(47.68, 80.45, 35.08) // red #d62728 25-45
 };
-const size = 'proteomics'
-const shading = 'numberOfW'
+
 Promise.all([d3.csv('categories.csv'), d3.csv("geneData.csv"), d3.csv('geneCategories.csv'), d3.csv('segments.csv')]).then(([categories, geneData, geneCategories, segments]) => {
     const data = {
         type: 'root',
