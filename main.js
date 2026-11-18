@@ -24,7 +24,6 @@ Promise.all([d3.csv('categories.csv'), d3.csv("geneData.csv"), d3.csv('geneCateg
     //          #####Main Code######
     setSlope(geneData,shading);
     const rootNode = createTree(geneData, geneCategories, categories, size)
-    console.log(rootNode)
     drawVoronoiTree(rootNode, filterBy, shading);
     makeLegend(rootNode);
     renderGeneInfo();
@@ -524,7 +523,6 @@ function setSlope (geneData,shading){
         .map(gene => gene[shading])
         .map(Number)
     m = maxshading/(d3.max(values)-d3.min(values));
-    console.log(m);
 }
 function redrawMap(geneData, geneCategories, categoryList,filterBy,size,shading){
 d3.select("body").select("#voronoiTreemap")
