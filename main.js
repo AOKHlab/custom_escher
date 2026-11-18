@@ -155,6 +155,8 @@ function addColorLeafs(rootNode) {
     }
 }
 function onTileClick(event, d, shading) {
+    const borders = d3.select("body").select("#voronoiTreemap").select(".category-borders").selectAll("path");
+    borders.attr("stroke", "#000")
     const svg = d3.select("body").select("#voronoiTreemap").select("svg")
     const tile = d3.select(event.currentTarget);
     const isHighlighted = tile.classed("highlighted");
