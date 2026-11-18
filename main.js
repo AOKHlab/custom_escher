@@ -4,6 +4,7 @@ let m =2;
 const filterBy =
     [
         //{ property: 'essentiality', target: 'Essential', operator: '===' },
+        {property: 'proteomics', target: 0, operator: '!=='}
         //{property:'id', target:105, operator:'<='},
         //{property:'id', target:169, operator:'>='},
         //{property:'start', target:60800, operator:'<='},
@@ -220,7 +221,8 @@ function keepEssentiality(node, essentiality) {
 }
 function compareValues(value1, value2, operator) {
     switch (operator) {
-        case "===": return value1 === value2;
+        case "===": return String(value1) === String(value2);
+        case "!==": return String(value1) !== String(value2);
         case ">": return Number(value1) > Number(value2);
         case "<": return Number(value1) < Number(value2);
         case ">=": return Number(value1) >= Number(value2);
