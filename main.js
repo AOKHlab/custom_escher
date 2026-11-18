@@ -3,13 +3,13 @@ const maxshading = 90;
 let m =2;
 const filterBy =
     [
-        //{ property: 'essentiality', target: 'Essential', operator: '===' },
+        { property: 'essentiality', target: 'Essential', operator: '===' },
         //{property:'id', target:105, operator:'<='},
         //{property:'id', target:169, operator:'>='},
         //{property:'start', target:60800, operator:'<='},
         //{property:'end', target:118738, operator:'>='},
         //{property:'name', target:'tRNA-Met',operator:'==='}
-        //{property:'numberOfW', target:5,operator:'<'}
+        {property:'numberOfW', target:0,operator:'<'}
     ]
 let size = 'proteomics' //What parameter determines the size of polygons
 let shading = 'numberOfW' //What parameter determines the shading of polygons
@@ -531,7 +531,7 @@ d3.select("body").select("#voronoiTreemap")
         .select("svg").remove()
 setSlope(geneData,shading);
 const rootNode = createTree(geneData, geneCategories, categoryList, size)
-drawVoronoiTree(rootNode, filterBy = null,shading)
+drawVoronoiTree(rootNode, filterBy,shading)
 }
 // ///-----------TESTING CENTER---------////////
 // // import models in console
