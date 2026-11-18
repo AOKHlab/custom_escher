@@ -1,3 +1,6 @@
+//          #####Variables######
+const maxshading = 90;
+let m =2;
 const filterBy =
     [
         //{ property: 'essentiality', target: 'Essential', operator: '===' },
@@ -8,8 +11,8 @@ const filterBy =
         //{property:'name', target:'tRNA-Met',operator:'==='}
         //{property:'numberOfW', target:5,operator:'<'}
     ]
-const size = 'proteomics' //What parameter determines the size of polygons
-const shading = 'numberOfW' //What parameter determines the shading of polygons
+let size = 'proteomics' //What parameter determines the size of polygons
+let shading = 'numberOfW' //What parameter determines the shading of polygons
 const random_seed = 42;
 const colors = {
     'SW.1': d3.lch(57.96, 80.01, 136.29), // green #2ca02c 122-140
@@ -17,35 +20,43 @@ const colors = {
     'SW.3': d3.lch(47.36, 80.14, 257.55), // blue #1f77b4 250-280 crhoma 60?
     'SW.4': d3.lch(47.68, 80.45, 35.08) // red #d62728 25-45
 };
-
 Promise.all([d3.csv('categories.csv'), d3.csv("geneData.csv"), d3.csv('geneCategories.csv'), d3.csv('segments.csv')]).then(([categories, geneData, geneCategories, segments]) => {
+    //          #####Main Code######
+    setSlope(geneData,shading);
+    const rootNode = createTree(geneData, geneCategories, categories, size)
+    console.log(rootNode)
+    drawVoronoiTree(rootNode, filterBy, shading);
+    makeLegend(rootNode);
+    renderGeneInfo();
+    createGenomeMap(segments);
+    listOptions();
+    d3.select("#redraw-map").on("click", () => {
+        redrawMap(geneData,
+            geneCategories,
+            categories,
+            filterBy,
+            d3.select("#size-field").property("value"),
+            d3.select("#shading-field").property("value"));
+    });
+});
+//          #####Function definitions######
+//              ###Heriarchy creation###
+function createTree(geneData, geneCategories, categoryList, size) {
     const data = {
         type: 'root',
         name: 'Syn3 genome'
     };
-    for (element of categories) {
+    for (element of categoryList) {
         addToHierarchy(data, element.id, element.category, 'category');
     }
-    addGeneCategory(geneData, geneCategories, categories);
+    addGeneCategory(geneData, geneCategories, categoryList);
     for (gene of geneData) {
         const weight = Number(gene?.[size] ?? 0) + 0.001 //0 dont work so need to add something (does not matter for lenght)
         addToHierarchy(data, gene.categories[0].id, gene.name, 'gene', gene.id, weight, gene)
     }
-
     removeEmptyCategories(data);
-    const rootNode = d3.hierarchy(data)
-    drawVoronoiTree(rootNode, filterBy);
-    renderGeneInfo();
-    createGenomeMap(segments);
-});
-function leafColoring(leaf) {
-    const hue = leaf.parent.data.color.h;
-    const lightness = leaf.parent.data.color.l - (Number(leaf.data.geneInfo?.[shading] ?? 0) * 2); // adjust lightness based on number of W's
-    const chroma = leaf.parent.data.color.c //+ (parseInt(leaf.data.geneInfo.numberOfW) * 2)
-    const color = d3.lch(lightness, chroma, hue);
-    return color;
+    return d3.hierarchy(data)
 }
-
 function addToHierarchy(data, SW, Name, type, locus = null, weight = null, geneInfo = null) {
     const idList = SW.split('.')
     idList.shift()
@@ -69,7 +80,16 @@ function addToHierarchy(data, SW, Name, type, locus = null, weight = null, geneI
             pointer.children.push({ type: 'gene', id: locus, name: Name, weight: weight, geneInfo: geneInfo });
     }
 }
-
+function addGeneCategory(geneData, geneCategories, categoryList) {
+    for (gene of geneData) {
+        const categories = geneCategories.filter(cat => cat.locus === gene.locus);
+        for (category of categories) {
+            category.priority = categoryList.find(cat => cat.id === category.id).priotity
+        }
+        gene.categories = categories.sort((a, b) =>
+            parseInt(a.priority) - parseInt(b.priority) || a.id.localeCompare(b.id));
+    }
+}
 function removeEmptyCategories(node) {
     if (!node.children) return false;
 
@@ -79,6 +99,179 @@ function removeEmptyCategories(node) {
     });
 
     return node.type === 'root' || node.children.length > 0;
+}
+//              ###VoronoiTreemap creation###
+function drawVoronoiTree(rootNode, filterBy = null, shading) {
+    if (filterBy) {
+        for (const element of filterBy) {
+            filterTree(rootNode, element.property, element.target, element.operator)
+        }
+    }
+    rootNode.sum(weightAccessor)
+    addColorLeafs(rootNode);
+    const voronoiTreemap = d3.voronoiTreemap().clip([
+        [0, 0],
+        [0, 100],
+        [100, 100],
+        [100, 0]
+    ]).prng(d3.randomLcg(random_seed)); // seed generation of map
+    voronoiTreemap(rootNode);
+
+    const svg = d3.select("body").select("#voronoiTreemap")
+        .append("svg")
+        .attr("width", "min(90vw, 90vh, 900px)")
+        .attr("height", "min(90vw, 90vh, 900px)")
+        .attr("viewBox", '0 0 100 100')
+
+    drawTiles(rootNode, svg, shading);
+
+    drawBorders(rootNode, svg);
+
+}
+function weightAccessor(d) {
+    return d.weight;
+}
+function leafColoring(leaf, shading) {
+    const hue = leaf.parent.data.color.h;
+    const lightness = leaf.parent.data.color.l - (Number(leaf.data.geneInfo?.[shading] ?? 0) * m); // adjust lightness based on number of W's
+    const chroma = leaf.parent.data.color.c //+ (parseInt(leaf.data.geneInfo.numberOfW) * 2)
+    const color = d3.lch(lightness, chroma, hue);
+    return color;
+}
+function addColorLeafs(rootNode) {
+    for (element of rootNode.children) {
+        const subgroups = element.descendants().filter( //find all lowest level subgroups
+            node => node.children?.some(child => child.data.type === "gene") // that only contain leaves
+        );
+        const branchColor = colors[element.data.id]
+        const step = 60 / subgroups.length;
+        let i = 0;
+        subgroups.sort(() => Math.random(random_seed) - 0.5) // randomize the order of the subgroups
+        for (subelement of subgroups) {
+            const chroma = branchColor.c + (i * step) - (step * (subgroups.length - 1) / 2); // center the hues around the branch color
+            subelement.data.color = d3.lch(branchColor.l, chroma, branchColor.h);
+            i++;
+        }
+    }
+}
+function onTileClick(event, d, shading) {
+    const svg = d3.select("body").select("#voronoiTreemap").select("svg")
+    const tile = d3.select(event.currentTarget);
+    const isHighlighted = tile.classed("highlighted");
+    svg.selectAll('path.highlighted')
+        .classed("highlighted", false)
+        .style("fill", d=> leafColoring(d,shading));
+    d3.select('.genome-map').selectAll('path.gene').remove()
+    if (isHighlighted) {
+        tile.classed("highlighted", false)
+            .style("fill", leafColoring(d,shading));
+        renderGeneInfo();
+    } else {
+        tile.classed("highlighted", true)
+            .style("fill", "#ffff00");
+        displayGeneInfo(d.data.geneInfo);
+        const geneArc = d3.arc()
+            .innerRadius(60)
+            .outerRadius(90)
+            .startAngle(geneCoordinatesToAngle(d.data.geneInfo.start))
+            .endAngle(geneCoordinatesToAngle(d.data.geneInfo.end));
+        // draw the gene on the genome map
+        drawGene(geneArc, "#ffff00", d.data.geneInfo);
+    }
+}
+function drawTiles(rootNode, svg,shading) {
+    svg.selectAll("path")
+        .data(rootNode.leaves().filter(d => d.data.type === "gene")) // filter out non/genes
+        .join("path")
+        .attr("id", d => `${d.data.type}-${d.data.id}`)
+        .attr("data-name", d => d.data.name)
+        .attr("d", d => `${d3.line()(d.polygon)}Z`)
+        .style("fill", d => leafColoring(d,shading))
+        .on("click", (event,d) => onTileClick(event,d,shading));
+}
+function drawBorders(rootNode, svg) {
+    svg.append("g")
+        .attr("class", "category-borders")
+        .selectAll("path")
+        .data(rootNode.descendants())
+        .join("path")
+        .attr("d", d => `${d3.line()(d.polygon)}Z`)
+        .attr('id', d => d.data.name)
+        .attr("fill", "none")
+        .attr("stroke", "#000")
+        .attr("stroke-width", d => 1 / (d.depth ** 1.2))
+        .attr("stroke-linejoin", "round");
+    svg.selectAll('.category-borders path[id="Syn3 genome"]').attr("stroke-width", 2);
+}
+//              ###Tree filtering###
+function keepEssentiality(node, essentiality) {
+    if (node.data.type === "gene") {
+        return node.data.geneInfo.essentiality === essentiality;
+    }
+
+    if (!node.children) return node.data.type === "root";
+
+    node.children = node.children.filter(child =>
+        keepEssentiality(child, essentiality)
+    );
+
+    return node.data.type === "root" || node.children.length > 0;
+}
+function compareValues(value1, value2, operator) {
+    switch (operator) {
+        case "===": return value1 === value2;
+        case ">": return Number(value1) > Number(value2);
+        case "<": return Number(value1) < Number(value2);
+        case ">=": return Number(value1) >= Number(value2);
+        case "<=": return Number(value1) <= Number(value2);
+    }
+}
+function filterTree(node, property, target, operator) {
+    if (node.data.type === "gene") {
+        return compareValues(target, node.data.geneInfo[property], operator);
+    }
+
+    if (!node.children) return node.data.type === "root";
+
+    node.children = node.children.filter(child =>
+        filterTree(child, property, target, operator)
+    );
+
+    return node.data.type === "root" || node.children.length > 0;
+}
+//                  ###Legend display###
+function makeLegend(rootNode) {
+    const legendContainer = d3.select("#legend");
+    legendContainer.append('p')
+        .attr("class", "legend-title")
+        .on("click", () => { drawBranch(rootNode) })
+        .text("Syn3 Genome");
+    for (const filter of filterBy) {
+        legendContainer.append('p')
+            .attr("class", "legend-subtitle")
+            .on("click", () => { drawBranch(rootNode) })
+            .text(`(${filter.property} ${filter.operator} ${filter.target})`);
+    }
+
+    const legend = legendContainer
+        .append("div")
+        .attr("class", "legend-list");
+
+    rootNode.children.forEach(category => {
+        addLegendCategory(legend, category, category.data.id);
+    });
+    const metabolismLabel = d3.selectAll(".legend-label")
+        .filter(function () {
+            return d3.select(this).text() === "Metabolism";
+        });
+    metabolismLabel.text("Metabolism ")
+    const metabolismHref = ["localhost", "127.0.0.1", "::1"].includes(window.location.hostname) // checks if its hosted locally or remotely
+        ? "/Metabolism/" // if its local keeps old behaviour
+        : `${window.location.protocol}//${window.location.hostname}/Metabolism/`; //if its remote changes href to remove port number
+
+    metabolismLabel.append("a")
+        .attr("href", metabolismHref)
+        .text("(Metabolic Map)");
 }
 function addLegendCategory(container, category, topCategoryId) {
     const subcategories = (category.children || [])
@@ -99,6 +292,7 @@ function addLegendCategory(container, category, topCategoryId) {
         addLegendCategory(item, child, topCategoryId);
     });
 }
+//                  ###Gene info display###
 function renderGeneInfo() {
     d3.select('#gene_info').selectAll("*").remove();
     const geneInfoContainer = d3.select("#gene_info");
@@ -144,13 +338,20 @@ function displayGeneInfo(geneInfo) {
         .attr("class", "gene-info-content")
         .text(`Essentiality: ${geneInfo.essentiality}`);
 }
-
-// ///-----------TESTING CENTER---------////////
-// // import models in console
-// const geneData = await d3.csv('geneDataFiltered.csv')
-// const categories = await d3.csv('categories.csv')
-// const geneCategories = await d3.csv('geneCategories.csv')
-//###Function definition### currently in global space so beware!!
+function displayBranchInfo(categoryName, geneCount, Wcount) {
+    d3.select('#gene_info').selectAll(".gene-info-content").remove();
+    const geneInfoContainer = d3.select("#gene_info");
+    geneInfoContainer.append("h2")
+        .attr("class", "gene-info-content")
+        .text(categoryName);
+    geneInfoContainer.append("h3")
+        .attr("class", "gene-info-content")
+        .text(`Genes: ${geneCount}`);
+    geneInfoContainer.append("h3")
+        .attr("class", "gene-info-content")
+        .text(`Total W: ${Wcount}`);
+}
+//                  ###Genome map###
 function createGenomeMap(segments) {
     // Create the SVG container
     const genomeMap = d3.select('body')
@@ -168,7 +369,7 @@ function createGenomeMap(segments) {
     const formatValue = d3.formatPrefix(",.0", 10000);
     const groupTick = genomeContent.append("g")
         .selectAll()
-        .data(groupTicks(10000))
+        .data(ticks(10000))
         .join("g")
         .attr("transform", d => `rotate(${d.angle * 180 / Math.PI - 90}) translate(60,0)`);
 
@@ -239,7 +440,7 @@ function createGenomeMap(segments) {
         }
     }
 }
-function drawGene(geneArc, color, geneInfo) {
+function drawGene(geneArc, color, geneInfo,shading) {
     d3.select('.genome-content')
         .append('path')
         .attr('class', 'gene')
@@ -255,7 +456,7 @@ function drawGene(geneArc, color, geneInfo) {
             const map = d3.select("#voronoiTreemap svg");
             map.selectAll('path.highlighted')
                 .classed("highlighted", false)
-                .style("fill", leafColoring);
+                .style("fill", d=>leafColoring(d,shading));
             const geneTile = map.select(`path[id="gene-${geneInfo.id}"]`);
             geneTile
                 .classed("highlighted", true)
@@ -284,204 +485,54 @@ function drawBranch(category) {
                 .outerRadius(90)
                 .startAngle(geneCoordinatesToAngle(leaf.data.geneInfo.start))
                 .endAngle(geneCoordinatesToAngle(leaf.data.geneInfo.end));
-            drawGene(geneArc, leafColoring(leaf), leaf.data.geneInfo);
+            drawGene(geneArc, leafColoring(leaf,shading), leaf.data.geneInfo);
             geneCount++;
             Wcount += parseInt(leaf.data.geneInfo.numberOfW);
         }
     }
     displayBranchInfo(category.data.name, geneCount, Wcount);
 }
-function displayBranchInfo(categoryName, geneCount, Wcount) {
-    d3.select('#gene_info').selectAll(".gene-info-content").remove();
-    const geneInfoContainer = d3.select("#gene_info");
-    geneInfoContainer.append("h2")
-        .attr("class", "gene-info-content")
-        .text(categoryName);
-    geneInfoContainer.append("h3")
-        .attr("class", "gene-info-content")
-        .text(`Genes: ${geneCount}`);
-    geneInfoContainer.append("h3")
-        .attr("class", "gene-info-content")
-        .text(`Total W: ${Wcount}`);
-}
-function groupTicks(step) {
+function ticks(step) {
     const k = 2 * Math.PI / 543379;
     return d3.range(0, 543379, step).map(value => {
         return { value: value, angle: value * k + 0 };
     });
 }
-function addGeneCategory(geneData, geneCategories, categoryList) {
-    for (gene of geneData) {
-        const categories = geneCategories.filter(cat => cat.locus === gene.locus);
-        for (category of categories) {
-            category.priority = categoryList.find(cat => cat.id === category.id).priotity
-        }
-        gene.categories = categories.sort((a, b) =>
-            parseInt(a.priority) - parseInt(b.priority) || a.id.localeCompare(b.id));
+//                  ###Input handeling###
+function listOptions() {
+    const options = ['length','proteomics', 'numberOfW']
+    
+    for (const [id, defaultValue] of [
+        ["#size-field", size],
+        ["#shading-field", shading]
+    ]) {
+        const select = d3.select(id);
+
+        select.selectAll("option")
+            .data(options)
+            .join("option")
+            .attr("value", d => d)
+            .text(d => d);
+
+        select.property("value", defaultValue);
     }
 }
-function keepEssentiality(node, essentiality) {
-    if (node.data.type === "gene") {
-        return node.data.geneInfo.essentiality === essentiality;
-    }
-
-    if (!node.children) return node.data.type === "root";
-
-    node.children = node.children.filter(child =>
-        keepEssentiality(child, essentiality)
-    );
-
-    return node.data.type === "root" || node.children.length > 0;
+function setSlope (geneData,shading){
+   const values = geneData
+        .map(gene => gene[shading])
+        .map(Number)
+    m = maxshading/(d3.max(values)-d3.min(values));
+    console.log(m);
 }
-function compareValues(value1, value2, operator) {
-    switch (operator) {
-        case "===": return value1 === value2;
-        case ">": return Number(value1) > Number(value2);
-        case "<": return Number(value1) < Number(value2);
-        case ">=": return Number(value1) >= Number(value2);
-        case "<=": return Number(value1) <= Number(value2);
-    }
+function redrawMap(geneData, geneCategories, categoryList,filterBy,size,shading){
+d3.select("body").select("#voronoiTreemap")
+        .select("svg").remove()
+setSlope(geneData,shading);
+const rootNode = createTree(geneData, geneCategories, categoryList, size)
+drawVoronoiTree(rootNode, filterBy = null,shading)
 }
-function filterTree(node, property, target, operator) {
-    if (node.data.type === "gene") {
-        return compareValues(target, node.data.geneInfo[property], operator);
-    }
-
-    if (!node.children) return node.data.type === "root";
-
-    node.children = node.children.filter(child =>
-        filterTree(child, property, target, operator)
-    );
-
-    return node.data.type === "root" || node.children.length > 0;
-}
-function drawVoronoiTree(rootNode, filterBy = null) {
-    if (filterBy) {
-        for (const element of filterBy) {
-            filterTree(rootNode, element.property, element.target, element.operator)
-        }
-    }
-    rootNode.sum(weightAccessor)
-    colorLeafs(rootNode);
-    const voronoiTreemap = d3.voronoiTreemap().clip([
-        [0, 0],
-        [0, 100],
-        [100, 100],
-        [100, 0]
-    ]).prng(d3.randomLcg(random_seed)); // seed generation of map
-    voronoiTreemap(rootNode);
-
-    const svg = d3.select("body").select("#voronoiTreemap")
-        .append("svg")
-        .attr("width", "min(90vw, 90vh, 900px)")
-        .attr("height", "min(90vw, 90vh, 900px)")
-        .attr("viewBox", '0 0 100 100')
-
-    drawTiles(rootNode, svg);
-
-    drawBorders(rootNode, svg);
-
-    makeLegend(rootNode);
-
-}
-function weightAccessor(d) {
-    return d.weight;
-}
-function colorLeafs(rootNode) {
-    for (element of rootNode.children) {
-        const subgroups = element.descendants().filter( //find all lowest level subgroups
-            node => node.children?.some(child => child.data.type === "gene") // that only contain leaves
-        );
-        const branchColor = colors[element.data.id]
-        const step = 60 / subgroups.length;
-        let i = 0;
-        subgroups.sort(() => Math.random(random_seed) - 0.5) // randomize the order of the subgroups
-        for (subelement of subgroups) {
-            const chroma = branchColor.c + (i * step) - (step * (subgroups.length - 1) / 2); // center the hues around the branch color
-            subelement.data.color = d3.lch(branchColor.l, chroma, branchColor.h);
-            i++;
-        }
-    }
-}
-function onTileClick(event, d) {
-    const svg = d3.select("body").select("#voronoiTreemap").select("svg")
-    const tile = d3.select(event.currentTarget);
-    const isHighlighted = tile.classed("highlighted");
-    svg.selectAll('path.highlighted')
-        .classed("highlighted", false)
-        .style("fill", leafColoring);
-    d3.select('.genome-map').selectAll('path.gene').remove()
-    if (isHighlighted) {
-        tile.classed("highlighted", false)
-            .style("fill", leafColoring(d));
-        renderGeneInfo();
-    } else {
-        tile.classed("highlighted", true)
-            .style("fill", "#ffff00");
-        displayGeneInfo(d.data.geneInfo);
-        const geneArc = d3.arc()
-            .innerRadius(60)
-            .outerRadius(90)
-            .startAngle(geneCoordinatesToAngle(d.data.geneInfo.start))
-            .endAngle(geneCoordinatesToAngle(d.data.geneInfo.end));
-        // draw the gene on the genome map
-        drawGene(geneArc, "#ffff00", d.data.geneInfo);
-    }
-}
-function drawTiles(rootNode, svg) {
-    svg.selectAll("path")
-        .data(rootNode.leaves().filter(d => d.data.type === "gene")) // filter out non/genes
-        .join("path")
-        .attr("id", d => `${d.data.type}-${d.data.id}`)
-        .attr("data-name", d => d.data.name)
-        .attr("d", d => `${d3.line()(d.polygon)}Z`)
-        .style("fill", leafColoring)
-        .on("click", onTileClick);
-}
-function drawBorders(rootNode, svg) {
-    svg.append("g")
-        .attr("class", "category-borders")
-        .selectAll("path")
-        .data(rootNode.descendants())
-        .join("path")
-        .attr("d", d => `${d3.line()(d.polygon)}Z`)
-        .attr('id', d => d.data.name)
-        .attr("fill", "none")
-        .attr("stroke", "#000")
-        .attr("stroke-width", d => 1 / (d.depth ** 1.2))
-        .attr("stroke-linejoin", "round");
-    svg.selectAll('.category-borders path[id="Syn3 genome"]').attr("stroke-width", 2);
-}
-function makeLegend(rootNode) {
-    const legendContainer = d3.select("#legend");
-    legendContainer.append('p')
-        .attr("class", "legend-title")
-        .on("click", () => { drawBranch(rootNode) })
-        .text("Syn3 Genome");
-    for (const filter of filterBy) {
-        legendContainer.append('p')
-            .attr("class", "legend-subtitle")
-            .on("click", () => { drawBranch(rootNode) })
-            .text(`(${filter.property} ${filter.operator} ${filter.target})`);
-    }
-
-    const legend = legendContainer
-        .append("div")
-        .attr("class", "legend-list");
-
-    rootNode.children.forEach(category => {
-        addLegendCategory(legend, category, category.data.id);
-    });
-    const metabolismLabel = d3.selectAll(".legend-label")
-        .filter(function () {
-            return d3.select(this).text() === "Metabolism";
-        });
-    metabolismLabel.text("Metabolism ")
-    const metabolismHref = ["localhost", "127.0.0.1", "::1"].includes(window.location.hostname) // checks if its hosted locally or remotely
-        ? "/Metabolism/" // if its local keeps old behaviour
-        : `${window.location.protocol}//${window.location.hostname}/Metabolism/`; //if its remote changes href to remove port number
-
-    metabolismLabel.append("a")
-        .attr("href", metabolismHref)
-        .text("(Metabolic Map)");
-}
+// ///-----------TESTING CENTER---------////////
+// // import models in console
+// const geneData = await d3.csv('geneData.csv')
+// const categories = await d3.csv('categories.csv')
+// const geneCategories = await d3.csv('geneCategories.csv')
