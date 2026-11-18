@@ -4,7 +4,7 @@ let m =2;
 const filterBy =
     [
         //{ property: 'essentiality', target: 'Essential', operator: '===' },
-        {property: 'proteomics', target: 0, operator: '!=='}
+        {property: 'proteomics', target: 0, operator: '<'}
         //{property:'id', target:105, operator:'<='},
         //{property:'id', target:169, operator:'>='},
         //{property:'start', target:60800, operator:'<='},
@@ -531,7 +531,7 @@ d3.select("body").select("#voronoiTreemap")
         .select("svg").remove()
 setSlope(geneData,shading);
 const rootNode = createTree(geneData, geneCategories, categoryList, size)
-drawVoronoiTree(rootNode, filterBy = null,shading)
+drawVoronoiTree(rootNode, filterBy, shading)
 }
 // ///-----------TESTING CENTER---------////////
 // // import models in console
