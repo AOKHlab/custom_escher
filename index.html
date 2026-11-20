@@ -23,9 +23,23 @@
     <label>Shading
       <select id="shading-field"></select>
     </label>
+    <div id='Filtering'>
+      <label>Property
+        <select id="property"></select>
+      </label>
+      <label>Operator
+        <select id="operator"></select>
+      </label>
+      <label>Target
+        <input id="target"></input>
+      </label>
+      <button id="add-filter">Add Filter</button>
+    </div>
     <button id="redraw-map">Redraw map</button>
   </div>
-  <div id="legend"></div>
+  <div id="legend">
+    <div id="legend-head"></div>
+  </div>
   <div id="voronoiTreemap"></div>
   <div id="gene_info"></div>
 </body>

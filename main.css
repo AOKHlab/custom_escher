@@ -3,6 +3,25 @@
   --map-half-size: min(45vw, 45vh);
 }
 
+#map-controls,
+#Filtering {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: nowrap;
+}
+
+#map-controls {
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+#map-controls label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
 #legend {
   position: fixed;
   top: calc(50% - var(--map-half-size));
@@ -81,6 +100,10 @@
   margin: 0;
   font-size: 1rem;
   font-weight: 200;
+}
+
+.legend-subtitle:hover {
+  text-decoration: line-through;
 }
 
 #voronoiTreemap svg {

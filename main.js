@@ -1,16 +1,15 @@
 //          #####Variables######
 const maxshading = 90;
-let m =2;
+let m = 2;
 const filterBy =
     [
-        //{ property: 'essentiality', target: 'Essential', operator: '===' },
-        {property: 'proteomics', target: 0, operator: '<'}
-        //{property:'id', target:105, operator:'<='},
-        //{property:'id', target:169, operator:'>='},
+        //{ property: 'essentiality', operator: '===', target: 'Essential' },
+        //{property:'id',operator:'>=', target:0},
+        //{property:'id', operator:'<=', target:200},
         //{property:'start', target:60800, operator:'<='},
         //{property:'end', target:118738, operator:'>='},
         //{property:'name', target:'tRNA-Met',operator:'==='}
-        //{property:'numberOfW', target:5,operator:'<'}
+        //{ property: 'numberOfW', operator: '>', target: 0 }
     ]
 let size = 'proteomics' //What parameter determines the size of polygons
 let shading = 'numberOfW' //What parameter determines the shading of polygons
@@ -23,13 +22,34 @@ const colors = {
 };
 Promise.all([d3.csv('categories.csv'), d3.csv("geneData.csv"), d3.csv('geneCategories.csv'), d3.csv('segments.csv')]).then(([categories, geneData, geneCategories, segments]) => {
     //          #####Main Code######
-    setSlope(geneData,shading);
+    setSlope(geneData, shading);
     const rootNode = createTree(geneData, geneCategories, categories, size)
     drawVoronoiTree(rootNode, filterBy, shading);
     makeLegend(rootNode);
     renderGeneInfo();
     createGenomeMap(segments);
     listOptions();
+    populateFilterOptions(geneData);
+    d3.select('#add-filter').on('click', () => {
+        const filter = {
+            property: d3.select("#property").property("value"),
+            operator: d3.select("#operator").property("value"),
+            target: d3.select("#target").property("value")
+        }
+        filterBy.push(filter)
+        const legendContainer = d3.select('#legend-head')
+        legendContainer.append('p')
+            .attr("class", "legend-subtitle")
+            .attr('id', i)
+            .style("font-weight", "bold")
+            .on("click", (d) => {
+                filterBy.splice(Number(d.target.id), 1)
+                d.target.remove();
+            })
+            .text(`(${filter.property} ${filter.operator} ${filter.target})`);
+    }
+        
+    );
     d3.select("#redraw-map").on("click", () => {
         redrawMap(geneData,
             geneCategories,
@@ -162,11 +182,11 @@ function onTileClick(event, d, shading) {
     const isHighlighted = tile.classed("highlighted");
     svg.selectAll('path.highlighted')
         .classed("highlighted", false)
-        .style("fill", d=> leafColoring(d,shading));
+        .style("fill", d => leafColoring(d, shading));
     d3.select('.genome-map').selectAll('path.gene').remove()
     if (isHighlighted) {
         tile.classed("highlighted", false)
-            .style("fill", leafColoring(d,shading));
+            .style("fill", leafColoring(d, shading));
         renderGeneInfo();
     } else {
         tile.classed("highlighted", true)
@@ -181,15 +201,15 @@ function onTileClick(event, d, shading) {
         drawGene(geneArc, "#ffff00", d.data.geneInfo);
     }
 }
-function drawTiles(rootNode, svg,shading) {
+function drawTiles(rootNode, svg, shading) {
     svg.selectAll("path")
         .data(rootNode.leaves().filter(d => d.data.type === "gene")) // filter out non/genes
         .join("path")
         .attr("id", d => `${d.data.type}-${d.data.id}`)
         .attr("data-name", d => d.data.name)
         .attr("d", d => `${d3.line()(d.polygon)}Z`)
-        .style("fill", d => leafColoring(d,shading))
-        .on("click", (event,d) => onTileClick(event,d,shading));
+        .style("fill", d => leafColoring(d, shading))
+        .on("click", (event, d) => onTileClick(event, d, shading));
 }
 function drawBorders(rootNode, svg) {
     svg.append("g")
@@ -231,7 +251,7 @@ function compareValues(value1, value2, operator) {
 }
 function filterTree(node, property, target, operator) {
     if (node.data.type === "gene") {
-        return compareValues(target, node.data.geneInfo[property], operator);
+        return compareValues(node.data.geneInfo[property], target, operator);
     }
 
     if (!node.children) return node.data.type === "root";
@@ -245,16 +265,11 @@ function filterTree(node, property, target, operator) {
 //                  ###Legend display###
 function makeLegend(rootNode) {
     const legendContainer = d3.select("#legend");
-    legendContainer.append('p')
+    legendContainer.select('#legend-head').append('p')
         .attr("class", "legend-title")
         .on("click", () => { drawBranch(rootNode) })
         .text("Syn3 Genome");
-    for (const filter of filterBy) {
-        legendContainer.append('p')
-            .attr("class", "legend-subtitle")
-            .on("click", () => { drawBranch(rootNode) })
-            .text(`(${filter.property} ${filter.operator} ${filter.target})`);
-    }
+    renderFilterLegend(filterBy);
 
     const legend = legendContainer
         .append("div")
@@ -443,7 +458,7 @@ function createGenomeMap(segments) {
         }
     }
 }
-function drawGene(geneArc, color, geneInfo,shading) {
+function drawGene(geneArc, color, geneInfo, shading) {
     d3.select('.genome-content')
         .append('path')
         .attr('class', 'gene')
@@ -459,7 +474,7 @@ function drawGene(geneArc, color, geneInfo,shading) {
             const map = d3.select("#voronoiTreemap svg");
             map.selectAll('path.highlighted')
                 .classed("highlighted", false)
-                .style("fill", d=>leafColoring(d,shading));
+                .style("fill", d => leafColoring(d, shading));
             const geneTile = map.select(`path[id="gene-${geneInfo.id}"]`);
             geneTile
                 .classed("highlighted", true)
@@ -488,7 +503,7 @@ function drawBranch(category) {
                 .outerRadius(90)
                 .startAngle(geneCoordinatesToAngle(leaf.data.geneInfo.start))
                 .endAngle(geneCoordinatesToAngle(leaf.data.geneInfo.end));
-            drawGene(geneArc, leafColoring(leaf,shading), leaf.data.geneInfo);
+            drawGene(geneArc, leafColoring(leaf, shading), leaf.data.geneInfo);
             geneCount++;
             Wcount += parseInt(leaf.data.geneInfo.numberOfW);
         }
@@ -503,8 +518,8 @@ function ticks(step) {
 }
 //                  ###Input handeling###
 function listOptions() {
-    const options = ['length','proteomics', 'numberOfW']
-    
+    const options = ['length', 'proteomics', 'numberOfW']
+
     for (const [id, defaultValue] of [
         ["#size-field", size],
         ["#shading-field", shading]
@@ -520,18 +535,62 @@ function listOptions() {
         select.property("value", defaultValue);
     }
 }
-function setSlope (geneData,shading){
-   const values = geneData
+function populateFilterOptions(geneData) {
+    const properties = geneData.columns;
+    d3.select("#property")
+        .selectAll("option")
+        .data(properties)
+        .join("option")
+        .attr("value", d => d)
+        .text(d => d);
+    const operators = ["===", "!==", ">", "<", ">=", "<="]
+    d3.select("#operator")
+        .selectAll("option")
+        .data(operators)
+        .join("option")
+        .attr("value", d => d)
+        .text(d => d);
+
+}
+function setSlope(geneData, shading) {
+    const values = geneData
         .map(gene => gene[shading])
         .map(Number)
-    m = maxshading/(d3.max(values)-d3.min(values));
+    m = maxshading / (d3.max(values) - d3.min(values));
+    console.log(m);
 }
-function redrawMap(geneData, geneCategories, categoryList,filterBy,size,shading){
-d3.select("body").select("#voronoiTreemap")
-        .select("svg").remove()
-setSlope(geneData,shading);
-const rootNode = createTree(geneData, geneCategories, categoryList, size)
-drawVoronoiTree(rootNode, filterBy, shading)
+function redrawMap(geneData, geneCategories, categoryList, filterBy, size, shading) {
+    d3.select("body").select("#voronoiTreemap")
+        .selectAll('*').remove()
+    setSlope(geneData, shading);
+    const rootNode = createTree(geneData, geneCategories, categoryList, size)
+    try{
+    drawVoronoiTree(rootNode, filterBy, shading)
+    } catch (error){
+        d3.select("body").select("#voronoiTreemap")
+        .append('h1')
+        .text('No datapoint fits all filters')
+        .style('color','red')
+        .style("text-align", "center")
+    
+    renderFilterLegend(filterBy)
+}
+}
+function renderFilterLegend(filterBy) {
+    d3.select('#legend').selectAll('.legend-subtitle').remove();
+    const legendContainer = d3.select('#legend-head')
+    for (const i in filterBy) {
+        const filter = filterBy[i]
+        legendContainer.append('p')
+            .attr("class", "legend-subtitle")
+            .attr('id', i)
+            .style("font-weight","normal")
+            .on("click", (d) => {
+                filterBy.splice(Number(d.target.id), 1)
+                renderFilterLegend(filterBy);
+            })
+            .text(`(${filter.property} ${filter.operator} ${filter.target})`);
+    }
 }
 // ///-----------TESTING CENTER---------////////
 // // import models in console
