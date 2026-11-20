@@ -265,7 +265,9 @@ function filterTree(node, property, target, operator) {
 //                  ###Legend display###
 function makeLegend(rootNode) {
     const legendContainer = d3.select("#legend");
-    legendContainer.select('#legend-head').append('p')
+    legendContainer.selectAll('*').remove();
+    legendContainer.append('div').attr('id', 'legend-head')
+        .append('p')
         .attr("class", "legend-title")
         .on("click", () => { drawBranch(rootNode) })
         .text("Syn3 Genome");
@@ -573,10 +575,9 @@ function redrawMap(geneData, geneCategories, categoryList, filterBy, size, shadi
             .style('color', 'red')
             .style("text-align", "center")
     }
-    renderFilterLegend(filterBy)
+    makeLegend(rootNode)
 }
 function renderFilterLegend(filterBy) {
-    d3.select('#legend').selectAll('.legend-subtitle').remove();
     const legendContainer = d3.select('#legend-head')
     for (const i in filterBy) {
         const filter = filterBy[i]
@@ -586,7 +587,7 @@ function renderFilterLegend(filterBy) {
             .style("font-weight", "normal")
             .on("click", (d) => {
                 filterBy.splice(Number(d.target.id), 1)
-                renderFilterLegend(filterBy);
+                d.target.remove();
             })
             .text(`(${filter.property} ${filter.operator} ${filter.target})`);
     }
