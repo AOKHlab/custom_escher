@@ -49,7 +49,7 @@ Promise.all([d3.csv('categories.csv'), d3.csv("geneData.csv"), d3.csv('geneCateg
             })
             .text(`(${filter.property} ${filter.operator} ${filter.target})`);
     }
-        
+
     );
     d3.select("#redraw-map").on("click", () => {
         redrawMap(geneData,
@@ -565,17 +565,16 @@ function redrawMap(geneData, geneCategories, categoryList, filterBy, size, shadi
         .selectAll('*').remove()
     setSlope(geneData, shading);
     const rootNode = createTree(geneData, geneCategories, categoryList, size)
-    try{
-    drawVoronoiTree(rootNode, filterBy, shading)
-    } catch (error){
+    try {
+        drawVoronoiTree(rootNode, filterBy, shading)
+    } catch (error) {
         d3.select("body").select("#voronoiTreemap")
-        .append('h1')
-        .text('No datapoint fits all filters')
-        .style('color','red')
-        .style("text-align", "center")
-    
+            .append('h1')
+            .text('No datapoint fits all filters')
+            .style('color', 'red')
+            .style("text-align", "center")
+    }
     renderFilterLegend(filterBy)
-}
 }
 function renderFilterLegend(filterBy) {
     d3.select('#legend').selectAll('.legend-subtitle').remove();
@@ -585,7 +584,7 @@ function renderFilterLegend(filterBy) {
         legendContainer.append('p')
             .attr("class", "legend-subtitle")
             .attr('id', i)
-            .style("font-weight","normal")
+            .style("font-weight", "normal")
             .on("click", (d) => {
                 filterBy.splice(Number(d.target.id), 1)
                 renderFilterLegend(filterBy);
