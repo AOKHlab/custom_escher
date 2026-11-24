@@ -633,6 +633,7 @@ function drawHistogram(data, field) {
         .domain([0, d3.max(bins, (d) => d.length) || 1])
         .nice()
         .range([height - marginBottom, marginTop]);
+    const meanValue = d3.mean(values, (d) => Number(d[field]));
     d3.select('svg.histogram').remove()
     const svg = d3.select("body")
         .append("svg")
@@ -650,6 +651,27 @@ function drawHistogram(data, field) {
         .attr("width", (d) => Math.max(0, x(d.x1) - x(d.x0) - 1))
         .attr("y", (d) => y(d.length))
         .attr("height", (d) => y(0) - y(d.length));
+
+    if (meanValue !== undefined) {
+        const meanOnRight = meanValue > binEnd / 2;
+        svg.append("line")
+            .attr("class", "mean-line")
+            .attr("x1", x(meanValue))
+            .attr("x2", x(meanValue))
+            .attr("y1", marginTop)
+            .attr("y2", height - marginBottom)
+            .attr("stroke", "crimson")
+            .attr("stroke-dasharray", "4 3")
+            .attr("stroke-width", 2);
+
+        svg.append("text")
+            .attr("class", "mean-label")
+            .attr("x", x(meanValue) + (meanOnRight ? -6 : 6))
+            .attr("y", marginTop + 12)
+            .attr("fill", "crimson")
+            .attr("text-anchor", meanOnRight ? "end" : "start")
+            .text(`Mean: ${d3.format(".2f")(meanValue)}`);
+    }
 
     svg.append("g")
         .attr("transform", `translate(0,${height - marginBottom})`)
