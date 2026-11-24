@@ -160,3 +160,12 @@
   outline: 0.25rem solid #333;
   background: #fff;
 }
+
+.histogram {
+  position: fixed;
+  bottom: 0.5rem;
+  left: 0;
+  z-index: 1001;
+  width: max(0px, calc(50vw - var(--map-half-size)));
+  height: auto;
+}

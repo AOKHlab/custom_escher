@@ -129,6 +129,10 @@ function drawVoronoiTree(rootNode, filterBy = null, shading) {
         }
     }
     rootNode.sum(weightAccessor)
+    drawHistogram(
+  rootNode.leaves().map(d => d.data.geneInfo),
+  "numberOfW"
+);
     addColorLeafs(rootNode);
     const voronoiTreemap = d3.voronoiTreemap().clip([
         [0, 0],
@@ -567,6 +571,7 @@ function redrawMap(geneData, geneCategories, categoryList, filterBy, size, shadi
         .selectAll('*').remove()
     setSlope(geneData, shading);
     const rootNode = createTree(geneData, geneCategories, categoryList, size)
+    
     try {
         drawVoronoiTree(rootNode, filterBy, shading)
     } catch (error) {
@@ -593,6 +598,90 @@ function renderFilterLegend(filterBy) {
             .text(`(${filter.property} ${filter.operator} ${filter.target})`);
     }
 }
+function drawHistogram(data, field) {
+    if (!Array.isArray(data)) {
+        throw new TypeError("Histogram data must be an array.");
+    }
+    if (typeof field !== "string" || field.length === 0) {
+        throw new TypeError("Histogram field must be a non-empty string.");
+    }
+
+    const values = data.filter((d) => {
+        const value = d?.[field];
+        const number = Number(value);
+        return value !== null && value !== undefined && String(value).trim() !== "" &&
+            Number.isFinite(number) && number >= 0;
+    });
+    const maxValue = d3.max(values, (d) => Number(d[field]));
+    const binEnd = Math.floor(maxValue ?? 0) + 1;
+    const bins = d3.bin()
+        .value((d) => Number(d[field]))
+        .domain([0, binEnd])
+        .thresholds(d3.range(1, binEnd))
+        (values);
+
+    const width = 640;
+    const height = 400;
+    const marginTop = 20;
+    const marginRight = 20;
+    const marginBottom = 55;
+    const marginLeft = 55;
+    const x = d3.scaleLinear()
+        .domain(bins.length ? [bins[0].x0, bins[bins.length - 1].x1] : [0, 1])
+        .range([marginLeft, width - marginRight]);
+    const y = d3.scaleLinear()
+        .domain([0, d3.max(bins, (d) => d.length) || 1])
+        .nice()
+        .range([height - marginBottom, marginTop]);
+    d3.select('svg.histogram').remove()
+    const svg = d3.select("body")
+        .append("svg")
+        .attr("class", "histogram")
+        .attr("width", width)
+        .attr("height", height)
+        .attr("viewBox", `0 0 ${width} ${height}`);
+
+    svg.append("g")
+        .attr("fill", "steelblue")
+        .selectAll("rect")
+        .data(bins)
+        .join("rect")
+        .attr("x", (d) => x(d.x0) + 1)
+        .attr("width", (d) => Math.max(0, x(d.x1) - x(d.x0) - 1))
+        .attr("y", (d) => y(d.length))
+        .attr("height", (d) => y(0) - y(d.length));
+
+    svg.append("g")
+        .attr("transform", `translate(0,${height - marginBottom})`)
+        .call(d3.axisBottom(x).tickValues(d3.range(binEnd)))
+        .call((g) => g.append("text")
+            .attr("x", width - marginRight)
+            .attr("y", marginBottom - 10)
+            .attr("fill", "currentColor")
+            .attr("text-anchor", "end")
+            .text(field));
+
+    svg.append("g")
+        .attr("transform", `translate(${marginLeft},0)`)
+        .call(d3.axisLeft(y))
+        .call((g) => g.append("text")
+            .attr("x", -marginLeft + 5)
+            .attr("y", marginTop)
+            .attr("fill", "currentColor")
+            .attr("text-anchor", "start")
+            .text("Frequency"));
+
+    if (values.length === 0) {
+        svg.append("text")
+            .attr("x", width / 2)
+            .attr("y", height / 2)
+            .attr("text-anchor", "middle")
+            .text(`No non-negative numeric data for "${field}"`);
+    }
+
+    return svg.node();
+}
+
 // ///-----------TESTING CENTER---------////////
 // // import models in console
 // const geneData = await d3.csv('geneData.csv')
