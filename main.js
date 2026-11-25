@@ -20,9 +20,10 @@ const colors = {
     'SW.3': d3.lch(47.36, 80.14, 257.55), // blue #1f77b4 250-280 crhoma 60?
     'SW.4': d3.lch(47.68, 80.45, 35.08) // red #d62728 25-45
 };
-Promise.all([d3.csv('categories.csv'), d3.csv("geneData.csv"), d3.csv('geneCategories.csv'), d3.csv('segments.csv')]).then(([categories, geneData, geneCategories, segments]) => {
+Promise.all([d3.csv('categories.csv'), d3.csv("geneData.csv"), d3.csv('geneCategories.csv'), d3.csv('segments.csv'),d3.json('mutations.json'),d3.json('sequence.json')]).then(([categories, geneData, geneCategories, segments, mutationData, proteinCodes]) => {
     //          #####Main Code######
     setSlope(geneData, shading);
+    addSubstitutionData(geneData,proteinCodes,mutationData)
     const rootNode = createTree(geneData, geneCategories, categories, size)
     console.log(rootNode)
     drawVoronoiTree(rootNode, filterBy, shading);
@@ -703,9 +704,33 @@ function drawHistogram(data, field) {
 
     return svg.node();
 }
+function addSubstitutionData(geneData, sequenceData, mutationData){
+    for (const gene of geneData){
+        const locus = gene.locus
+        const hit = sequenceData.filter((d)=>d.locus_tag===locus)
+        const len = hit.length
+        const sequence = gene.sequence
+        const check1 = len !== 1
+        const check2 = (sequence[0] !== "M")
+        if(check1 && check2){
+            console.log("Not 1 hit",hit,sequence,gene.id)}
+        else{gene.protein_id = hit[0].protein_id}
+    }
+    for (const gene of geneData){
+        const proteinCode = gene.protein_id
+        const hits = mutationData.filter((d)=>d.protein_code===proteinCode)
+        const len = hits.length
+        const check1 = len === 0
+        if(check1){
+            console.log("Not hits",hits)
+        }else{(gene.mutations = hits);}
+    }
+}
 
 // ///-----------TESTING CENTER---------////////
 // // import models in console
 // const geneData = await d3.csv('geneData.csv')
 // const categories = await d3.csv('categories.csv')
 // const geneCategories = await d3.csv('geneCategories.csv')
+// const sequenceData = await d3.json('sequence.json')
+// const mutationData = await d3.json('mutations.json')

@@ -1,1135 +1,1137 @@
-﻿id,category,locus,Priority
-SW.2.4,Proteins of unknown function,JCVISYN3A_0249,0
-SW.2.4,Proteins of unknown function,JCVISYN3A_0005,0
-SW.2.2,Membrane proteins,JCVISYN3A_0005,0
-SW.2.3,Poorly characterized enzymes,JCVISYN3A_0029,0
-SW.1.3.1.2,Exporters,JCVISYN3A_0030,0
-SW.2.2,Membrane proteins,JCVISYN3A_0030,0
-SW.2.2,Membrane proteins,JCVISYN3A_0033,0
-SW.2.4,Proteins of unknown function,JCVISYN3A_0033,0
-SW.1.3.1.2,Exporters,JCVISYN3A_0034,0
-SW.2.2,Membrane proteins,JCVISYN3A_0034,0
-SW.3.3,Regulation of gene expression,JCVISYN3A_0042,0
-SW.2.5,Pseudogenes,JCVISYN3A_0051,0
-SW.2.2,Membrane proteins,JCVISYN3A_0060,0
-SW.2.4,Proteins of unknown function,JCVISYN3A_0060,0
-SW.2.3,Poorly characterized enzymes,JCVISYN3A_0066,0
-SW.2.3,Poorly characterized enzymes,JCVISYN3A_0077,0
-SW.1.2.2,Coping with stress,JCVISYN3A_0080,0
-SW.2.2,Membrane proteins,JCVISYN3A_0094,0
-SW.2.4,Proteins of unknown function,JCVISYN3A_0094,0
-SW.2.4,Proteins of unknown function,JCVISYN3A_0108,0
-SW.2.2,Membrane proteins,JCVISYN3A_0116,0
-SW.2.4,Proteins of unknown function,JCVISYN3A_0116,0
-SW.2.3,Poorly characterized enzymes,JCVISYN3A_0127,0
-SW.2.4,Proteins of unknown function,JCVISYN3A_0138,0
-SW.2.2,Membrane proteins,JCVISYN3A_0143,0
-SW.2.4,Proteins of unknown function,JCVISYN3A_0143,0
-SW.2.4,Proteins of unknown function,JCVISYN3A_0145,0
-SW.2.2,Membrane proteins,JCVISYN3A_0146,0
-SW.2.4,Proteins of unknown function,JCVISYN3A_0146,0
-SW.4.1,Amino acid acquisition,JCVISYN3A_0154,0
-SW.2.2,Membrane proteins,JCVISYN3A_0164,0
-SW.2.4,Proteins of unknown function,JCVISYN3A_0164,0
-SW.1.3.4,Symporter,JCVISYN3A_0235,0
-SW.2.2,Membrane proteins,JCVISYN3A_0235,0
-SW.2.2,Membrane proteins,JCVISYN3A_0239,0
-SW.2.2,Membrane proteins,JCVISYN3A_0248,0
-SW.2.4,Proteins of unknown function,JCVISYN3A_0248,0
-SW.2.2,Membrane proteins,JCVISYN3A_0249,0
-SW.2.4,Proteins of unknown function,JCVISYN3A_0250,0
-SW.2.4,Proteins of unknown function,JCVISYN3A_0281,0
-SW.2.4,Proteins of unknown function,JCVISYN3A_0286,0
-SW.2.2,Membrane proteins,JCVISYN3A_0296,0
-SW.2.4,Proteins of unknown function,JCVISYN3A_0296,0
-SW.2.4,Proteins of unknown function,JCVISYN3A_0315,0
-SW.2.2,Membrane proteins,JCVISYN3A_0317,0
-SW.2.4,Proteins of unknown function,JCVISYN3A_0317,0
-SW.2.2,Membrane proteins,JCVISYN3A_0325,0
-SW.2.4,Proteins of unknown function,JCVISYN3A_0325,0
-SW.2.2,Membrane proteins,JCVISYN3A_0326,0
-SW.2.4,Proteins of unknown function,JCVISYN3A_0326,0
-SW.2.2,Membrane proteins,JCVISYN3A_0332,0
-SW.2.4,Proteins of unknown function,JCVISYN3A_0332,0
-SW.2.2,Membrane proteins,JCVISYN3A_0338,0
-SW.2.4,Proteins of unknown function,JCVISYN3A_0338,0
-SW.2.4,Proteins of unknown function,JCVISYN3A_0346,0
-SW.2.4,Proteins of unknown function,JCVISYN3A_0352,0
-SW.2.2,Membrane proteins,JCVISYN3A_0353,0
-SW.2.4,Proteins of unknown function,JCVISYN3A_0373,0
-SW.2.4,Proteins of unknown function,JCVISYN3A_0375,0
-SW.2.4,Proteins of unknown function,JCVISYN3A_0376,0
-SW.2.4,Proteins of unknown function,JCVISYN3A_0379,0
-SW.2.2,Membrane proteins,JCVISYN3A_0379,0
-SW.2.4,Proteins of unknown function,JCVISYN3A_0388,0
-SW.2.2,Membrane proteins,JCVISYN3A_0388,0
-SW.2.4,Proteins of unknown function,JCVISYN3A_0389,0
-SW.2.4,Proteins of unknown function,JCVISYN3A_0392,0
-SW.2.4,Proteins of unknown function,JCVISYN3A_0398,0
-SW.2.2,Membrane proteins,JCVISYN3A_0398,0
-SW.2.4,Proteins of unknown function,JCVISYN3A_0399,0
-SW.2.2,Membrane proteins,JCVISYN3A_0399,0
-SW.1.3.1.2,Exporters,JCVISYN3A_0401,0
-SW.2.2,Membrane proteins,JCVISYN3A_0401,0
-SW.2.4,Proteins of unknown function,JCVISYN3A_0409,0
-SW.2.4,Proteins of unknown function,JCVISYN3A_0411,0
-SW.2.2,Membrane proteins,JCVISYN3A_0411,0
-SW.2.2,Membrane proteins,JCVISYN3A_0412,0
-SW.3.2.3,Protein secretion,JCVISYN3A_0412,0
-SW.2.4,Proteins of unknown function,JCVISYN3A_0416,0
-SW.2.4,Proteins of unknown function,JCVISYN3A_0424,0
-SW.2.4,Proteins of unknown function,JCVISYN3A_0439,0
-SW.2.2,Membrane proteins,JCVISYN3A_0439,0
-SW.2.4,Proteins of unknown function,JCVISYN3A_0440,0
-SW.2.2,Membrane proteins,JCVISYN3A_0440,0
-SW.4.1,Amino acid acquisition,JCVISYN3A_0444,0
-SW.3.2.5.5,rRNA modifications and maturation,JCVISYN3A_0448,0
-SW.2.3,Poorly characterized enzymes,JCVISYN3A_0451,0
-SW.2.4,Proteins of unknown function,JCVISYN3A_0478,0
-SW.2.2,Membrane proteins,JCVISYN3A_0478,0
-SW.2.4,Proteins of unknown function,JCVISYN3A_0479,0
-SW.2.2,Membrane proteins,JCVISYN3A_0479,0
-SW.2.4,Proteins of unknown function,JCVISYN3A_0481,0
-SW.2.2,Membrane proteins,JCVISYN3A_0481,0
-SW.4.3.2,Utilization of specific carbon sources,JCVISYN3A_0495,0
-SW.2.4,Proteins of unknown function,JCVISYN3A_0503,0
-SW.2.4,Proteins of unknown function,JCVISYN3A_0505,0
-SW.2.2,Membrane proteins,JCVISYN3A_0505,0
-SW.2.4,Proteins of unknown function,JCVISYN3A_0511,0
-SW.2.2,Membrane proteins,JCVISYN3A_0516,0
-SW.2.4,Proteins of unknown function,JCVISYN3A_0520,0
-SW.2.4,Proteins of unknown function,JCVISYN3A_0527,0
-SW.2.4,Proteins of unknown function,JCVISYN3A_0530,0
-SW.2.4,Proteins of unknown function,JCVISYN3A_0538,0
-SW.2.2,Membrane proteins,JCVISYN3A_0538,0
-SW.2.3,Poorly characterized enzymes,JCVISYN3A_0546,0
-SW.2.4,Proteins of unknown function,JCVISYN3A_0592,0
-SW.2.2,Membrane proteins,JCVISYN3A_0592,0
-SW.2.4,Proteins of unknown function,JCVISYN3A_0593,0
-SW.2.4,Proteins of unknown function,JCVISYN3A_0599,0
-SW.2.4,Proteins of unknown function,JCVISYN3A_0601,0
-SW.2.2,Membrane proteins,JCVISYN3A_0601,0
-SW.2.4,Proteins of unknown function,JCVISYN3A_0602,0
-SW.2.4,Proteins of unknown function,JCVISYN3A_0604,0
-SW.2.4,Proteins of unknown function,JCVISYN3A_0605,0
-SW.2.2,Membrane proteins,JCVISYN3A_0605,0
-SW.3.2.5.1,Aminoacyl-tRNA synthase,JCVISYN3A_0615,0
-SW.1.2.1,Metal ion homeostasis,JCVISYN3A_0620,0
-SW.3.3,Regulation of gene expression,JCVISYN3A_0620,0
-SW.2.2,Membrane proteins,JCVISYN3A_0622,0
-SW.2.4,Proteins of unknown function,JCVISYN3A_0622,0
-SW.2.4,Proteins of unknown function,JCVISYN3A_0623,0
-SW.2.4,Proteins of unknown function,JCVISYN3A_0636,0
-SW.1.3.1.3,Unknown,JCVISYN3A_0639,0
-SW.2.2,Membrane proteins,JCVISYN3A_0639,0
-SW.2.2,Membrane proteins,JCVISYN3A_0691,0
-SW.2.4,Proteins of unknown function,JCVISYN3A_0691,0
-SW.3.2.5.5,rRNA modifications and maturation,JCVISYN3A_0692,0
-SW.2.2,Membrane proteins,JCVISYN3A_0693,0
-SW.2.4,Proteins of unknown function,JCVISYN3A_0693,0
-SW.2.2,Membrane proteins,JCVISYN3A_0696,0
-SW.2.4,Proteins of unknown function,JCVISYN3A_0696,0
-SW.2.3,Poorly characterized enzymes,JCVISYN3A_0697,0
-SW.2.3,Poorly characterized enzymes,JCVISYN3A_0710,0
-SW.2.3,Poorly characterized enzymes,JCVISYN3A_0728,0
-SW.2.4,Proteins of unknown function,JCVISYN3A_0730,0
-SW.2.2,Membrane proteins,JCVISYN3A_0777,0
-SW.2.4,Proteins of unknown function,JCVISYN3A_0777,0
-SW.2.2,Membrane proteins,JCVISYN3A_0778,0
-SW.2.4,Proteins of unknown function,JCVISYN3A_0778,0
-SW.2.2,Membrane proteins,JCVISYN3A_0797,0
-SW.2.4,Proteins of unknown function,JCVISYN3A_0797,0
-SW.2.4,Proteins of unknown function,JCVISYN3A_0805,0
-SW.2.2,Membrane proteins,JCVISYN3A_0827,0
-SW.2.4,Proteins of unknown function,JCVISYN3A_0827,0
-SW.2.2,Membrane proteins,JCVISYN3A_0830,0
-SW.2.4,Proteins of unknown function,JCVISYN3A_0830,0
-SW.2.4,Proteins of unknown function,JCVISYN3A_0835,0
-SW.2.4,Proteins of unknown function,JCVISYN3A_0851,0
-SW.2.2,Membrane proteins,JCVISYN3A_0851,0
-SW.2.4,Proteins of unknown function,JCVISYN3A_0852,0
-SW.2.2,Membrane proteins,JCVISYN3A_0852,0
-SW.2.4,Proteins of unknown function,JCVISYN3A_0853,0
-SW.2.4,Proteins of unknown function,JCVISYN3A_0870,0
-SW.2.2,Membrane proteins,JCVISYN3A_0870,0
-SW.2.4,Proteins of unknown function,JCVISYN3A_0873,0
-SW.1.3.4,Symporter,JCVISYN3A_0876,0
-SW.2.2,Membrane proteins,JCVISYN3A_0876,0
-SW.4.1,Amino acid acquisition,JCVISYN3A_0876,0
-SW.2.2,Membrane proteins,JCVISYN3A_0877,0
-SW.1.3.4,Symporter,JCVISYN3A_0878,0
-SW.2.2,Membrane proteins,JCVISYN3A_0878,0
-SW.4.1,Amino acid acquisition,JCVISYN3A_0878,0
-SW.1.3.4,Symporter,JCVISYN3A_0881,0
-SW.2.2,Membrane proteins,JCVISYN3A_0881,0
-SW.4.3.2,Utilization of specific carbon sources,JCVISYN3A_0881,0
-SW.2.4,Proteins of unknown function,JCVISYN3A_0906,0
-SW.2.3,Poorly characterized enzymes,JCVISYN3A_0907,0
-SW.2.1,Foreign gene,JCVISYN3A_0918,0
-SW.2.2,Membrane proteins,JCVISYN3A_0346,0
-SW.4.3.1,Carbon core metabolism,JCVISYN3A_0230,0
-SW.4.6,Lipid metabolism,JCVISYN3A_0621,0
-SW.4.6,Lipid metabolism,JCVISYN3A_0513,0
-SW.4.7,Nucleotide metabolism,JCVISYN3A_0651,0
-SW.1.2.2,Coping with stress,JCVISYN3A_0054,0
-SW.3.2.5.1,Aminoacyl-tRNA synthase,JCVISYN3A_0163,0
-SW.4.7,Nucleotide metabolism,JCVISYN3A_0413,0
-SW.2.2,Membrane proteins,JCVISYN3A_0795,0
-SW.3.2.5.1,Aminoacyl-tRNA synthase,JCVISYN3A_0535,0
-SW.3.2.5.1,Aminoacyl-tRNA synthase,JCVISYN3A_0076,0
-SW.3.2.5.1,Aminoacyl-tRNA synthase,JCVISYN3A_0287,0
-SW.2.2,Membrane proteins,JCVISYN3A_0792,0
-SW.4.2,ATP synthesis,JCVISYN3A_0792,0
-SW.2.2,Membrane proteins,JCVISYN3A_0796,0
-SW.4.2,ATP synthesis,JCVISYN3A_0796,0
-SW.4.2,ATP synthesis,JCVISYN3A_0789,0
-SW.2.2,Membrane proteins,JCVISYN3A_0790,0
-SW.4.2,ATP synthesis,JCVISYN3A_0790,0
-SW.4.2,ATP synthesis,JCVISYN3A_0795,0
-SW.2.2,Membrane proteins,JCVISYN3A_0794,0
-SW.4.2,ATP synthesis,JCVISYN3A_0794,0
-SW.2.2,Membrane proteins,JCVISYN3A_0791,0
-SW.4.2,ATP synthesis,JCVISYN3A_0791,0
-SW.2.2,Membrane proteins,JCVISYN3A_0793,0
-SW.4.2,ATP synthesis,JCVISYN3A_0793,0
-SW.2.3,Poorly characterized enzymes,JCVISYN3A_0113,0
-SW.2.3,Poorly characterized enzymes,JCVISYN3A_0114,0
-SW.1.2.2,Coping with stress,JCVISYN3A_0887,0
-SW.2.2,Membrane proteins,JCVISYN3A_0304,0
-SW.4.6,Lipid metabolism,JCVISYN3A_0304,0
-SW.3.2.4,Proteolysis,JCVISYN3A_0545,0
-SW.2.2,Membrane proteins,JCVISYN3A_0147,0
-SW.4.6,Lipid metabolism,JCVISYN3A_0147,0
-SW.4.7,Nucleotide metabolism,JCVISYN3A_0347,0
-SW.1.2.1,Metal ion homeostasis,JCVISYN3A_0879,0
-SW.2.2,Membrane proteins,JCVISYN3A_0879,0
-SW.3.2.5.4,Ribosome assembly,JCVISYN3A_0263,0
-SW.1.3.3,Phosphotransferase system,JCVISYN3A_0234,0
-SW.4.3.1,Carbon core metabolism,JCVISYN3A_0234,0
-SW.3.2.5.4,Ribosome assembly,JCVISYN3A_0410,0
-SW.3.2.5.8,tRNA modification and maturation,JCVISYN3A_0548,0
-SW.1.2.1,Metal ion homeostasis,JCVISYN3A_0433,0
-SW.3.2.5.1,Aminoacyl-tRNA synthase,JCVISYN3A_0837,0
-SW.4.7,Nucleotide metabolism,JCVISYN3A_0515,0
-SW.3.1.4,Other,JCVISYN3A_0201,0
-SW.4.3.2,Utilization of specific carbon sources,JCVISYN3A_0733,0
-SW.4.3.2,Utilization of specific carbon sources,JCVISYN3A_0732,0
-SW.4.7,Nucleotide metabolism,JCVISYN3A_0330,0
-SW.3.1.1,DNA replication,JCVISYN3A_0001,0
-SW.3.1.1,DNA replication,JCVISYN3A_0609,0
-SW.3.1.1,DNA replication,JCVISYN3A_0834,0
-SW.3.1.1,DNA replication,JCVISYN3A_0612,0
-SW.3.1.1,DNA replication,JCVISYN3A_0406,0
-SW.3.1.1,DNA replication,JCVISYN3A_0608,0
-SW.3.2.1,"Chaperones, protein folding and maturation",JCVISYN3A_0541,0
-SW.3.2.1,"Chaperones, protein folding and maturation",JCVISYN3A_0542,0
-SW.3.1.1,DNA replication,JCVISYN3A_0002,0
-SW.3.1.1,DNA replication,JCVISYN3A_0047,0
-SW.4.7,Nucleotide metabolism,JCVISYN3A_0382,0
-SW.3.2.5.8,tRNA modification and maturation,JCVISYN3A_0063,0
-SW.4.7,Nucleotide metabolism,JCVISYN3A_0447,0
-SW.1.3.2,ECF transporters,JCVISYN3A_0643,0
-SW.2.2,Membrane proteins,JCVISYN3A_0643,0
-SW.1.3.2,ECF transporters,JCVISYN3A_0642,0
-SW.2.2,Membrane proteins,JCVISYN3A_0642,0
-SW.1.3.2,ECF transporters,JCVISYN3A_0314,0
-SW.2.2,Membrane proteins,JCVISYN3A_0314,0
-SW.1.3.2,ECF transporters,JCVISYN3A_0345,0
-SW.2.2,Membrane proteins,JCVISYN3A_0345,0
-SW.1.3.2,ECF transporters,JCVISYN3A_0822,0
-SW.2.2,Membrane proteins,JCVISYN3A_0822,0
-SW.4.4,Cofactor acquisition,JCVISYN3A_0822,0
-SW.1.3.2,ECF transporters,JCVISYN3A_0836,0
-SW.2.2,Membrane proteins,JCVISYN3A_0836,0
-SW.1.3.2,ECF transporters,JCVISYN3A_0641,0
-SW.2.2,Membrane proteins,JCVISYN3A_0641,0
-SW.3.2.5.6,Translation factors,JCVISYN3A_0391,0
-SW.3.2.5.4,Ribosome assembly,JCVISYN3A_0348,0
-SW.4.3.1,Carbon core metabolism,JCVISYN3A_0213,0
-SW.3.2.5.4,Ribosome assembly,JCVISYN3A_0403,0
-SW.3.1.3,DNA repair,JCVISYN3A_0097,0
-SW.3.1.1,DNA replication,JCVISYN3A_0097,0
-SW.4.6,Lipid metabolism,JCVISYN3A_0420,0
-SW.4.6,Lipid metabolism,JCVISYN3A_0616,0
-SW.4.6,Lipid metabolism,JCVISYN3A_0617,0
-SW.4.3.1,Carbon core metabolism,JCVISYN3A_0131,0
-SW.3.2.3,Protein secretion,JCVISYN3A_0360,0
-SW.2.6,ncRNA,JCVISYN3A_0049,0
-SW.3.2.5.8,tRNA modification and maturation,JCVISYN3A_0390,0
-SW.4.4,Cofactor acquisition,JCVISYN3A_0823,0
-SW.3.2.5.8,tRNA modification and maturation,JCVISYN3A_0684,0
-SW.1.2.2,Coping with stress,JCVISYN3A_0302,0
-SW.3.2.5.6,Translation factors,JCVISYN3A_0536,0
-SW.1.1,Cell envelope and cell division,JCVISYN3A_0523,0
-SW.2.2,Membrane proteins,JCVISYN3A_0523,0
-SW.1.1,Cell envelope and cell division,JCVISYN3A_0039,0
-SW.2.2,Membrane proteins,JCVISYN3A_0039,0
-SW.3.2.4,Proteolysis,JCVISYN3A_0039,0
-SW.2.2,Membrane proteins,JCVISYN3A_0429,0
-SW.3.2.3,Protein secretion,JCVISYN3A_0429,0
-SW.1.1,Cell envelope and cell division,JCVISYN3A_0522,0
-SW.3.2.5.6,Translation factors,JCVISYN3A_0150,0
-SW.4.3.2,Utilization of specific carbon sources,JCVISYN3A_0813,0
-SW.4.3.1,Carbon core metabolism,JCVISYN3A_0607,0
-SW.3.2.5.1,Aminoacyl-tRNA synthase,JCVISYN3A_0688,0
-SW.3.2.5.1,Aminoacyl-tRNA synthase,JCVISYN3A_0687,0
-SW.3.2.5.1,Aminoacyl-tRNA synthase,JCVISYN3A_0689,0
-SW.4.3.2,Utilization of specific carbon sources,JCVISYN3A_0814,0
-SW.4.3.2,Utilization of specific carbon sources,JCVISYN3A_0218,0
-SW.1.3.4,Symporter,JCVISYN3A_0886,0
-SW.2.2,Membrane proteins,JCVISYN3A_0886,0
-SW.4.1,Amino acid acquisition,JCVISYN3A_0886,0
-SW.3.2.5.1,Aminoacyl-tRNA synthase,JCVISYN3A_0126,0
-SW.4.1,Amino acid acquisition,JCVISYN3A_0799,0
-SW.3.2.5.1,Aminoacyl-tRNA synthase,JCVISYN3A_0405,0
-SW.4.7,Nucleotide metabolism,JCVISYN3A_0203,0
-SW.3.4.2,Transcription,JCVISYN3A_0253,0
-SW.3.2.1,"Chaperones, protein folding and maturation",JCVISYN3A_0543,0
-SW.3.1.2,DNA condensation/segregation,JCVISYN3A_0007,0
-SW.3.1.2,DNA condensation/segregation,JCVISYN3A_0006,0
-SW.2.4,Proteins of unknown function,JCVISYN3A_0438,0
-SW.3.2.5.1,Aminoacyl-tRNA synthase,JCVISYN3A_0288,0
-SW.3.1.1,DNA replication,JCVISYN3A_0044,0
-SW.3.2.2,Protein modification,JCVISYN3A_0821,0
-SW.4.7,Nucleotide metabolism,JCVISYN3A_0216,0
-SW.3.3,Regulation of gene expression,JCVISYN3A_0544,0
-SW.3.1.2,DNA condensation/segregation,JCVISYN3A_0350,0
-SW.2.4,Proteins of unknown function,JCVISYN3A_0132,0
-SW.2.4,Proteins of unknown function,JCVISYN3A_0133,0
-SW.3.2.5.1,Aminoacyl-tRNA synthase,JCVISYN3A_0519,0
-SW.3.2.5.6,Translation factors,JCVISYN3A_0649,0
-SW.3.2.5.6,Translation factors,JCVISYN3A_0297,0
-SW.3.2.5.6,Translation factors,JCVISYN3A_0200,0
-SW.4.5,Iron metabolism,JCVISYN3A_0441,0
-SW.4.5,Iron metabolism,JCVISYN3A_0442,0
-SW.3.2.5.5,rRNA modifications and maturation,JCVISYN3A_0004,0
-SW.1.2.1,Metal ion homeostasis,JCVISYN3A_0686,0
-SW.2.2,Membrane proteins,JCVISYN3A_0686,0
-SW.1.2.1,Metal ion homeostasis,JCVISYN3A_0685,0
-SW.2.2,Membrane proteins,JCVISYN3A_0685,0
-SW.4.3.1,Carbon core metabolism,JCVISYN3A_0475,0
-SW.3.2.5.6,Translation factors,JCVISYN3A_0285,0
-SW.3.2.5.1,Aminoacyl-tRNA synthase,JCVISYN3A_0634,0
-SW.3.2.1,"Chaperones, protein folding and maturation",JCVISYN3A_0818,0
-SW.3.2.1,"Chaperones, protein folding and maturation",JCVISYN3A_0820,0
-SW.3.1.1,DNA replication,JCVISYN3A_0690,0
-SW.3.2.4,Proteolysis,JCVISYN3A_0394,0
-SW.2.2,Membrane proteins,JCVISYN3A_0518,0
-SW.3.2.1,"Chaperones, protein folding and maturation",JCVISYN3A_0518,0
-SW.3.2.5.1,Aminoacyl-tRNA synthase,JCVISYN3A_0064,0
-SW.4.3.2,Utilization of specific carbon sources,JCVISYN3A_0435,0
-SW.3.2.5.6,Translation factors,JCVISYN3A_0650,0
-SW.3.2.1,"Chaperones, protein folding and maturation",JCVISYN3A_0650,0
-SW.4.4,Cofactor acquisition,JCVISYN3A_0432,0
-SW.3.2.5.1,Aminoacyl-tRNA synthase,JCVISYN3A_0012,0
-SW.1.2.1,Metal ion homeostasis,JCVISYN3A_0787,0
-SW.2.2,Membrane proteins,JCVISYN3A_0787,0
-SW.3.2.5.8,tRNA modification and maturation,JCVISYN3A_0387,0
-SW.3.2.5.8,tRNA modification and maturation,JCVISYN3A_0081,0
-SW.3.2.5.8,tRNA modification and maturation,JCVISYN3A_0885,0
-SW.3.3,Regulation of gene expression,JCVISYN3A_0525,0
-SW.4.4,Cofactor acquisition,JCVISYN3A_0381,0
-SW.3.1.3,DNA repair,JCVISYN3A_0610,0
-SW.4.4,Cofactor acquisition,JCVISYN3A_0380,0
-SW.4.4,Cofactor acquisition,JCVISYN3A_0378,0
-SW.4.4,Cofactor acquisition,JCVISYN3A_0259,0
-SW.4.3.2,Utilization of specific carbon sources,JCVISYN3A_0726,0
-SW.4.3.2,Utilization of specific carbon sources,JCVISYN3A_0494,0
-SW.3.1.3,DNA repair,JCVISYN3A_0109,0
-SW.4.7,Nucleotide metabolism,JCVISYN3A_0771,0
-SW.4.7,Nucleotide metabolism,JCVISYN3A_0773,0
-SW.4.7,Nucleotide metabolism,JCVISYN3A_0772,0
-SW.3.4.1.2,Exoribonucleases,JCVISYN3A_0139,0
-SW.3.4.2,Transcription,JCVISYN3A_0300,0
-SW.3.4.2,Transcription,JCVISYN3A_0107,0
-SW.3.4.2,Transcription,JCVISYN3A_0840,0
-SW.3.2.5.4,Ribosome assembly,JCVISYN3A_0377,0
-SW.1.3.1.1,Importers,JCVISYN3A_0169,0
-SW.2.2,Membrane proteins,JCVISYN3A_0169,0
-SW.1.3.1.1,Importers,JCVISYN3A_0165,0
-SW.2.2,Membrane proteins,JCVISYN3A_0165,0
-SW.1.3.1.1,Importers,JCVISYN3A_0166,0
-SW.2.2,Membrane proteins,JCVISYN3A_0166,0
-SW.1.3.1.1,Importers,JCVISYN3A_0167,0
-SW.2.2,Membrane proteins,JCVISYN3A_0167,0
-SW.1.3.1.1,Importers,JCVISYN3A_0168,0
-SW.2.2,Membrane proteins,JCVISYN3A_0168,0
-SW.4.1,Amino acid acquisition,JCVISYN3A_0305,0
-SW.3.1.2,DNA condensation/segregation,JCVISYN3A_0453,0
-SW.3.1.2,DNA condensation/segregation,JCVISYN3A_0452,0
-SW.3.1.1,DNA replication,JCVISYN3A_0695,0
-SW.4.3.1,Carbon core metabolism,JCVISYN3A_0227,0
-SW.4.3.1,Carbon core metabolism,JCVISYN3A_0228,0
-SW.4.3.1,Carbon core metabolism,JCVISYN3A_0220,0
-SW.4.3.1,Carbon core metabolism,JCVISYN3A_0445,0
-SW.4.3.1,Carbon core metabolism,JCVISYN3A_0606,0
-SW.4.3.1,Carbon core metabolism,JCVISYN3A_0729,0
-SW.2.2,Membrane proteins,JCVISYN3A_0214,0
-SW.4.6,Lipid metabolism,JCVISYN3A_0214,0
-SW.2.2,Membrane proteins,JCVISYN3A_0875,0
-SW.4.6,Lipid metabolism,JCVISYN3A_0875,0
-SW.3.2.5.1,Aminoacyl-tRNA synthase,JCVISYN3A_0529,0
-SW.3.2.5.1,Aminoacyl-tRNA synthase,JCVISYN3A_0528,0
-SW.4.8,Phosphate metabolism,JCVISYN3A_0428,0
-SW.4.6,Lipid metabolism,JCVISYN3A_0512,0
-SW.4.6,Lipid metabolism,JCVISYN3A_0419,0
-SW.2.2,Membrane proteins,JCVISYN3A_0117,0
-SW.4.6,Lipid metabolism,JCVISYN3A_0117,0
-SW.4.4,Cofactor acquisition,JCVISYN3A_0614,0
-SW.3.1.1,DNA replication,JCVISYN3A_0611,0
-SW.3.1.1,DNA replication,JCVISYN3A_0303,0
-SW.1.3.1.1,Importers,JCVISYN3A_0197,0
-SW.2.2,Membrane proteins,JCVISYN3A_0197,0
-SW.1.3.1.1,Importers,JCVISYN3A_0196,0
-SW.2.2,Membrane proteins,JCVISYN3A_0196,0
-SW.1.3.1.1,Importers,JCVISYN3A_0195,0
-SW.2.2,Membrane proteins,JCVISYN3A_0195,0
-SW.4.8,Phosphate metabolism,JCVISYN3A_0344,0
-SW.3.2.5.6,Translation factors,JCVISYN3A_0141,0
-SW.2.2,Membrane proteins,JCVISYN3A_0264,0
-SW.3.2.2,Protein modification,JCVISYN3A_0264,0
-SW.3.1.4,Other,JCVISYN3A_0142,0
-SW.3.2.2,Protein modification,JCVISYN3A_0142,0
-SW.3.2.5.1,Aminoacyl-tRNA synthase,JCVISYN3A_0282,0
-SW.3.2.5.4,Ribosome assembly,JCVISYN3A_0500,0
-SW.3.2.1,"Chaperones, protein folding and maturation",JCVISYN3A_0500,0
-SW.4.7,Nucleotide metabolism,JCVISYN3A_0831,0
-SW.1.3.1.1,Importers,JCVISYN3A_0426,0
-SW.2.2,Membrane proteins,JCVISYN3A_0426,0
-SW.4.8,Phosphate metabolism,JCVISYN3A_0426,0
-SW.1.3.1.1,Importers,JCVISYN3A_0427,0
-SW.2.2,Membrane proteins,JCVISYN3A_0427,0
-SW.4.8,Phosphate metabolism,JCVISYN3A_0427,0
-SW.1.3.1.1,Importers,JCVISYN3A_0425,0
-SW.2.2,Membrane proteins,JCVISYN3A_0425,0
-SW.4.8,Phosphate metabolism,JCVISYN3A_0425,0
-SW.4.3.1,Carbon core metabolism,JCVISYN3A_0229,0
-SW.3.2.5.6,Translation factors,JCVISYN3A_0832,0
-SW.1.3.3,Phosphotransferase system,JCVISYN3A_0779,0
-SW.2.2,Membrane proteins,JCVISYN3A_0779,0
-SW.4.3.1,Carbon core metabolism,JCVISYN3A_0779,0
-SW.1.3.3,Phosphotransferase system,JCVISYN3A_0694,0
-SW.4.3.1,Carbon core metabolism,JCVISYN3A_0694,0
-SW.1.3.3,Phosphotransferase system,JCVISYN3A_0233,0
-SW.4.3.1,Carbon core metabolism,JCVISYN3A_0233,0
-SW.4.7,Nucleotide metabolism,JCVISYN3A_0747,0
-SW.4.3.1,Carbon core metabolism,JCVISYN3A_0221,0
-SW.4.7,Nucleotide metabolism,JCVISYN3A_0129,0
-SW.4.7,Nucleotide metabolism,JCVISYN3A_0537,0
-SW.3.2.5.6,Translation factors,JCVISYN3A_0289,0
-SW.3.2.5.4,Ribosome assembly,JCVISYN3A_0366,0
-SW.3.1.3,DNA repair,JCVISYN3A_0404,0
-SW.3.1.3,DNA repair,JCVISYN3A_0046,0
-SW.1.2.2,Coping with stress,JCVISYN3A_0414,0
-SW.4.7,Nucleotide metabolism,JCVISYN3A_0549,0
-SW.4.4,Cofactor acquisition,JCVISYN3A_0291,0
-SW.3.2.5.5,rRNA modifications and maturation,JCVISYN3A_0363,0
-SW.3.1.4,Other,JCVISYN3A_0363,0
-SW.3.2.5.4,Ribosome assembly,JCVISYN3A_0301,0
-SW.3.2.5.5,rRNA modifications and maturation,JCVISYN3A_0838,0
-SW.3.2.5.8,tRNA modification and maturation,JCVISYN3A_0434,0
-SW.3.2.5.5,rRNA modifications and maturation,JCVISYN3A_0361,0
-SW.3.2.5.5,rRNA modifications and maturation,JCVISYN3A_0329,0
-SW.3.2.5.5,rRNA modifications and maturation,JCVISYN3A_0517,0
-SW.3.4.1.1,Endoribonucleases,JCVISYN3A_0418,0
-SW.3.2.5.5,rRNA modifications and maturation,JCVISYN3A_0418,0
-SW.3.1.1,DNA replication,JCVISYN3A_0283,0
-SW.3.4.1.1,Endoribonucleases,JCVISYN3A_0283,0
-SW.3.4.1.2,Exoribonucleases,JCVISYN3A_0600,0
-SW.3.4.1.2,Exoribonucleases,JCVISYN3A_0257,0
-SW.3.2.5.5,rRNA modifications and maturation,JCVISYN3A_0003,0
-SW.3.4.1.1,Endoribonucleases,JCVISYN3A_0003,0
-SW.3.4.1.1,Endoribonucleases,JCVISYN3A_0909,0
-SW.3.2.5.8,tRNA modification and maturation,JCVISYN3A_0909,0
-SW.2.6,ncRNA,JCVISYN3A_0356,0
-SW.3.4.1.1,Endoribonucleases,JCVISYN3A_0356,0
-SW.3.2.5.8,tRNA modification and maturation,JCVISYN3A_0356,0
-SW.3.4.1.2,Exoribonucleases,JCVISYN3A_0775,0
-SW.4.7,Nucleotide metabolism,JCVISYN3A_0775,0
-SW.1.3.1.1,Importers,JCVISYN3A_0010,0
-SW.2.2,Membrane proteins,JCVISYN3A_0010,0
-SW.4.7,Nucleotide metabolism,JCVISYN3A_0010,0
-SW.1.3.1.1,Importers,JCVISYN3A_0011,0
-SW.2.2,Membrane proteins,JCVISYN3A_0011,0
-SW.4.7,Nucleotide metabolism,JCVISYN3A_0011,0
-SW.1.3.1.1,Importers,JCVISYN3A_0009,0
-SW.2.2,Membrane proteins,JCVISYN3A_0009,0
-SW.4.7,Nucleotide metabolism,JCVISYN3A_0009,0
-SW.1.3.1.1,Importers,JCVISYN3A_0008,0
-SW.2.2,Membrane proteins,JCVISYN3A_0008,0
-SW.4.7,Nucleotide metabolism,JCVISYN3A_0008,0
-SW.2.2,Membrane proteins,JCVISYN3A_0359,0
-SW.3.4.1.1,Endoribonucleases,JCVISYN3A_0359,0
-SW.4.3.1,Carbon core metabolism,JCVISYN3A_0262,0
-SW.4.3.1,Carbon core metabolism,JCVISYN3A_0800,0
-SW.3.2.5.2,Ribosomal proteins,JCVISYN3A_0809,0
-SW.3.2.5.2,Ribosomal proteins,JCVISYN3A_0668,0
-SW.3.2.5.2,Ribosomal proteins,JCVISYN3A_0671,0
-SW.3.2.5.2,Ribosomal proteins,JCVISYN3A_0670,0
-SW.3.2.5.2,Ribosomal proteins,JCVISYN3A_0659,0
-SW.3.2.5.2,Ribosomal proteins,JCVISYN3A_0833,0
-SW.3.2.5.2,Ribosomal proteins,JCVISYN3A_0807,0
-SW.3.2.5.2,Ribosomal proteins,JCVISYN3A_0810,0
-SW.3.2.5.2,Ribosomal proteins,JCVISYN3A_0806,0
-SW.3.2.5.2,Ribosomal proteins,JCVISYN3A_0638,0
-SW.3.2.5.2,Ribosomal proteins,JCVISYN3A_0661,0
-SW.3.2.5.2,Ribosomal proteins,JCVISYN3A_0664,0
-SW.3.2.5.2,Ribosomal proteins,JCVISYN3A_0644,0
-SW.3.2.5.2,Ribosomal proteins,JCVISYN3A_0365,0
-SW.3.2.5.2,Ribosomal proteins,JCVISYN3A_0198,0
-SW.3.2.5.2,Ribosomal proteins,JCVISYN3A_0501,0
-SW.3.2.5.2,Ribosomal proteins,JCVISYN3A_0666,0
-SW.3.2.5.2,Ribosomal proteins,JCVISYN3A_0669,0
-SW.3.2.5.2,Ribosomal proteins,JCVISYN3A_0660,0
-SW.3.2.5.2,Ribosomal proteins,JCVISYN3A_0499,0
-SW.3.2.5.2,Ribosomal proteins,JCVISYN3A_0422,0
-SW.3.2.5.2,Ribosomal proteins,JCVISYN3A_0663,0
-SW.3.2.5.2,Ribosomal proteins,JCVISYN3A_0137,0
-SW.3.2.5.2,Ribosomal proteins,JCVISYN3A_0526,0
-SW.3.2.5.2,Ribosomal proteins,JCVISYN3A_0910,0
-SW.3.2.5.2,Ribosomal proteins,JCVISYN3A_0199,0
-SW.3.2.5.2,Ribosomal proteins,JCVISYN3A_0648,0
-SW.3.4.2,Transcription,JCVISYN3A_0645,0
-SW.3.4.2,Transcription,JCVISYN3A_0804,0
-SW.3.4.2,Transcription,JCVISYN3A_0803,0
-SW.3.4.2,Transcription,JCVISYN3A_0407,0
-SW.3.4.2,Transcription,JCVISYN3A_0128,0
-SW.3.2.5.2,Ribosomal proteins,JCVISYN3A_0540,0
-SW.3.2.5.2,Ribosomal proteins,JCVISYN3A_0665,0
-SW.3.2.5.2,Ribosomal proteins,JCVISYN3A_0238,0
-SW.3.2.5.2,Ribosomal proteins,JCVISYN3A_0654,0
-SW.3.2.5.2,Ribosomal proteins,JCVISYN3A_0027,0
-SW.3.2.5.2,Ribosomal proteins,JCVISYN3A_0149,0
-SW.3.2.5.2,Ribosomal proteins,JCVISYN3A_0657,0
-SW.3.2.5.2,Ribosomal proteins,JCVISYN3A_0637,0
-SW.3.2.5.2,Ribosomal proteins,JCVISYN3A_0672,0
-SW.3.2.5.2,Ribosomal proteins,JCVISYN3A_0646,0
-SW.3.2.5.2,Ribosomal proteins,JCVISYN3A_0148,0
-SW.3.2.5.2,Ribosomal proteins,JCVISYN3A_0647,0
-SW.3.2.5.2,Ribosomal proteins,JCVISYN3A_0658,0
-SW.3.2.5.2,Ribosomal proteins,JCVISYN3A_0294,0
-SW.3.2.5.2,Ribosomal proteins,JCVISYN3A_0362,0
-SW.3.2.5.2,Ribosomal proteins,JCVISYN3A_0025,0
-SW.3.2.5.2,Ribosomal proteins,JCVISYN3A_0667,0
-SW.3.2.5.2,Ribosomal proteins,JCVISYN3A_0082,0
-SW.3.2.5.2,Ribosomal proteins,JCVISYN3A_0482,0
-SW.3.2.5.3,Ribosomal RNA,JCVISYN3A_0067,0
-SW.3.2.5.3,Ribosomal RNA,JCVISYN3A_0532,0
-SW.3.2.5.3,Ribosomal RNA,JCVISYN3A_0068,0
-SW.3.2.5.3,Ribosomal RNA,JCVISYN3A_0533,0
-SW.3.2.5.3,Ribosomal RNA,JCVISYN3A_0069,0
-SW.3.2.5.3,Ribosomal RNA,JCVISYN3A_0534,0
-SW.3.2.5.5,rRNA modifications and maturation,JCVISYN3A_0202,0
-SW.3.2.5.5,rRNA modifications and maturation,JCVISYN3A_0874,0
-SW.3.2.5.5,rRNA modifications and maturation,JCVISYN3A_0524,0
-SW.3.2.5.5,rRNA modifications and maturation,JCVISYN3A_0504,0
-SW.3.1.2,DNA condensation/segregation,JCVISYN3A_0327,0
-SW.3.1.2,DNA condensation/segregation,JCVISYN3A_0328,0
-SW.2.2,Membrane proteins,JCVISYN3A_0095,0
-SW.3.2.3,Protein secretion,JCVISYN3A_0095,0
-SW.2.2,Membrane proteins,JCVISYN3A_0839,0
-SW.3.2.3,Protein secretion,JCVISYN3A_0839,0
-SW.2.2,Membrane proteins,JCVISYN3A_0774,0
-SW.3.2.3,Protein secretion,JCVISYN3A_0774,0
-SW.2.2,Membrane proteins,JCVISYN3A_0652,0
-SW.3.2.3,Protein secretion,JCVISYN3A_0652,0
-SW.1.1,Cell envelope and cell division,JCVISYN3A_0521,0
-SW.3.2.5.1,Aminoacyl-tRNA synthase,JCVISYN3A_0061,0
-SW.3.1.2,DNA condensation/segregation,JCVISYN3A_0415,0
-SW.3.1.4,Other,JCVISYN3A_0776,0
-SW.3.1.1,DNA replication,JCVISYN3A_0026,0
-SW.3.1.3,DNA repair,JCVISYN3A_0026,0
-SW.2.6,ncRNA,JCVISYN3A_0158,0
-SW.3.1.4,Other,JCVISYN3A_0158,0
-SW.4.7,Nucleotide metabolism,JCVISYN3A_0140,0
-SW.2.1,Foreign gene,JCVISYN3A_0913,0
-SW.1.3.1.1,Importers,JCVISYN3A_0706,0
-SW.2.2,Membrane proteins,JCVISYN3A_0706,0
-SW.1.3.1.1,Importers,JCVISYN3A_0708,0
-SW.2.2,Membrane proteins,JCVISYN3A_0708,0
-SW.3.2.5.8,tRNA modification and maturation,JCVISYN3A_0240,0
-SW.1.3.1.1,Importers,JCVISYN3A_0707,0
-SW.2.2,Membrane proteins,JCVISYN3A_0707,0
-SW.3.2.5.1,Aminoacyl-tRNA synthase,JCVISYN3A_0222,0
-SW.3.2.5.8,tRNA modification and maturation,JCVISYN3A_0040,0
-SW.4.3.1,Carbon core metabolism,JCVISYN3A_0316,0
-SW.4.7,Nucleotide metabolism,JCVISYN3A_0045,0
-SW.3.1.2,DNA condensation/segregation,JCVISYN3A_0859,0
-SW.4.3.1,Carbon core metabolism,JCVISYN3A_0727,0
-SW.3.2.5.8,tRNA modification and maturation,JCVISYN3A_0364,0
-SW.3.2.5.8,tRNA modification and maturation,JCVISYN3A_0408,0
-SW.3.2.5.7,tRNA,JCVISYN3A_0719,0
-SW.3.2.5.7,tRNA,JCVISYN3A_0717,0
-SW.3.2.5.7,tRNA,JCVISYN3A_0681,0
-SW.3.2.5.7,tRNA,JCVISYN3A_0724,0
-SW.3.2.5.7,tRNA,JCVISYN3A_0828,0
-SW.3.2.5.7,tRNA,JCVISYN3A_0508,0
-SW.3.2.5.7,tRNA,JCVISYN3A_0680,0
-SW.3.2.5.7,tRNA,JCVISYN3A_0295,0
-SW.3.2.5.7,tRNA,JCVISYN3A_0624,0
-SW.3.2.5.7,tRNA,JCVISYN3A_0635,0
-SW.3.2.5.7,tRNA,JCVISYN3A_0070,0
-SW.3.2.5.7,tRNA,JCVISYN3A_0507,0
-SW.3.2.5.7,tRNA,JCVISYN3A_0720,0
-SW.3.2.5.7,tRNA,JCVISYN3A_0725,0
-SW.3.2.5.7,tRNA,JCVISYN3A_0718,0
-SW.3.2.5.7,tRNA,JCVISYN3A_0722,0
-SW.3.2.5.7,tRNA,JCVISYN3A_0510,0
-SW.3.2.5.7,tRNA,JCVISYN3A_0619,0
-SW.3.2.5.7,tRNA,JCVISYN3A_0509,0
-SW.3.2.5.7,tRNA,JCVISYN3A_0679,0
-SW.3.2.5.1,Aminoacyl-tRNA synthase,JCVISYN3A_0308,0
-SW.3.2.5.8,tRNA modification and maturation,JCVISYN3A_0640,0
-SW.3.2.5.8,tRNA modification and maturation,JCVISYN3A_0290,0
-SW.1.2.2,Coping with stress,JCVISYN3A_0819,0
-SW.3.2.5.8,tRNA modification and maturation,JCVISYN3A_0271,0
-SW.3.2.5.8,tRNA modification and maturation,JCVISYN3A_0144,0
-SW.3.2.5.8,tRNA modification and maturation,JCVISYN3A_0079,0
-SW.3.2.5.8,tRNA modification and maturation,JCVISYN3A_0270,0
-SW.3.2.5.6,Translation factors,JCVISYN3A_0539,0
-SW.3.2.5.6,Translation factors,JCVISYN3A_0151,0
-SW.3.2.5.1,Aminoacyl-tRNA synthase,JCVISYN3A_0613,0
-SW.4.7,Nucleotide metabolism,JCVISYN3A_0798,0
-SW.3.1.3,DNA repair,JCVISYN3A_0824,0
-SW.3.1.3,DNA repair,JCVISYN3A_0825,0
-SW.3.1.3,DNA repair,JCVISYN3A_0254,0
-SW.3.2.5.1,Aminoacyl-tRNA synthase,JCVISYN3A_0260,0
-SW.3.3,Regulation of gene expression,JCVISYN3A_0817,0
-SW.3.1.4,Other,JCVISYN3A_0106,0
-SW.3.1.4,Other,JCVISYN3A_0105,0
-SW.2.3,Poorly characterized enzymes,JCVISYN3A_0043,0
-SW.3.4.1.1,Endoribonucleases,JCVISYN3A_0402,0
-SW.3.2.5.5,rRNA modifications and maturation,JCVISYN3A_0402,0
-SW.3.2.5.4,Ribosome assembly,JCVISYN3A_0872,0
-SW.3.4.1.2,Exoribonucleases,JCVISYN3A_0437,0
-SW.2.2,Membrane proteins,JCVISYN3A_0908,0
-SW.3.2.3,Protein secretion,JCVISYN3A_0908,0
-SW.3.2.3,Protein secretion,JCVISYN3A_0430,0
-SW.3.3,Regulation of gene expression,JCVISYN3A_0430,0
-SW.3.2.5.2,Ribosomal proteins,JCVISYN3A_0298,0
-SW.2.4,Proteins of unknown function,JCVISYN3A_0299,0
-SW.2.3,Poorly characterized enzymes,JCVISYN3A_0431,0
-SW.3.1.1,DNA replication,JCVISYN3A_0826,0
-SW.3.2.5.5,rRNA modifications and maturation,JCVISYN3A_0215,0
-SW.3.4.1.1,Endoribonucleases,JCVISYN3A_0215,0
-SW.3.2.5.4,Ribosome assembly,JCVISYN3A_0247,0
-SW.1.3.1.2,Exporters,JCVISYN3A_0371,0
-SW.2.2,Membrane proteins,JCVISYN3A_0371,0
-SW.2.2,Membrane proteins,JCVISYN3A_0372,0
-SW.2.7.1,Essential,JCVISYN3A_0030,0
-SW.2.7.1,Essential,JCVISYN3A_0143,0
-SW.2.7.1,Essential,JCVISYN3A_0146,0
-SW.2.7.1,Essential,JCVISYN3A_0281,0
-SW.2.7.1,Essential,JCVISYN3A_0317,0
-SW.2.7.1,Essential,JCVISYN3A_0373,0
-SW.2.7.1,Essential,JCVISYN3A_0379,0
-SW.2.7.1,Essential,JCVISYN3A_0388,0
-SW.2.7.1,Essential,JCVISYN3A_0412,0
-SW.2.7.1,Essential,JCVISYN3A_0439,0
-SW.2.7.1,Essential,JCVISYN3A_0451,0
-SW.2.7.1,Essential,JCVISYN3A_0478,0
-SW.2.7.1,Essential,JCVISYN3A_0511,0
-SW.2.7.1,Essential,JCVISYN3A_0636,0
-SW.2.7.1,Essential,JCVISYN3A_0639,0
-SW.2.7.1,Essential,JCVISYN3A_0691,0
-SW.2.7.1,Essential,JCVISYN3A_0778,0
-SW.2.7.1,Essential,JCVISYN3A_0797,0
-SW.2.7.1,Essential,JCVISYN3A_0835,0
-SW.2.7.1,Essential,JCVISYN3A_0870,0
-SW.2.7.1,Essential,JCVISYN3A_0877,0
-SW.2.7.1,Essential,JCVISYN3A_0881,0
-SW.2.7.1,Essential,JCVISYN3A_0621,0
-SW.2.7.1,Essential,JCVISYN3A_0513,0
-SW.2.7.1,Essential,JCVISYN3A_0651,0
-SW.2.7.1,Essential,JCVISYN3A_0163,0
-SW.2.7.1,Essential,JCVISYN3A_0413,0
-SW.2.7.1,Essential,JCVISYN3A_0535,0
-SW.2.7.1,Essential,JCVISYN3A_0796,0
-SW.2.7.1,Essential,JCVISYN3A_0795,0
-SW.2.7.1,Essential,JCVISYN3A_0791,0
-SW.2.7.1,Essential,JCVISYN3A_0793,0
-SW.2.7.1,Essential,JCVISYN3A_0304,0
-SW.2.7.1,Essential,JCVISYN3A_0147,0
-SW.2.7.1,Essential,JCVISYN3A_0234,0
-SW.2.7.1,Essential,JCVISYN3A_0837,0
-SW.2.7.1,Essential,JCVISYN3A_0201,0
-SW.2.7.1,Essential,JCVISYN3A_0001,0
-SW.2.7.1,Essential,JCVISYN3A_0609,0
-SW.2.7.1,Essential,JCVISYN3A_0834,0
-SW.2.7.1,Essential,JCVISYN3A_0406,0
-SW.2.7.1,Essential,JCVISYN3A_0608,0
-SW.2.7.1,Essential,JCVISYN3A_0541,0
-SW.2.7.1,Essential,JCVISYN3A_0542,0
-SW.2.7.1,Essential,JCVISYN3A_0002,0
-SW.2.7.1,Essential,JCVISYN3A_0047,0
-SW.2.7.1,Essential,JCVISYN3A_0447,0
-SW.2.7.1,Essential,JCVISYN3A_0643,0
-SW.2.7.1,Essential,JCVISYN3A_0642,0
-SW.2.7.1,Essential,JCVISYN3A_0836,0
-SW.2.7.1,Essential,JCVISYN3A_0641,0
-SW.2.7.1,Essential,JCVISYN3A_0348,0
-SW.2.7.1,Essential,JCVISYN3A_0213,0
-SW.2.7.1,Essential,JCVISYN3A_0420,0
-SW.2.7.1,Essential,JCVISYN3A_0616,0
-SW.2.7.1,Essential,JCVISYN3A_0131,0
-SW.2.7.1,Essential,JCVISYN3A_0049,0
-SW.2.7.1,Essential,JCVISYN3A_0684,0
-SW.2.7.1,Essential,JCVISYN3A_0536,0
-SW.2.7.1,Essential,JCVISYN3A_0039,0
-SW.2.7.1,Essential,JCVISYN3A_0429,0
-SW.2.7.1,Essential,JCVISYN3A_0150,0
-SW.2.7.1,Essential,JCVISYN3A_0607,0
-SW.2.7.1,Essential,JCVISYN3A_0688,0
-SW.2.7.1,Essential,JCVISYN3A_0687,0
-SW.2.7.1,Essential,JCVISYN3A_0689,0
-SW.2.7.1,Essential,JCVISYN3A_0218,0
-SW.2.7.1,Essential,JCVISYN3A_0405,0
-SW.2.7.1,Essential,JCVISYN3A_0203,0
-SW.2.7.1,Essential,JCVISYN3A_0253,0
-SW.2.7.1,Essential,JCVISYN3A_0543,0
-SW.2.7.1,Essential,JCVISYN3A_0007,0
-SW.2.7.1,Essential,JCVISYN3A_0006,0
-SW.2.7.1,Essential,JCVISYN3A_0044,0
-SW.2.7.1,Essential,JCVISYN3A_0544,0
-SW.2.7.1,Essential,JCVISYN3A_0350,0
-SW.2.7.1,Essential,JCVISYN3A_0519,0
-SW.2.7.1,Essential,JCVISYN3A_0649,0
-SW.2.7.1,Essential,JCVISYN3A_0200,0
-SW.2.7.1,Essential,JCVISYN3A_0441,0
-SW.2.7.1,Essential,JCVISYN3A_0442,0
-SW.2.7.1,Essential,JCVISYN3A_0686,0
-SW.2.7.1,Essential,JCVISYN3A_0685,0
-SW.2.7.1,Essential,JCVISYN3A_0634,0
-SW.2.7.1,Essential,JCVISYN3A_0820,0
-SW.2.7.1,Essential,JCVISYN3A_0690,0
-SW.2.7.1,Essential,JCVISYN3A_0650,0
-SW.2.7.1,Essential,JCVISYN3A_0787,0
-SW.2.7.1,Essential,JCVISYN3A_0387,0
-SW.2.7.1,Essential,JCVISYN3A_0378,0
-SW.2.7.1,Essential,JCVISYN3A_0259,0
-SW.2.7.1,Essential,JCVISYN3A_0109,0
-SW.2.7.1,Essential,JCVISYN3A_0772,0
-SW.2.7.1,Essential,JCVISYN3A_0139,0
-SW.2.7.1,Essential,JCVISYN3A_0107,0
-SW.2.7.1,Essential,JCVISYN3A_0840,0
-SW.2.7.1,Essential,JCVISYN3A_0377,0
-SW.2.7.1,Essential,JCVISYN3A_0453,0
-SW.2.7.1,Essential,JCVISYN3A_0452,0
-SW.2.7.1,Essential,JCVISYN3A_0220,0
-SW.2.7.1,Essential,JCVISYN3A_0445,0
-SW.2.7.1,Essential,JCVISYN3A_0606,0
-SW.2.7.1,Essential,JCVISYN3A_0729,0
-SW.2.7.1,Essential,JCVISYN3A_0875,0
-SW.2.7.1,Essential,JCVISYN3A_0529,0
-SW.2.7.1,Essential,JCVISYN3A_0528,0
-SW.2.7.1,Essential,JCVISYN3A_0428,0
-SW.2.7.1,Essential,JCVISYN3A_0512,0
-SW.2.7.1,Essential,JCVISYN3A_0419,0
-SW.2.7.1,Essential,JCVISYN3A_0614,0
-SW.2.7.1,Essential,JCVISYN3A_0611,0
-SW.2.7.1,Essential,JCVISYN3A_0303,0
-SW.2.7.1,Essential,JCVISYN3A_0344,0
-SW.2.7.1,Essential,JCVISYN3A_0282,0
-SW.2.7.1,Essential,JCVISYN3A_0500,0
-SW.2.7.1,Essential,JCVISYN3A_0426,0
-SW.2.7.1,Essential,JCVISYN3A_0427,0
-SW.2.7.1,Essential,JCVISYN3A_0425,0
-SW.2.7.1,Essential,JCVISYN3A_0229,0
-SW.2.7.1,Essential,JCVISYN3A_0537,0
-SW.2.7.1,Essential,JCVISYN3A_0366,0
-SW.2.7.1,Essential,JCVISYN3A_0363,0
-SW.2.7.1,Essential,JCVISYN3A_0418,0
-SW.2.7.1,Essential,JCVISYN3A_0600,0
-SW.2.7.1,Essential,JCVISYN3A_0909,0
-SW.2.7.1,Essential,JCVISYN3A_0356,0
-SW.2.7.1,Essential,JCVISYN3A_0010,0
-SW.2.7.1,Essential,JCVISYN3A_0008,0
-SW.2.7.1,Essential,JCVISYN3A_0668,0
-SW.2.7.1,Essential,JCVISYN3A_0671,0
-SW.2.7.1,Essential,JCVISYN3A_0670,0
-SW.2.7.1,Essential,JCVISYN3A_0659,0
-SW.2.7.1,Essential,JCVISYN3A_0656,0
-SW.2.7.1,Essential,JCVISYN3A_0807,0
-SW.2.7.1,Essential,JCVISYN3A_0810,0
-SW.2.7.1,Essential,JCVISYN3A_0806,0
-SW.2.7.1,Essential,JCVISYN3A_0638,0
-SW.2.7.1,Essential,JCVISYN3A_0661,0
-SW.2.7.1,Essential,JCVISYN3A_0653,0
-SW.2.7.1,Essential,JCVISYN3A_0664,0
-SW.2.7.1,Essential,JCVISYN3A_0644,0
-SW.2.7.1,Essential,JCVISYN3A_0655,0
-SW.2.7.1,Essential,JCVISYN3A_0198,0
-SW.2.7.1,Essential,JCVISYN3A_0501,0
-SW.2.7.1,Essential,JCVISYN3A_0666,0
-SW.2.7.1,Essential,JCVISYN3A_0669,0
-SW.2.7.1,Essential,JCVISYN3A_0660,0
-SW.2.7.1,Essential,JCVISYN3A_0499,0
-SW.2.7.1,Essential,JCVISYN3A_0663,0
-SW.2.7.1,Essential,JCVISYN3A_0910,0
-SW.2.7.1,Essential,JCVISYN3A_0199,0
-SW.2.7.1,Essential,JCVISYN3A_0648,0
-SW.2.7.1,Essential,JCVISYN3A_0645,0
-SW.2.7.1,Essential,JCVISYN3A_0804,0
-SW.2.7.1,Essential,JCVISYN3A_0803,0
-SW.2.7.1,Essential,JCVISYN3A_0407,0
-SW.2.7.1,Essential,JCVISYN3A_0540,0
-SW.2.7.1,Essential,JCVISYN3A_0665,0
-SW.2.7.1,Essential,JCVISYN3A_0238,0
-SW.2.7.1,Essential,JCVISYN3A_0654,0
-SW.2.7.1,Essential,JCVISYN3A_0027,0
-SW.2.7.1,Essential,JCVISYN3A_0149,0
-SW.2.7.1,Essential,JCVISYN3A_0657,0
-SW.2.7.1,Essential,JCVISYN3A_0637,0
-SW.2.7.1,Essential,JCVISYN3A_0672,0
-SW.2.7.1,Essential,JCVISYN3A_0646,0
-SW.2.7.1,Essential,JCVISYN3A_0148,0
-SW.2.7.1,Essential,JCVISYN3A_0647,0
-SW.2.7.1,Essential,JCVISYN3A_0658,0
-SW.2.7.1,Essential,JCVISYN3A_0362,0
-SW.2.7.1,Essential,JCVISYN3A_0662,0
-SW.2.7.1,Essential,JCVISYN3A_0025,0
-SW.2.7.1,Essential,JCVISYN3A_0667,0
-SW.2.7.1,Essential,JCVISYN3A_0482,0
-SW.2.7.1,Essential,JCVISYN3A_0532,0
-SW.2.7.1,Essential,JCVISYN3A_0533,0
-SW.2.7.1,Essential,JCVISYN3A_0534,0
-SW.2.7.1,Essential,JCVISYN3A_0839,0
-SW.2.7.1,Essential,JCVISYN3A_0774,0
-SW.2.7.1,Essential,JCVISYN3A_0652,0
-SW.2.7.1,Essential,JCVISYN3A_0061,0
-SW.2.7.1,Essential,JCVISYN3A_0776,0
-SW.2.7.1,Essential,JCVISYN3A_0026,0
-SW.2.7.1,Essential,JCVISYN3A_0158,0
-SW.2.7.1,Essential,JCVISYN3A_0719,0
-SW.2.7.1,Essential,JCVISYN3A_0717,0
-SW.2.7.1,Essential,JCVISYN3A_0681,0
-SW.2.7.1,Essential,JCVISYN3A_0724,0
-SW.2.7.1,Essential,JCVISYN3A_0828,0
-SW.2.7.1,Essential,JCVISYN3A_0508,0
-SW.2.7.1,Essential,JCVISYN3A_0680,0
-SW.2.7.1,Essential,JCVISYN3A_0295,0
-SW.2.7.1,Essential,JCVISYN3A_0635,0
-SW.2.7.1,Essential,JCVISYN3A_0070,0
-SW.2.7.1,Essential,JCVISYN3A_0507,0
-SW.2.7.1,Essential,JCVISYN3A_0720,0
-SW.2.7.1,Essential,JCVISYN3A_0718,0
-SW.2.7.1,Essential,JCVISYN3A_0722,0
-SW.2.7.1,Essential,JCVISYN3A_0510,0
-SW.2.7.1,Essential,JCVISYN3A_0619,0
-SW.2.7.1,Essential,JCVISYN3A_0509,0
-SW.2.7.1,Essential,JCVISYN3A_0679,0
-SW.2.7.1,Essential,JCVISYN3A_0222,0
-SW.2.7.1,Essential,JCVISYN3A_0040,0
-SW.2.7.1,Essential,JCVISYN3A_0045,0
-SW.2.7.1,Essential,JCVISYN3A_0727,0
-SW.2.7.1,Essential,JCVISYN3A_0364,0
-SW.2.7.1,Essential,JCVISYN3A_0819,0
-SW.2.7.1,Essential,JCVISYN3A_0065,0
-SW.2.7.1,Essential,JCVISYN3A_0270,0
-SW.2.7.1,Essential,JCVISYN3A_0539,0
-SW.2.7.1,Essential,JCVISYN3A_0151,0
-SW.2.7.1,Essential,JCVISYN3A_0613,0
-SW.2.7.1,Essential,JCVISYN3A_0260,0
-SW.2.7.1,Essential,JCVISYN3A_0437,0
-SW.2.7.1,Essential,JCVISYN3A_0908,0
-SW.2.7.1,Essential,JCVISYN3A_0826,0
-SW.2.7.1,Essential,JCVISYN3A_0247,0
-SW.2.7.1,Essential,JCVISYN3A_0371,0
-SW.2.7.1,Essential,JCVISYN3A_0372,0
-SW.2.7.1,Essential,JCVISYN3A_0296,0
-SW.2.7.1,Essential,JCVISYN3A_0352,0
-SW.2.7.3,Quasi essential,JCVISYN3A_0034,0
-SW.2.7.3,Quasi essential,JCVISYN3A_0042,0
-SW.2.7.3,Quasi essential,JCVISYN3A_0060,0
-SW.2.7.3,Quasi essential,JCVISYN3A_0066,0
-SW.2.7.3,Quasi essential,JCVISYN3A_0108,0
-SW.2.7.3,Quasi essential,JCVISYN3A_0116,0
-SW.2.7.3,Quasi essential,JCVISYN3A_0127,0
-SW.2.7.3,Quasi essential,JCVISYN3A_0138,0
-SW.2.7.3,Quasi essential,JCVISYN3A_0154,0
-SW.2.7.3,Quasi essential,JCVISYN3A_0164,0
-SW.2.7.3,Quasi essential,JCVISYN3A_0239,0
-SW.2.7.3,Quasi essential,JCVISYN3A_0250,0
-SW.2.7.3,Quasi essential,JCVISYN3A_0315,0
-SW.2.7.3,Quasi essential,JCVISYN3A_0332,0
-SW.2.7.3,Quasi essential,JCVISYN3A_0338,0
-SW.2.7.3,Quasi essential,JCVISYN3A_0346,0
-SW.2.7.3,Quasi essential,JCVISYN3A_0353,0
-SW.2.7.3,Quasi essential,JCVISYN3A_0389,0
-SW.2.7.3,Quasi essential,JCVISYN3A_0400,0
-SW.2.7.3,Quasi essential,JCVISYN3A_0411,0
-SW.2.7.3,Quasi essential,JCVISYN3A_0421,0
-SW.2.7.3,Quasi essential,JCVISYN3A_0440,0
-SW.2.7.3,Quasi essential,JCVISYN3A_0479,0
-SW.2.7.3,Quasi essential,JCVISYN3A_0505,0
-SW.2.7.3,Quasi essential,JCVISYN3A_0516,0
-SW.2.7.3,Quasi essential,JCVISYN3A_0601,0
-SW.2.7.3,Quasi essential,JCVISYN3A_0615,0
-SW.2.7.3,Quasi essential,JCVISYN3A_0620,0
-SW.2.7.3,Quasi essential,JCVISYN3A_0728,0
-SW.2.7.3,Quasi essential,JCVISYN3A_0805,0
-SW.2.7.3,Quasi essential,JCVISYN3A_0827,0
-SW.2.7.3,Quasi essential,JCVISYN3A_0876,0
-SW.2.7.3,Quasi essential,JCVISYN3A_0878,0
-SW.2.7.3,Quasi essential,JCVISYN3A_0906,0
-SW.2.7.3,Quasi essential,JCVISYN3A_0230,0
-SW.2.7.3,Quasi essential,JCVISYN3A_0790,0
-SW.2.7.3,Quasi essential,JCVISYN3A_0114,0
-SW.2.7.3,Quasi essential,JCVISYN3A_0887,0
-SW.2.7.3,Quasi essential,JCVISYN3A_0347,0
-SW.2.7.3,Quasi essential,JCVISYN3A_0263,0
-SW.2.7.3,Quasi essential,JCVISYN3A_0410,0
-SW.2.7.3,Quasi essential,JCVISYN3A_0433,0
-SW.2.7.3,Quasi essential,JCVISYN3A_0733,0
-SW.2.7.3,Quasi essential,JCVISYN3A_0822,0
-SW.2.7.3,Quasi essential,JCVISYN3A_0097,0
-SW.2.7.3,Quasi essential,JCVISYN3A_0617,0
-SW.2.7.3,Quasi essential,JCVISYN3A_0523,0
-SW.2.7.3,Quasi essential,JCVISYN3A_0813,0
-SW.2.7.3,Quasi essential,JCVISYN3A_0115,0
-SW.2.7.3,Quasi essential,JCVISYN3A_0814,0
-SW.2.7.3,Quasi essential,JCVISYN3A_0886,0
-SW.2.7.3,Quasi essential,JCVISYN3A_0799,0
-SW.2.7.3,Quasi essential,JCVISYN3A_0821,0
-SW.2.7.3,Quasi essential,JCVISYN3A_0216,0
-SW.2.7.3,Quasi essential,JCVISYN3A_0132,0
-SW.2.7.1,Essential,JCVISYN3A_0297,0
-SW.2.7.3,Quasi essential,JCVISYN3A_0285,0
-SW.2.7.3,Quasi essential,JCVISYN3A_0394,0
-SW.2.7.3,Quasi essential,JCVISYN3A_0432,0
-SW.2.7.3,Quasi essential,JCVISYN3A_0081,0
-SW.2.7.3,Quasi essential,JCVISYN3A_0885,0
-SW.2.7.3,Quasi essential,JCVISYN3A_0525,0
-SW.2.7.3,Quasi essential,JCVISYN3A_0771,0
-SW.2.7.3,Quasi essential,JCVISYN3A_0169,0
-SW.2.7.3,Quasi essential,JCVISYN3A_0165,0
-SW.2.7.3,Quasi essential,JCVISYN3A_0166,0
-SW.2.7.3,Quasi essential,JCVISYN3A_0167,0
-SW.2.7.3,Quasi essential,JCVISYN3A_0168,0
-SW.2.7.3,Quasi essential,JCVISYN3A_0695,0
-SW.2.7.3,Quasi essential,JCVISYN3A_0227,0
-SW.2.7.3,Quasi essential,JCVISYN3A_0228,0
-SW.2.7.3,Quasi essential,JCVISYN3A_0214,0
-SW.2.7.3,Quasi essential,JCVISYN3A_0197,0
-SW.2.7.3,Quasi essential,JCVISYN3A_0196,0
-SW.2.7.3,Quasi essential,JCVISYN3A_0195,0
-SW.2.7.3,Quasi essential,JCVISYN3A_0142,0
-SW.2.7.3,Quasi essential,JCVISYN3A_0831,0
-SW.2.7.3,Quasi essential,JCVISYN3A_0747,0
-SW.2.7.3,Quasi essential,JCVISYN3A_0301,0
-SW.2.7.3,Quasi essential,JCVISYN3A_0838,0
-SW.2.7.3,Quasi essential,JCVISYN3A_0003,0
-SW.2.7.3,Quasi essential,JCVISYN3A_0775,0
-SW.2.7.3,Quasi essential,JCVISYN3A_0262,0
-SW.2.7.3,Quasi essential,JCVISYN3A_0800,0
-SW.2.7.3,Quasi essential,JCVISYN3A_0809,0
-SW.2.7.3,Quasi essential,JCVISYN3A_0137,0
-SW.2.7.3,Quasi essential,JCVISYN3A_0526,0
-SW.2.7.3,Quasi essential,JCVISYN3A_0128,0
-SW.2.7.3,Quasi essential,JCVISYN3A_0294,0
-SW.2.7.3,Quasi essential,JCVISYN3A_0082,0
-SW.2.7.3,Quasi essential,JCVISYN3A_0067,0
-SW.2.7.3,Quasi essential,JCVISYN3A_0068,0
-SW.2.7.3,Quasi essential,JCVISYN3A_0069,0
-SW.2.7.3,Quasi essential,JCVISYN3A_0202,0
-SW.2.7.3,Quasi essential,JCVISYN3A_0874,0
-SW.2.7.3,Quasi essential,JCVISYN3A_0524,0
-SW.2.7.3,Quasi essential,JCVISYN3A_0504,0
-SW.2.7.3,Quasi essential,JCVISYN3A_0415,0
-SW.2.7.3,Quasi essential,JCVISYN3A_0070,0
-SW.2.7.1,Essential,JCVISYN3A_0725,0
-SW.2.7.3,Quasi essential,JCVISYN3A_0706,0
-SW.2.7.3,Quasi essential,JCVISYN3A_0708,0
-SW.2.7.3,Quasi essential,JCVISYN3A_0240,0
-SW.2.7.3,Quasi essential,JCVISYN3A_0707,0
-SW.2.7.3,Quasi essential,JCVISYN3A_0316,0
-SW.2.7.3,Quasi essential,JCVISYN3A_0859,0
-SW.2.7.3,Quasi essential,JCVISYN3A_0144,0
-SW.2.7.3,Quasi essential,JCVISYN3A_0798,0
-SW.2.7.3,Quasi essential,JCVISYN3A_0817,0
-SW.2.7.3,Quasi essential,JCVISYN3A_0105,0
-SW.2.7.3,Quasi essential,JCVISYN3A_0872,0
-SW.2.7.3,Quasi essential,JCVISYN3A_0298,0
-SW.2.7.3,Quasi essential,JCVISYN3A_0299,0
-SW.2.7.3.1,Minimal growth disadvantage,JCVISYN3A_0094,0
-SW.2.7.3.1,Minimal growth disadvantage,JCVISYN3A_0235,0
-SW.2.7.3.1,Minimal growth disadvantage,JCVISYN3A_0376,0
-SW.2.7.3.1,Minimal growth disadvantage,JCVISYN3A_0401,0
-SW.2.7.3.1,Minimal growth disadvantage,JCVISYN3A_0409,0
-SW.2.7.3.1,Minimal growth disadvantage,JCVISYN3A_0503,0
-SW.2.7.3.1,Minimal growth disadvantage,JCVISYN3A_0730,0
-SW.2.7.3.1,Minimal growth disadvantage,JCVISYN3A_0777,0
-SW.2.7.3.1,Minimal growth disadvantage,JCVISYN3A_0726,0
-SW.2.7.3.1,Minimal growth disadvantage,JCVISYN3A_0264,0
-SW.2.7.3.1,Minimal growth disadvantage,JCVISYN3A_0517,0
-SW.2.7.3.1,Minimal growth disadvantage,JCVISYN3A_0640,0
-SW.2.7.3.2,Severe growth defect,JCVISYN3A_0029,0
-SW.2.7.3.2,Severe growth defect,JCVISYN3A_0033,0
-SW.2.7.3.2,Severe growth defect,JCVISYN3A_0145,0
-SW.2.7.3.2,Severe growth defect,JCVISYN3A_0248,0
-SW.2.7.3.2,Severe growth defect,JCVISYN3A_0325,0
-SW.2.7.3.2,Severe growth defect,JCVISYN3A_0398,0
-SW.2.7.3.2,Severe growth defect,JCVISYN3A_0399,0
-SW.2.7.3.2,Severe growth defect,JCVISYN3A_0448,0
-SW.2.7.3.2,Severe growth defect,JCVISYN3A_0493,0
-SW.2.7.3.2,Severe growth defect,JCVISYN3A_0530,0
-SW.2.7.3.2,Severe growth defect,JCVISYN3A_0693,0
-SW.2.7.3.2,Severe growth defect,JCVISYN3A_0696,0
-SW.2.7.3.2,Severe growth defect,JCVISYN3A_0830,0
-SW.2.7.1,Essential,JCVISYN3A_0076,0
-SW.2.7.1,Essential,JCVISYN3A_0287,0
-SW.2.7.3.2,Severe growth defect,JCVISYN3A_0792,0
-SW.2.7.3.2,Severe growth defect,JCVISYN3A_0789,0
-SW.2.7.3.2,Severe growth defect,JCVISYN3A_0794,0
-SW.2.7.3.2,Severe growth defect,JCVISYN3A_0113,0
-SW.2.7.3.2,Severe growth defect,JCVISYN3A_0545,0
-SW.2.7.1,Essential,JCVISYN3A_0612,0
-SW.2.7.3.2,Severe growth defect,JCVISYN3A_0314,0
-SW.2.7.3.2,Severe growth defect,JCVISYN3A_0345,0
-SW.2.7.3.2,Severe growth defect,JCVISYN3A_0391,0
-SW.2.7.3.2,Severe growth defect,JCVISYN3A_0403,0
-SW.2.7.3.2,Severe growth defect,JCVISYN3A_0360,0
-SW.2.7.3.2,Severe growth defect,JCVISYN3A_0390,0
-SW.2.7.3.2,Severe growth defect,JCVISYN3A_0302,0
-SW.2.7.1,Essential,JCVISYN3A_0126,0
-SW.2.7.1,Essential,JCVISYN3A_0288,0
-SW.2.7.3.2,Severe growth defect,JCVISYN3A_0475,0
-SW.2.7.3.2,Severe growth defect,JCVISYN3A_0818,0
-SW.2.7.3.2,Severe growth defect,JCVISYN3A_0518,0
-SW.2.7.1,Essential,JCVISYN3A_0064,0
-SW.2.7.1,Essential,JCVISYN3A_0012,0
-SW.2.7.3.2,Severe growth defect,JCVISYN3A_0380,0
-SW.2.7.3.2,Severe growth defect,JCVISYN3A_0773,0
-SW.2.7.1,Essential,JCVISYN3A_0300,0
-SW.2.7.1,Essential,JCVISYN3A_0117,0
-SW.2.7.3.2,Severe growth defect,JCVISYN3A_0141,0
-SW.2.7.3.2,Severe growth defect,JCVISYN3A_0832,0
-SW.2.7.3.2,Severe growth defect,JCVISYN3A_0779,0
-SW.2.7.3.2,Severe growth defect,JCVISYN3A_0694,0
-SW.2.7.3.2,Severe growth defect,JCVISYN3A_0233,0
-SW.2.7.3.2,Severe growth defect,JCVISYN3A_0221,0
-SW.2.7.3.2,Severe growth defect,JCVISYN3A_0129,0
-SW.2.7.3.2,Severe growth defect,JCVISYN3A_0289,0
-SW.2.7.3.2,Severe growth defect,JCVISYN3A_0291,0
-SW.2.7.3.2,Severe growth defect,JCVISYN3A_0283,0
-SW.2.7.3.2,Severe growth defect,JCVISYN3A_0257,0
-SW.2.7.3.2,Severe growth defect,JCVISYN3A_0011,0
-SW.2.7.3.2,Severe growth defect,JCVISYN3A_0009,0
-SW.2.7.3.2,Severe growth defect,JCVISYN3A_0359,0
-SW.2.7.3.2,Severe growth defect,JCVISYN3A_0365,0
-SW.2.7.3.2,Severe growth defect,JCVISYN3A_0327,0
-SW.2.7.3.2,Severe growth defect,JCVISYN3A_0328,0
-SW.2.7.3.2,Severe growth defect,JCVISYN3A_0095,0
-SW.2.7.1,Essential,JCVISYN3A_0624,0
-SW.2.7.3.2,Severe growth defect,JCVISYN3A_0140,0
-SW.2.7.1,Essential,JCVISYN3A_0308,0
-SW.2.7.3.2,Severe growth defect,JCVISYN3A_0271,0
-SW.2.7.3.2,Severe growth defect,JCVISYN3A_0079,0
-SW.2.7.3.2,Severe growth defect,JCVISYN3A_0402,0
-SW.2.7.3.2,Severe growth defect,JCVISYN3A_0431,0
-SW.2.7.3.2,Severe growth defect,JCVISYN3A_0215,0
-SW.2.7.2,Not essential,JCVISYN3A_0005,0
-SW.2.7.2,Not essential,JCVISYN3A_0077,0
-SW.2.7.2,Not essential,JCVISYN3A_0080,0
-SW.2.7.2,Not essential,JCVISYN3A_0286,0
-SW.2.7.2,Not essential,JCVISYN3A_0326,0
-SW.2.7.2,Not essential,JCVISYN3A_0375,0
-SW.2.7.2,Not essential,JCVISYN3A_0392,0
-SW.2.7.2,Not essential,JCVISYN3A_0416,0
-SW.2.7.2,Not essential,JCVISYN3A_0424,0
-SW.2.7.2,Not essential,JCVISYN3A_0444,0
-SW.2.7.2,Not essential,JCVISYN3A_0481,0
-SW.2.7.2,Not essential,JCVISYN3A_0495,0
-SW.2.7.2,Not essential,JCVISYN3A_0520,0
-SW.2.7.2,Not essential,JCVISYN3A_0527,0
-SW.2.7.2,Not essential,JCVISYN3A_0538,0
-SW.2.7.2,Not essential,JCVISYN3A_0546,0
-SW.2.7.2,Not essential,JCVISYN3A_0592,0
-SW.2.7.2,Not essential,JCVISYN3A_0593,0
-SW.2.7.2,Not essential,JCVISYN3A_0599,0
-SW.2.7.2,Not essential,JCVISYN3A_0602,0
-SW.2.7.2,Not essential,JCVISYN3A_0604,0
-SW.2.7.2,Not essential,JCVISYN3A_0605,0
-SW.2.7.2,Not essential,JCVISYN3A_0622,0
-SW.2.7.2,Not essential,JCVISYN3A_0623,0
-SW.2.7.2,Not essential,JCVISYN3A_0692,0
-SW.2.7.2,Not essential,JCVISYN3A_0697,0
-SW.2.7.2,Not essential,JCVISYN3A_0851,0
-SW.2.7.2,Not essential,JCVISYN3A_0852,0
-SW.2.7.2,Not essential,JCVISYN3A_0853,0
-SW.2.7.2,Not essential,JCVISYN3A_0907,0
-SW.2.7.2,Not essential,JCVISYN3A_0054,0
-SW.2.7.2,Not essential,JCVISYN3A_0879,0
-SW.2.7.2,Not essential,JCVISYN3A_0548,0
-SW.2.7.2,Not essential,JCVISYN3A_0515,0
-SW.2.7.2,Not essential,JCVISYN3A_0732,0
-SW.2.7.2,Not essential,JCVISYN3A_0330,0
-SW.2.7.2,Not essential,JCVISYN3A_0382,0
-SW.2.7.2,Not essential,JCVISYN3A_0063,0
-SW.2.7.2,Not essential,JCVISYN3A_0823,0
-SW.2.7.2,Not essential,JCVISYN3A_0522,0
-SW.2.7.2,Not essential,JCVISYN3A_0438,0
-SW.2.7.2,Not essential,JCVISYN3A_0133,0
-SW.2.7.2,Not essential,JCVISYN3A_0004,0
-SW.2.7.2,Not essential,JCVISYN3A_0435,0
-SW.2.7.2,Not essential,JCVISYN3A_0381,0
-SW.2.7.2,Not essential,JCVISYN3A_0610,0
-SW.2.7.2,Not essential,JCVISYN3A_0494,0
-SW.2.7.2,Not essential,JCVISYN3A_0305,0
-SW.2.7.2,Not essential,JCVISYN3A_0404,0
-SW.2.7.2,Not essential,JCVISYN3A_0046,0
-SW.2.7.2,Not essential,JCVISYN3A_0414,0
-SW.2.7.2,Not essential,JCVISYN3A_0549,0
-SW.2.7.2,Not essential,JCVISYN3A_0434,0
-SW.2.7.2,Not essential,JCVISYN3A_0361,0
-SW.2.7.2,Not essential,JCVISYN3A_0329,0
-SW.2.7.2,Not essential,JCVISYN3A_0833,0
-SW.2.7.2,Not essential,JCVISYN3A_0422,0
-SW.2.7.2,Not essential,JCVISYN3A_0521,0
-SW.2.7.2,Not essential,JCVISYN3A_0408,0
-SW.2.7.2,Not essential,JCVISYN3A_0290,0
-SW.2.7.2,Not essential,JCVISYN3A_0824,0
-SW.2.7.2,Not essential,JCVISYN3A_0825,0
-SW.2.7.2,Not essential,JCVISYN3A_0254,0
-SW.2.7.2,Not essential,JCVISYN3A_0106,0
-SW.2.7.2,Not essential,JCVISYN3A_0043,0
-SW.2.7.2,Not essential,JCVISYN3A_0430,0
-SW.2.7.2,Not essential,JCVISYN3A_0249,0
-SW.2.7.2,Not essential,JCVISYN3A_0873,0
-SW.1.2,Homeostasis,JCVISYN3A_0065,0
-SW.3.2.5,Translation,JCVISYN3A_0662,0
-SW.3.2.5,Translation,JCVISYN3A_0655,0
-SW.3.2.5,Translation,JCVISYN3A_0653,0
-SW.3.2.5,Translation,JCVISYN3A_0656,0
-SW.4.6,Lipid metabolism,JCVISYN3A_0218,0
-SW.4.6,Lipid metabolism,JCVISYN3A_0115,0
-SW.4.3.2,Utilization of specific carbon sources,JCVISYN3A_0493,0
-SW.4.1,Amino acid acquisition,JCVISYN3A_0169,0
-SW.4.1,Amino acid acquisition,JCVISYN3A_0165,0
-SW.4.1,Amino acid acquisition,JCVISYN3A_0166,0
-SW.4.1,Amino acid acquisition,JCVISYN3A_0167,0
-SW.4.1,Amino acid acquisition,JCVISYN3A_0168,0
-SW.4.6,Lipid metabolism,JCVISYN3A_0421,0
-SW.2.7.1,Essential,JCVISYN3A_0443,0
-SW.4.9,Detoxification,JCVISYN3A_0443,0
-SW.4.9,Detoxification,JCVISYN3A_0728,0
-SW.4.9,Detoxification,JCVISYN3A_0066,0
-SW.4.9,Detoxification,JCVISYN3A_0077,0
-SW.4.9,Detoxification,JCVISYN3A_0710,0
-SW.4.9,Detoxification,JCVISYN3A_0907,0
-SW.2.7.1,Essential,JCVISYN3A_0710,0
-SW.4.9,Detoxification,JCVISYN3A_0400,0
-SW.1.1,Cell envelope and cell division,JCVISYN3A_0353,0
-SW.1.1,Cell envelope and cell division,JCVISYN3A_0239,0
-SW.3.2.4,Proteolysis,JCVISYN3A_0516,0
-SW.4.4,Cofactor acquisition,JCVISYN3A_0877,0
-SW.1.3.2,ECF transporters,JCVISYN3A_0877,0
-SW.3.2.5.7,tRNA,JCVISYN3A_0723,0
-SW.3.2.5.7,tRNA,JCVISYN3A_0423,0
-SW.3.2.5.7,tRNA,JCVISYN3A_0618,0
-SW.3.2.5.7,tRNA,JCVISYN3A_0071,0
-SW.3.2.5.7,tRNA,JCVISYN3A_0374,0
-SW.3.2.5.7,tRNA,JCVISYN3A_0678,0
-SW.3.2.5.7,tRNA,JCVISYN3A_0721,0
-SW.3.2.5.7,tRNA,JCVISYN3A_0506,0
-SW.3.2.5.7,tRNA,JCVISYN3A_0280,0
+﻿id,category,locus
+SW.2.4,Proteins of unknown function,JCVISYN3A_0249
+SW.2.4,Proteins of unknown function,JCVISYN3A_0005
+SW.2.2,Membrane proteins,JCVISYN3A_0005
+SW.2.3,Poorly characterized enzymes,JCVISYN3A_0029
+SW.1.3.1.2,Exporters,JCVISYN3A_0030
+SW.2.2,Membrane proteins,JCVISYN3A_0030
+SW.2.2,Membrane proteins,JCVISYN3A_0033
+SW.2.4,Proteins of unknown function,JCVISYN3A_0033
+SW.1.3.1.2,Exporters,JCVISYN3A_0034
+SW.2.2,Membrane proteins,JCVISYN3A_0034
+SW.3.3,Regulation of gene expression,JCVISYN3A_0042
+SW.2.5,Pseudogenes,JCVISYN3A_0051
+SW.2.2,Membrane proteins,JCVISYN3A_0060
+SW.2.4,Proteins of unknown function,JCVISYN3A_0060
+SW.2.3,Poorly characterized enzymes,JCVISYN3A_0066
+SW.2.3,Poorly characterized enzymes,JCVISYN3A_0077
+SW.1.2.2,Coping with stress,JCVISYN3A_0080
+SW.2.2,Membrane proteins,JCVISYN3A_0094
+SW.2.4,Proteins of unknown function,JCVISYN3A_0094
+SW.2.4,Proteins of unknown function,JCVISYN3A_0108
+SW.2.2,Membrane proteins,JCVISYN3A_0116
+SW.2.4,Proteins of unknown function,JCVISYN3A_0116
+SW.2.3,Poorly characterized enzymes,JCVISYN3A_0127
+SW.2.4,Proteins of unknown function,JCVISYN3A_0138
+SW.2.2,Membrane proteins,JCVISYN3A_0143
+SW.2.4,Proteins of unknown function,JCVISYN3A_0143
+SW.2.4,Proteins of unknown function,JCVISYN3A_0145
+SW.2.2,Membrane proteins,JCVISYN3A_0146
+SW.2.4,Proteins of unknown function,JCVISYN3A_0146
+SW.4.1,Amino acid acquisition,JCVISYN3A_0154
+SW.2.2,Membrane proteins,JCVISYN3A_0164
+SW.2.4,Proteins of unknown function,JCVISYN3A_0164
+SW.1.3.4,Symporter,JCVISYN3A_0235
+SW.2.2,Membrane proteins,JCVISYN3A_0235
+SW.2.2,Membrane proteins,JCVISYN3A_0239
+SW.2.2,Membrane proteins,JCVISYN3A_0248
+SW.2.4,Proteins of unknown function,JCVISYN3A_0248
+SW.2.2,Membrane proteins,JCVISYN3A_0249
+SW.2.4,Proteins of unknown function,JCVISYN3A_0250
+SW.2.4,Proteins of unknown function,JCVISYN3A_0281
+SW.2.4,Proteins of unknown function,JCVISYN3A_0286
+SW.2.2,Membrane proteins,JCVISYN3A_0296
+SW.2.4,Proteins of unknown function,JCVISYN3A_0296
+SW.2.4,Proteins of unknown function,JCVISYN3A_0315
+SW.2.2,Membrane proteins,JCVISYN3A_0317
+SW.2.4,Proteins of unknown function,JCVISYN3A_0317
+SW.2.2,Membrane proteins,JCVISYN3A_0325
+SW.2.4,Proteins of unknown function,JCVISYN3A_0325
+SW.2.2,Membrane proteins,JCVISYN3A_0326
+SW.2.4,Proteins of unknown function,JCVISYN3A_0326
+SW.2.2,Membrane proteins,JCVISYN3A_0332
+SW.2.4,Proteins of unknown function,JCVISYN3A_0332
+SW.2.2,Membrane proteins,JCVISYN3A_0338
+SW.2.4,Proteins of unknown function,JCVISYN3A_0338
+SW.2.4,Proteins of unknown function,JCVISYN3A_0346
+SW.2.4,Proteins of unknown function,JCVISYN3A_0352
+SW.2.2,Membrane proteins,JCVISYN3A_0353
+SW.2.4,Proteins of unknown function,JCVISYN3A_0373
+SW.2.4,Proteins of unknown function,JCVISYN3A_0375
+SW.2.4,Proteins of unknown function,JCVISYN3A_0376
+SW.2.4,Proteins of unknown function,JCVISYN3A_0379
+SW.2.2,Membrane proteins,JCVISYN3A_0379
+SW.2.4,Proteins of unknown function,JCVISYN3A_0388
+SW.2.2,Membrane proteins,JCVISYN3A_0388
+SW.2.4,Proteins of unknown function,JCVISYN3A_0389
+SW.2.4,Proteins of unknown function,JCVISYN3A_0392
+SW.2.4,Proteins of unknown function,JCVISYN3A_0398
+SW.2.2,Membrane proteins,JCVISYN3A_0398
+SW.2.4,Proteins of unknown function,JCVISYN3A_0399
+SW.2.2,Membrane proteins,JCVISYN3A_0399
+SW.1.3.1.2,Exporters,JCVISYN3A_0401
+SW.2.2,Membrane proteins,JCVISYN3A_0401
+SW.2.4,Proteins of unknown function,JCVISYN3A_0409
+SW.2.4,Proteins of unknown function,JCVISYN3A_0411
+SW.2.2,Membrane proteins,JCVISYN3A_0411
+SW.2.2,Membrane proteins,JCVISYN3A_0412
+SW.3.2.3,Protein secretion,JCVISYN3A_0412
+SW.2.4,Proteins of unknown function,JCVISYN3A_0416
+SW.2.4,Proteins of unknown function,JCVISYN3A_0424
+SW.2.4,Proteins of unknown function,JCVISYN3A_0439
+SW.2.2,Membrane proteins,JCVISYN3A_0439
+SW.2.4,Proteins of unknown function,JCVISYN3A_0440
+SW.2.2,Membrane proteins,JCVISYN3A_0440
+SW.4.1,Amino acid acquisition,JCVISYN3A_0444
+SW.3.2.5.5,rRNA modifications and maturation,JCVISYN3A_0448
+SW.2.3,Poorly characterized enzymes,JCVISYN3A_0451
+SW.2.4,Proteins of unknown function,JCVISYN3A_0478
+SW.2.2,Membrane proteins,JCVISYN3A_0478
+SW.2.4,Proteins of unknown function,JCVISYN3A_0479
+SW.2.2,Membrane proteins,JCVISYN3A_0479
+SW.2.4,Proteins of unknown function,JCVISYN3A_0481
+SW.2.2,Membrane proteins,JCVISYN3A_0481
+SW.4.3.2,Utilization of specific carbon sources,JCVISYN3A_0495
+SW.2.4,Proteins of unknown function,JCVISYN3A_0503
+SW.2.4,Proteins of unknown function,JCVISYN3A_0505
+SW.2.2,Membrane proteins,JCVISYN3A_0505
+SW.2.4,Proteins of unknown function,JCVISYN3A_0511
+SW.2.2,Membrane proteins,JCVISYN3A_0516
+SW.2.4,Proteins of unknown function,JCVISYN3A_0520
+SW.2.4,Proteins of unknown function,JCVISYN3A_0527
+SW.2.4,Proteins of unknown function,JCVISYN3A_0530
+SW.2.4,Proteins of unknown function,JCVISYN3A_0538
+SW.2.2,Membrane proteins,JCVISYN3A_0538
+SW.2.5,Pseudogenes,JCVISYN3A_0546
+SW.2.3,Poorly characterized enzymes,JCVISYN3A_0546
+SW.2.4,Proteins of unknown function,JCVISYN3A_0592
+SW.2.2,Membrane proteins,JCVISYN3A_0592
+SW.2.4,Proteins of unknown function,JCVISYN3A_0593
+SW.2.4,Proteins of unknown function,JCVISYN3A_0599
+SW.2.4,Proteins of unknown function,JCVISYN3A_0601
+SW.2.2,Membrane proteins,JCVISYN3A_0601
+SW.2.5,Pseudogenes,JCVISYN3A_0602
+SW.2.4,Proteins of unknown function,JCVISYN3A_0602
+SW.2.4,Proteins of unknown function,JCVISYN3A_0604
+SW.2.4,Proteins of unknown function,JCVISYN3A_0605
+SW.2.2,Membrane proteins,JCVISYN3A_0605
+SW.3.2.5.1,Aminoacyl-tRNA synthase,JCVISYN3A_0615
+SW.1.2.1,Metal ion homeostasis,JCVISYN3A_0620
+SW.3.3,Regulation of gene expression,JCVISYN3A_0620
+SW.2.2,Membrane proteins,JCVISYN3A_0622
+SW.2.4,Proteins of unknown function,JCVISYN3A_0622
+SW.2.4,Proteins of unknown function,JCVISYN3A_0623
+SW.2.4,Proteins of unknown function,JCVISYN3A_0636
+SW.1.3.1.3,Unknown,JCVISYN3A_0639
+SW.2.2,Membrane proteins,JCVISYN3A_0639
+SW.2.2,Membrane proteins,JCVISYN3A_0691
+SW.2.4,Proteins of unknown function,JCVISYN3A_0691
+SW.3.2.5.5,rRNA modifications and maturation,JCVISYN3A_0692
+SW.2.2,Membrane proteins,JCVISYN3A_0693
+SW.2.4,Proteins of unknown function,JCVISYN3A_0693
+SW.2.2,Membrane proteins,JCVISYN3A_0696
+SW.2.4,Proteins of unknown function,JCVISYN3A_0696
+SW.2.3,Poorly characterized enzymes,JCVISYN3A_0697
+SW.2.3,Poorly characterized enzymes,JCVISYN3A_0710
+SW.2.3,Poorly characterized enzymes,JCVISYN3A_0728
+SW.2.4,Proteins of unknown function,JCVISYN3A_0730
+SW.2.2,Membrane proteins,JCVISYN3A_0777
+SW.2.4,Proteins of unknown function,JCVISYN3A_0777
+SW.2.2,Membrane proteins,JCVISYN3A_0778
+SW.2.4,Proteins of unknown function,JCVISYN3A_0778
+SW.2.2,Membrane proteins,JCVISYN3A_0797
+SW.2.4,Proteins of unknown function,JCVISYN3A_0797
+SW.2.4,Proteins of unknown function,JCVISYN3A_0805
+SW.2.2,Membrane proteins,JCVISYN3A_0827
+SW.2.4,Proteins of unknown function,JCVISYN3A_0827
+SW.2.2,Membrane proteins,JCVISYN3A_0830
+SW.2.4,Proteins of unknown function,JCVISYN3A_0830
+SW.2.4,Proteins of unknown function,JCVISYN3A_0835
+SW.2.4,Proteins of unknown function,JCVISYN3A_0851
+SW.2.2,Membrane proteins,JCVISYN3A_0851
+SW.2.4,Proteins of unknown function,JCVISYN3A_0852
+SW.2.2,Membrane proteins,JCVISYN3A_0852
+SW.2.4,Proteins of unknown function,JCVISYN3A_0853
+SW.2.4,Proteins of unknown function,JCVISYN3A_0870
+SW.2.2,Membrane proteins,JCVISYN3A_0870
+SW.2.4,Proteins of unknown function,JCVISYN3A_0873
+SW.1.3.4,Symporter,JCVISYN3A_0876
+SW.2.2,Membrane proteins,JCVISYN3A_0876
+SW.4.1,Amino acid acquisition,JCVISYN3A_0876
+SW.2.2,Membrane proteins,JCVISYN3A_0877
+SW.1.3.4,Symporter,JCVISYN3A_0878
+SW.2.2,Membrane proteins,JCVISYN3A_0878
+SW.4.1,Amino acid acquisition,JCVISYN3A_0878
+SW.1.3.4,Symporter,JCVISYN3A_0881
+SW.2.2,Membrane proteins,JCVISYN3A_0881
+SW.4.3.2,Utilization of specific carbon sources,JCVISYN3A_0881
+SW.2.4,Proteins of unknown function,JCVISYN3A_0906
+SW.2.3,Poorly characterized enzymes,JCVISYN3A_0907
+SW.2.1,Foreign gene,JCVISYN3A_0918
+SW.2.2,Membrane proteins,JCVISYN3A_0346
+SW.4.3.1,Carbon core metabolism,JCVISYN3A_0230
+SW.4.6,Lipid metabolism,JCVISYN3A_0621
+SW.4.6,Lipid metabolism,JCVISYN3A_0513
+SW.4.7,Nucleotide metabolism,JCVISYN3A_0651
+SW.1.2.2,Coping with stress,JCVISYN3A_0054
+SW.3.2.5.1,Aminoacyl-tRNA synthase,JCVISYN3A_0163
+SW.4.7,Nucleotide metabolism,JCVISYN3A_0413
+SW.2.2,Membrane proteins,JCVISYN3A_0795
+SW.3.2.5.1,Aminoacyl-tRNA synthase,JCVISYN3A_0535
+SW.3.2.5.1,Aminoacyl-tRNA synthase,JCVISYN3A_0076
+SW.3.2.5.1,Aminoacyl-tRNA synthase,JCVISYN3A_0287
+SW.2.2,Membrane proteins,JCVISYN3A_0792
+SW.4.2,ATP synthesis,JCVISYN3A_0792
+SW.2.2,Membrane proteins,JCVISYN3A_0796
+SW.4.2,ATP synthesis,JCVISYN3A_0796
+SW.4.2,ATP synthesis,JCVISYN3A_0789
+SW.2.2,Membrane proteins,JCVISYN3A_0790
+SW.4.2,ATP synthesis,JCVISYN3A_0790
+SW.4.2,ATP synthesis,JCVISYN3A_0795
+SW.2.2,Membrane proteins,JCVISYN3A_0794
+SW.4.2,ATP synthesis,JCVISYN3A_0794
+SW.2.2,Membrane proteins,JCVISYN3A_0791
+SW.4.2,ATP synthesis,JCVISYN3A_0791
+SW.2.2,Membrane proteins,JCVISYN3A_0793
+SW.4.2,ATP synthesis,JCVISYN3A_0793
+SW.2.3,Poorly characterized enzymes,JCVISYN3A_0113
+SW.2.3,Poorly characterized enzymes,JCVISYN3A_0114
+SW.1.2.2,Coping with stress,JCVISYN3A_0887
+SW.2.2,Membrane proteins,JCVISYN3A_0304
+SW.4.6,Lipid metabolism,JCVISYN3A_0304
+SW.3.2.4,Proteolysis,JCVISYN3A_0545
+SW.2.2,Membrane proteins,JCVISYN3A_0147
+SW.4.6,Lipid metabolism,JCVISYN3A_0147
+SW.4.7,Nucleotide metabolism,JCVISYN3A_0347
+SW.1.2.1,Metal ion homeostasis,JCVISYN3A_0879
+SW.2.2,Membrane proteins,JCVISYN3A_0879
+SW.3.2.5.4,Ribosome assembly,JCVISYN3A_0263
+SW.1.3.3,Phosphotransferase system,JCVISYN3A_0234
+SW.4.3.1,Carbon core metabolism,JCVISYN3A_0234
+SW.3.2.5.4,Ribosome assembly,JCVISYN3A_0410
+SW.3.2.5.8,tRNA modification and maturation,JCVISYN3A_0548
+SW.1.2.1,Metal ion homeostasis,JCVISYN3A_0433
+SW.3.2.5.1,Aminoacyl-tRNA synthase,JCVISYN3A_0837
+SW.4.7,Nucleotide metabolism,JCVISYN3A_0515
+SW.3.1.4,Other,JCVISYN3A_0201
+SW.4.3.2,Utilization of specific carbon sources,JCVISYN3A_0733
+SW.4.3.2,Utilization of specific carbon sources,JCVISYN3A_0732
+SW.4.7,Nucleotide metabolism,JCVISYN3A_0330
+SW.3.1.1,DNA replication,JCVISYN3A_0001
+SW.3.1.1,DNA replication,JCVISYN3A_0609
+SW.3.1.1,DNA replication,JCVISYN3A_0834
+SW.3.1.1,DNA replication,JCVISYN3A_0612
+SW.3.1.1,DNA replication,JCVISYN3A_0406
+SW.3.1.1,DNA replication,JCVISYN3A_0608
+SW.3.2.1,"Chaperones, protein folding and maturation",JCVISYN3A_0541
+SW.3.2.1,"Chaperones, protein folding and maturation",JCVISYN3A_0542
+SW.3.1.1,DNA replication,JCVISYN3A_0002
+SW.3.1.1,DNA replication,JCVISYN3A_0047
+SW.4.7,Nucleotide metabolism,JCVISYN3A_0382
+SW.3.2.5.8,tRNA modification and maturation,JCVISYN3A_0063
+SW.4.7,Nucleotide metabolism,JCVISYN3A_0447
+SW.1.3.2,ECF transporters,JCVISYN3A_0643
+SW.2.2,Membrane proteins,JCVISYN3A_0643
+SW.1.3.2,ECF transporters,JCVISYN3A_0642
+SW.2.2,Membrane proteins,JCVISYN3A_0642
+SW.1.3.2,ECF transporters,JCVISYN3A_0314
+SW.2.2,Membrane proteins,JCVISYN3A_0314
+SW.1.3.2,ECF transporters,JCVISYN3A_0345
+SW.2.2,Membrane proteins,JCVISYN3A_0345
+SW.1.3.2,ECF transporters,JCVISYN3A_0822
+SW.2.2,Membrane proteins,JCVISYN3A_0822
+SW.4.4,Cofactor acquisition,JCVISYN3A_0822
+SW.1.3.2,ECF transporters,JCVISYN3A_0836
+SW.2.2,Membrane proteins,JCVISYN3A_0836
+SW.1.3.2,ECF transporters,JCVISYN3A_0641
+SW.2.2,Membrane proteins,JCVISYN3A_0641
+SW.3.2.5.6,Translation factors,JCVISYN3A_0391
+SW.3.2.5.4,Ribosome assembly,JCVISYN3A_0348
+SW.4.3.1,Carbon core metabolism,JCVISYN3A_0213
+SW.3.2.5.4,Ribosome assembly,JCVISYN3A_0403
+SW.3.1.3,DNA repair,JCVISYN3A_0097
+SW.3.1.1,DNA replication,JCVISYN3A_0097
+SW.4.6,Lipid metabolism,JCVISYN3A_0420
+SW.4.6,Lipid metabolism,JCVISYN3A_0616
+SW.4.6,Lipid metabolism,JCVISYN3A_0617
+SW.4.3.1,Carbon core metabolism,JCVISYN3A_0131
+SW.3.2.3,Protein secretion,JCVISYN3A_0360
+SW.2.6,ncRNA,JCVISYN3A_0049
+SW.3.2.5.8,tRNA modification and maturation,JCVISYN3A_0390
+SW.4.4,Cofactor acquisition,JCVISYN3A_0823
+SW.3.2.5.8,tRNA modification and maturation,JCVISYN3A_0684
+SW.1.2.2,Coping with stress,JCVISYN3A_0302
+SW.3.2.5.6,Translation factors,JCVISYN3A_0536
+SW.1.1,Cell envelope and cell division,JCVISYN3A_0523
+SW.2.2,Membrane proteins,JCVISYN3A_0523
+SW.1.1,Cell envelope and cell division,JCVISYN3A_0039
+SW.2.2,Membrane proteins,JCVISYN3A_0039
+SW.3.2.4,Proteolysis,JCVISYN3A_0039
+SW.2.2,Membrane proteins,JCVISYN3A_0429
+SW.3.2.3,Protein secretion,JCVISYN3A_0429
+SW.1.1,Cell envelope and cell division,JCVISYN3A_0522
+SW.3.2.5.6,Translation factors,JCVISYN3A_0150
+SW.4.3.2,Utilization of specific carbon sources,JCVISYN3A_0813
+SW.4.3.1,Carbon core metabolism,JCVISYN3A_0607
+SW.3.2.5.1,Aminoacyl-tRNA synthase,JCVISYN3A_0688
+SW.3.2.5.1,Aminoacyl-tRNA synthase,JCVISYN3A_0687
+SW.3.2.5.1,Aminoacyl-tRNA synthase,JCVISYN3A_0689
+SW.4.3.2,Utilization of specific carbon sources,JCVISYN3A_0814
+SW.4.3.2,Utilization of specific carbon sources,JCVISYN3A_0218
+SW.1.3.4,Symporter,JCVISYN3A_0886
+SW.2.2,Membrane proteins,JCVISYN3A_0886
+SW.4.1,Amino acid acquisition,JCVISYN3A_0886
+SW.3.2.5.1,Aminoacyl-tRNA synthase,JCVISYN3A_0126
+SW.4.1,Amino acid acquisition,JCVISYN3A_0799
+SW.3.2.5.1,Aminoacyl-tRNA synthase,JCVISYN3A_0405
+SW.4.7,Nucleotide metabolism,JCVISYN3A_0203
+SW.3.4.2,Transcription,JCVISYN3A_0253
+SW.3.2.1,"Chaperones, protein folding and maturation",JCVISYN3A_0543
+SW.3.1.2,DNA condensation/segregation,JCVISYN3A_0007
+SW.3.1.2,DNA condensation/segregation,JCVISYN3A_0006
+SW.2.4,Proteins of unknown function,JCVISYN3A_0438
+SW.3.2.5.1,Aminoacyl-tRNA synthase,JCVISYN3A_0288
+SW.3.1.1,DNA replication,JCVISYN3A_0044
+SW.3.2.2,Protein modification,JCVISYN3A_0821
+SW.4.7,Nucleotide metabolism,JCVISYN3A_0216
+SW.3.3,Regulation of gene expression,JCVISYN3A_0544
+SW.3.1.2,DNA condensation/segregation,JCVISYN3A_0350
+SW.2.4,Proteins of unknown function,JCVISYN3A_0132
+SW.2.4,Proteins of unknown function,JCVISYN3A_0133
+SW.3.2.5.1,Aminoacyl-tRNA synthase,JCVISYN3A_0519
+SW.3.2.5.6,Translation factors,JCVISYN3A_0649
+SW.3.2.5.6,Translation factors,JCVISYN3A_0297
+SW.3.2.5.6,Translation factors,JCVISYN3A_0200
+SW.4.5,Iron metabolism,JCVISYN3A_0441
+SW.4.5,Iron metabolism,JCVISYN3A_0442
+SW.3.2.5.5,rRNA modifications and maturation,JCVISYN3A_0004
+SW.1.2.1,Metal ion homeostasis,JCVISYN3A_0686
+SW.2.2,Membrane proteins,JCVISYN3A_0686
+SW.1.2.1,Metal ion homeostasis,JCVISYN3A_0685
+SW.2.2,Membrane proteins,JCVISYN3A_0685
+SW.4.3.1,Carbon core metabolism,JCVISYN3A_0475
+SW.3.2.5.6,Translation factors,JCVISYN3A_0285
+SW.3.2.5.1,Aminoacyl-tRNA synthase,JCVISYN3A_0634
+SW.3.2.1,"Chaperones, protein folding and maturation",JCVISYN3A_0818
+SW.3.2.1,"Chaperones, protein folding and maturation",JCVISYN3A_0820
+SW.3.1.1,DNA replication,JCVISYN3A_0690
+SW.3.2.4,Proteolysis,JCVISYN3A_0394
+SW.2.2,Membrane proteins,JCVISYN3A_0518
+SW.3.2.1,"Chaperones, protein folding and maturation",JCVISYN3A_0518
+SW.3.2.5.1,Aminoacyl-tRNA synthase,JCVISYN3A_0064
+SW.4.3.2,Utilization of specific carbon sources,JCVISYN3A_0435
+SW.3.2.5.6,Translation factors,JCVISYN3A_0650
+SW.3.2.1,"Chaperones, protein folding and maturation",JCVISYN3A_0650
+SW.4.4,Cofactor acquisition,JCVISYN3A_0432
+SW.3.2.5.1,Aminoacyl-tRNA synthase,JCVISYN3A_0012
+SW.1.2.1,Metal ion homeostasis,JCVISYN3A_0787
+SW.2.2,Membrane proteins,JCVISYN3A_0787
+SW.3.2.5.8,tRNA modification and maturation,JCVISYN3A_0387
+SW.3.2.5.8,tRNA modification and maturation,JCVISYN3A_0081
+SW.3.2.5.8,tRNA modification and maturation,JCVISYN3A_0885
+SW.3.3,Regulation of gene expression,JCVISYN3A_0525
+SW.4.4,Cofactor acquisition,JCVISYN3A_0381
+SW.3.1.3,DNA repair,JCVISYN3A_0610
+SW.4.4,Cofactor acquisition,JCVISYN3A_0380
+SW.4.4,Cofactor acquisition,JCVISYN3A_0378
+SW.4.4,Cofactor acquisition,JCVISYN3A_0259
+SW.4.3.2,Utilization of specific carbon sources,JCVISYN3A_0726
+SW.4.3.2,Utilization of specific carbon sources,JCVISYN3A_0494
+SW.3.1.3,DNA repair,JCVISYN3A_0109
+SW.4.7,Nucleotide metabolism,JCVISYN3A_0771
+SW.4.7,Nucleotide metabolism,JCVISYN3A_0773
+SW.4.7,Nucleotide metabolism,JCVISYN3A_0772
+SW.3.4.1.2,Exoribonucleases,JCVISYN3A_0139
+SW.3.4.2,Transcription,JCVISYN3A_0300
+SW.3.4.2,Transcription,JCVISYN3A_0107
+SW.3.4.2,Transcription,JCVISYN3A_0840
+SW.3.2.5.4,Ribosome assembly,JCVISYN3A_0377
+SW.1.3.1.1,Importers,JCVISYN3A_0169
+SW.2.2,Membrane proteins,JCVISYN3A_0169
+SW.1.3.1.1,Importers,JCVISYN3A_0165
+SW.2.2,Membrane proteins,JCVISYN3A_0165
+SW.1.3.1.1,Importers,JCVISYN3A_0166
+SW.2.2,Membrane proteins,JCVISYN3A_0166
+SW.1.3.1.1,Importers,JCVISYN3A_0167
+SW.2.2,Membrane proteins,JCVISYN3A_0167
+SW.1.3.1.1,Importers,JCVISYN3A_0168
+SW.2.2,Membrane proteins,JCVISYN3A_0168
+SW.4.1,Amino acid acquisition,JCVISYN3A_0305
+SW.3.1.2,DNA condensation/segregation,JCVISYN3A_0453
+SW.3.1.2,DNA condensation/segregation,JCVISYN3A_0452
+SW.3.1.1,DNA replication,JCVISYN3A_0695
+SW.4.3.1,Carbon core metabolism,JCVISYN3A_0227
+SW.4.3.1,Carbon core metabolism,JCVISYN3A_0228
+SW.4.3.1,Carbon core metabolism,JCVISYN3A_0220
+SW.4.3.1,Carbon core metabolism,JCVISYN3A_0445
+SW.4.3.1,Carbon core metabolism,JCVISYN3A_0606
+SW.4.3.1,Carbon core metabolism,JCVISYN3A_0729
+SW.2.2,Membrane proteins,JCVISYN3A_0214
+SW.4.6,Lipid metabolism,JCVISYN3A_0214
+SW.2.2,Membrane proteins,JCVISYN3A_0875
+SW.4.6,Lipid metabolism,JCVISYN3A_0875
+SW.3.2.5.1,Aminoacyl-tRNA synthase,JCVISYN3A_0529
+SW.3.2.5.1,Aminoacyl-tRNA synthase,JCVISYN3A_0528
+SW.4.8,Phosphate metabolism,JCVISYN3A_0428
+SW.4.6,Lipid metabolism,JCVISYN3A_0512
+SW.4.6,Lipid metabolism,JCVISYN3A_0419
+SW.2.2,Membrane proteins,JCVISYN3A_0117
+SW.4.6,Lipid metabolism,JCVISYN3A_0117
+SW.4.4,Cofactor acquisition,JCVISYN3A_0614
+SW.3.1.1,DNA replication,JCVISYN3A_0611
+SW.3.1.1,DNA replication,JCVISYN3A_0303
+SW.1.3.1.1,Importers,JCVISYN3A_0197
+SW.2.2,Membrane proteins,JCVISYN3A_0197
+SW.1.3.1.1,Importers,JCVISYN3A_0196
+SW.2.2,Membrane proteins,JCVISYN3A_0196
+SW.1.3.1.1,Importers,JCVISYN3A_0195
+SW.2.2,Membrane proteins,JCVISYN3A_0195
+SW.4.8,Phosphate metabolism,JCVISYN3A_0344
+SW.3.2.5.6,Translation factors,JCVISYN3A_0141
+SW.2.2,Membrane proteins,JCVISYN3A_0264
+SW.3.2.2,Protein modification,JCVISYN3A_0264
+SW.3.1.4,Other,JCVISYN3A_0142
+SW.3.2.2,Protein modification,JCVISYN3A_0142
+SW.3.2.5.1,Aminoacyl-tRNA synthase,JCVISYN3A_0282
+SW.3.2.5.4,Ribosome assembly,JCVISYN3A_0500
+SW.3.2.1,"Chaperones, protein folding and maturation",JCVISYN3A_0500
+SW.4.7,Nucleotide metabolism,JCVISYN3A_0831
+SW.1.3.1.1,Importers,JCVISYN3A_0426
+SW.2.2,Membrane proteins,JCVISYN3A_0426
+SW.4.8,Phosphate metabolism,JCVISYN3A_0426
+SW.1.3.1.1,Importers,JCVISYN3A_0427
+SW.2.2,Membrane proteins,JCVISYN3A_0427
+SW.4.8,Phosphate metabolism,JCVISYN3A_0427
+SW.1.3.1.1,Importers,JCVISYN3A_0425
+SW.2.2,Membrane proteins,JCVISYN3A_0425
+SW.4.8,Phosphate metabolism,JCVISYN3A_0425
+SW.4.3.1,Carbon core metabolism,JCVISYN3A_0229
+SW.3.2.5.6,Translation factors,JCVISYN3A_0832
+SW.1.3.3,Phosphotransferase system,JCVISYN3A_0779
+SW.2.2,Membrane proteins,JCVISYN3A_0779
+SW.4.3.1,Carbon core metabolism,JCVISYN3A_0779
+SW.1.3.3,Phosphotransferase system,JCVISYN3A_0694
+SW.4.3.1,Carbon core metabolism,JCVISYN3A_0694
+SW.1.3.3,Phosphotransferase system,JCVISYN3A_0233
+SW.4.3.1,Carbon core metabolism,JCVISYN3A_0233
+SW.4.7,Nucleotide metabolism,JCVISYN3A_0747
+SW.4.3.1,Carbon core metabolism,JCVISYN3A_0221
+SW.4.7,Nucleotide metabolism,JCVISYN3A_0129
+SW.4.7,Nucleotide metabolism,JCVISYN3A_0537
+SW.3.2.5.6,Translation factors,JCVISYN3A_0289
+SW.3.2.5.4,Ribosome assembly,JCVISYN3A_0366
+SW.3.1.3,DNA repair,JCVISYN3A_0404
+SW.3.1.3,DNA repair,JCVISYN3A_0046
+SW.1.2.2,Coping with stress,JCVISYN3A_0414
+SW.4.7,Nucleotide metabolism,JCVISYN3A_0549
+SW.4.4,Cofactor acquisition,JCVISYN3A_0291
+SW.3.2.5.5,rRNA modifications and maturation,JCVISYN3A_0363
+SW.3.1.4,Other,JCVISYN3A_0363
+SW.3.2.5.4,Ribosome assembly,JCVISYN3A_0301
+SW.3.2.5.5,rRNA modifications and maturation,JCVISYN3A_0838
+SW.3.2.5.8,tRNA modification and maturation,JCVISYN3A_0434
+SW.3.2.5.5,rRNA modifications and maturation,JCVISYN3A_0361
+SW.3.2.5.5,rRNA modifications and maturation,JCVISYN3A_0329
+SW.3.2.5.5,rRNA modifications and maturation,JCVISYN3A_0517
+SW.3.4.1.1,Endoribonucleases,JCVISYN3A_0418
+SW.3.2.5.5,rRNA modifications and maturation,JCVISYN3A_0418
+SW.3.1.1,DNA replication,JCVISYN3A_0283
+SW.3.4.1.1,Endoribonucleases,JCVISYN3A_0283
+SW.3.4.1.2,Exoribonucleases,JCVISYN3A_0600
+SW.3.4.1.2,Exoribonucleases,JCVISYN3A_0257
+SW.3.2.5.5,rRNA modifications and maturation,JCVISYN3A_0003
+SW.3.4.1.1,Endoribonucleases,JCVISYN3A_0003
+SW.3.4.1.1,Endoribonucleases,JCVISYN3A_0909
+SW.3.2.5.8,tRNA modification and maturation,JCVISYN3A_0909
+SW.2.6,ncRNA,JCVISYN3A_0356
+SW.3.4.1.1,Endoribonucleases,JCVISYN3A_0356
+SW.3.2.5.8,tRNA modification and maturation,JCVISYN3A_0356
+SW.3.4.1.2,Exoribonucleases,JCVISYN3A_0775
+SW.4.7,Nucleotide metabolism,JCVISYN3A_0775
+SW.1.3.1.1,Importers,JCVISYN3A_0010
+SW.2.2,Membrane proteins,JCVISYN3A_0010
+SW.4.7,Nucleotide metabolism,JCVISYN3A_0010
+SW.1.3.1.1,Importers,JCVISYN3A_0011
+SW.2.2,Membrane proteins,JCVISYN3A_0011
+SW.4.7,Nucleotide metabolism,JCVISYN3A_0011
+SW.1.3.1.1,Importers,JCVISYN3A_0009
+SW.2.2,Membrane proteins,JCVISYN3A_0009
+SW.4.7,Nucleotide metabolism,JCVISYN3A_0009
+SW.1.3.1.1,Importers,JCVISYN3A_0008
+SW.2.2,Membrane proteins,JCVISYN3A_0008
+SW.4.7,Nucleotide metabolism,JCVISYN3A_0008
+SW.2.2,Membrane proteins,JCVISYN3A_0359
+SW.3.4.1.1,Endoribonucleases,JCVISYN3A_0359
+SW.4.3.1,Carbon core metabolism,JCVISYN3A_0262
+SW.4.3.1,Carbon core metabolism,JCVISYN3A_0800
+SW.3.2.5.2,Ribosomal proteins,JCVISYN3A_0809
+SW.3.2.5.2,Ribosomal proteins,JCVISYN3A_0668
+SW.3.2.5.2,Ribosomal proteins,JCVISYN3A_0671
+SW.3.2.5.2,Ribosomal proteins,JCVISYN3A_0670
+SW.3.2.5.2,Ribosomal proteins,JCVISYN3A_0659
+SW.3.2.5.2,Ribosomal proteins,JCVISYN3A_0833
+SW.3.2.5.2,Ribosomal proteins,JCVISYN3A_0807
+SW.3.2.5.2,Ribosomal proteins,JCVISYN3A_0810
+SW.3.2.5.2,Ribosomal proteins,JCVISYN3A_0806
+SW.3.2.5.2,Ribosomal proteins,JCVISYN3A_0638
+SW.3.2.5.2,Ribosomal proteins,JCVISYN3A_0661
+SW.3.2.5.2,Ribosomal proteins,JCVISYN3A_0664
+SW.3.2.5.2,Ribosomal proteins,JCVISYN3A_0644
+SW.3.2.5.2,Ribosomal proteins,JCVISYN3A_0365
+SW.3.2.5.2,Ribosomal proteins,JCVISYN3A_0198
+SW.3.2.5.2,Ribosomal proteins,JCVISYN3A_0501
+SW.3.2.5.2,Ribosomal proteins,JCVISYN3A_0666
+SW.3.2.5.2,Ribosomal proteins,JCVISYN3A_0669
+SW.3.2.5.2,Ribosomal proteins,JCVISYN3A_0660
+SW.3.2.5.2,Ribosomal proteins,JCVISYN3A_0499
+SW.3.2.5.2,Ribosomal proteins,JCVISYN3A_0422
+SW.3.2.5.2,Ribosomal proteins,JCVISYN3A_0663
+SW.3.2.5.2,Ribosomal proteins,JCVISYN3A_0137
+SW.3.2.5.2,Ribosomal proteins,JCVISYN3A_0526
+SW.3.2.5.2,Ribosomal proteins,JCVISYN3A_0910
+SW.3.2.5.2,Ribosomal proteins,JCVISYN3A_0199
+SW.3.2.5.2,Ribosomal proteins,JCVISYN3A_0648
+SW.3.4.2,Transcription,JCVISYN3A_0645
+SW.3.4.2,Transcription,JCVISYN3A_0804
+SW.3.4.2,Transcription,JCVISYN3A_0803
+SW.3.4.2,Transcription,JCVISYN3A_0407
+SW.3.4.2,Transcription,JCVISYN3A_0128
+SW.3.2.5.2,Ribosomal proteins,JCVISYN3A_0540
+SW.3.2.5.2,Ribosomal proteins,JCVISYN3A_0665
+SW.3.2.5.2,Ribosomal proteins,JCVISYN3A_0238
+SW.3.2.5.2,Ribosomal proteins,JCVISYN3A_0654
+SW.3.2.5.2,Ribosomal proteins,JCVISYN3A_0027
+SW.3.2.5.2,Ribosomal proteins,JCVISYN3A_0149
+SW.3.2.5.2,Ribosomal proteins,JCVISYN3A_0657
+SW.3.2.5.2,Ribosomal proteins,JCVISYN3A_0637
+SW.3.2.5.2,Ribosomal proteins,JCVISYN3A_0672
+SW.3.2.5.2,Ribosomal proteins,JCVISYN3A_0646
+SW.3.2.5.2,Ribosomal proteins,JCVISYN3A_0148
+SW.3.2.5.2,Ribosomal proteins,JCVISYN3A_0647
+SW.3.2.5.2,Ribosomal proteins,JCVISYN3A_0658
+SW.3.2.5.2,Ribosomal proteins,JCVISYN3A_0294
+SW.3.2.5.2,Ribosomal proteins,JCVISYN3A_0362
+SW.3.2.5.2,Ribosomal proteins,JCVISYN3A_0025
+SW.3.2.5.2,Ribosomal proteins,JCVISYN3A_0667
+SW.3.2.5.2,Ribosomal proteins,JCVISYN3A_0082
+SW.3.2.5.2,Ribosomal proteins,JCVISYN3A_0482
+SW.3.2.5.3,Ribosomal RNA,JCVISYN3A_0067
+SW.3.2.5.3,Ribosomal RNA,JCVISYN3A_0532
+SW.3.2.5.3,Ribosomal RNA,JCVISYN3A_0068
+SW.3.2.5.3,Ribosomal RNA,JCVISYN3A_0533
+SW.3.2.5.3,Ribosomal RNA,JCVISYN3A_0069
+SW.3.2.5.3,Ribosomal RNA,JCVISYN3A_0534
+SW.3.2.5.5,rRNA modifications and maturation,JCVISYN3A_0202
+SW.3.2.5.5,rRNA modifications and maturation,JCVISYN3A_0874
+SW.3.2.5.5,rRNA modifications and maturation,JCVISYN3A_0524
+SW.3.2.5.5,rRNA modifications and maturation,JCVISYN3A_0504
+SW.3.1.2,DNA condensation/segregation,JCVISYN3A_0327
+SW.3.1.2,DNA condensation/segregation,JCVISYN3A_0328
+SW.2.2,Membrane proteins,JCVISYN3A_0095
+SW.3.2.3,Protein secretion,JCVISYN3A_0095
+SW.2.2,Membrane proteins,JCVISYN3A_0839
+SW.3.2.3,Protein secretion,JCVISYN3A_0839
+SW.2.2,Membrane proteins,JCVISYN3A_0774
+SW.3.2.3,Protein secretion,JCVISYN3A_0774
+SW.2.2,Membrane proteins,JCVISYN3A_0652
+SW.3.2.3,Protein secretion,JCVISYN3A_0652
+SW.1.1,Cell envelope and cell division,JCVISYN3A_0521
+SW.3.2.5.1,Aminoacyl-tRNA synthase,JCVISYN3A_0061
+SW.3.1.2,DNA condensation/segregation,JCVISYN3A_0415
+SW.3.1.4,Other,JCVISYN3A_0776
+SW.3.1.1,DNA replication,JCVISYN3A_0026
+SW.3.1.3,DNA repair,JCVISYN3A_0026
+SW.2.6,ncRNA,JCVISYN3A_0158
+SW.3.1.4,Other,JCVISYN3A_0158
+SW.4.7,Nucleotide metabolism,JCVISYN3A_0140
+SW.2.1,Foreign gene,JCVISYN3A_0913
+SW.1.3.1.1,Importers,JCVISYN3A_0706
+SW.2.2,Membrane proteins,JCVISYN3A_0706
+SW.1.3.1.1,Importers,JCVISYN3A_0708
+SW.2.2,Membrane proteins,JCVISYN3A_0708
+SW.3.2.5.8,tRNA modification and maturation,JCVISYN3A_0240
+SW.1.3.1.1,Importers,JCVISYN3A_0707
+SW.2.2,Membrane proteins,JCVISYN3A_0707
+SW.3.2.5.1,Aminoacyl-tRNA synthase,JCVISYN3A_0222
+SW.3.2.5.8,tRNA modification and maturation,JCVISYN3A_0040
+SW.4.3.1,Carbon core metabolism,JCVISYN3A_0316
+SW.4.7,Nucleotide metabolism,JCVISYN3A_0045
+SW.3.1.2,DNA condensation/segregation,JCVISYN3A_0859
+SW.4.3.1,Carbon core metabolism,JCVISYN3A_0727
+SW.3.2.5.8,tRNA modification and maturation,JCVISYN3A_0364
+SW.3.2.5.8,tRNA modification and maturation,JCVISYN3A_0408
+SW.3.2.5.7,tRNA,JCVISYN3A_0719
+SW.3.2.5.7,tRNA,JCVISYN3A_0717
+SW.3.2.5.7,tRNA,JCVISYN3A_0681
+SW.3.2.5.7,tRNA,JCVISYN3A_0724
+SW.3.2.5.7,tRNA,JCVISYN3A_0828
+SW.3.2.5.7,tRNA,JCVISYN3A_0508
+SW.3.2.5.7,tRNA,JCVISYN3A_0680
+SW.3.2.5.7,tRNA,JCVISYN3A_0295
+SW.3.2.5.7,tRNA,JCVISYN3A_0624
+SW.3.2.5.7,tRNA,JCVISYN3A_0635
+SW.3.2.5.7,tRNA,JCVISYN3A_0070
+SW.3.2.5.7,tRNA,JCVISYN3A_0507
+SW.3.2.5.7,tRNA,JCVISYN3A_0720
+SW.3.2.5.7,tRNA,JCVISYN3A_0725
+SW.3.2.5.7,tRNA,JCVISYN3A_0718
+SW.3.2.5.7,tRNA,JCVISYN3A_0722
+SW.3.2.5.7,tRNA,JCVISYN3A_0510
+SW.3.2.5.7,tRNA,JCVISYN3A_0619
+SW.3.2.5.7,tRNA,JCVISYN3A_0509
+SW.3.2.5.7,tRNA,JCVISYN3A_0679
+SW.3.2.5.1,Aminoacyl-tRNA synthase,JCVISYN3A_0308
+SW.3.2.5.8,tRNA modification and maturation,JCVISYN3A_0640
+SW.3.2.5.8,tRNA modification and maturation,JCVISYN3A_0290
+SW.1.2.2,Coping with stress,JCVISYN3A_0819
+SW.3.2.5.8,tRNA modification and maturation,JCVISYN3A_0271
+SW.3.2.5.8,tRNA modification and maturation,JCVISYN3A_0144
+SW.3.2.5.8,tRNA modification and maturation,JCVISYN3A_0079
+SW.3.2.5.8,tRNA modification and maturation,JCVISYN3A_0270
+SW.3.2.5.6,Translation factors,JCVISYN3A_0539
+SW.3.2.5.6,Translation factors,JCVISYN3A_0151
+SW.3.2.5.1,Aminoacyl-tRNA synthase,JCVISYN3A_0613
+SW.4.7,Nucleotide metabolism,JCVISYN3A_0798
+SW.3.1.3,DNA repair,JCVISYN3A_0824
+SW.3.1.3,DNA repair,JCVISYN3A_0825
+SW.3.1.3,DNA repair,JCVISYN3A_0254
+SW.3.2.5.1,Aminoacyl-tRNA synthase,JCVISYN3A_0260
+SW.3.3,Regulation of gene expression,JCVISYN3A_0817
+SW.3.1.4,Other,JCVISYN3A_0106
+SW.3.1.4,Other,JCVISYN3A_0105
+SW.2.3,Poorly characterized enzymes,JCVISYN3A_0043
+SW.3.4.1.1,Endoribonucleases,JCVISYN3A_0402
+SW.3.2.5.5,rRNA modifications and maturation,JCVISYN3A_0402
+SW.3.2.5.4,Ribosome assembly,JCVISYN3A_0872
+SW.3.4.1.2,Exoribonucleases,JCVISYN3A_0437
+SW.2.2,Membrane proteins,JCVISYN3A_0908
+SW.3.2.3,Protein secretion,JCVISYN3A_0908
+SW.3.2.3,Protein secretion,JCVISYN3A_0430
+SW.3.3,Regulation of gene expression,JCVISYN3A_0430
+SW.3.2.5.2,Ribosomal proteins,JCVISYN3A_0298
+SW.2.4,Proteins of unknown function,JCVISYN3A_0299
+SW.2.3,Poorly characterized enzymes,JCVISYN3A_0431
+SW.3.1.1,DNA replication,JCVISYN3A_0826
+SW.3.2.5.5,rRNA modifications and maturation,JCVISYN3A_0215
+SW.3.4.1.1,Endoribonucleases,JCVISYN3A_0215
+SW.3.2.5.4,Ribosome assembly,JCVISYN3A_0247
+SW.1.3.1.2,Exporters,JCVISYN3A_0371
+SW.2.2,Membrane proteins,JCVISYN3A_0371
+SW.2.2,Membrane proteins,JCVISYN3A_0372
+SW.2.7.1,Essential,JCVISYN3A_0030
+SW.2.7.1,Essential,JCVISYN3A_0143
+SW.2.7.1,Essential,JCVISYN3A_0146
+SW.2.7.1,Essential,JCVISYN3A_0281
+SW.2.7.1,Essential,JCVISYN3A_0317
+SW.2.7.1,Essential,JCVISYN3A_0373
+SW.2.7.1,Essential,JCVISYN3A_0379
+SW.2.7.1,Essential,JCVISYN3A_0388
+SW.2.7.1,Essential,JCVISYN3A_0412
+SW.2.7.1,Essential,JCVISYN3A_0439
+SW.2.7.1,Essential,JCVISYN3A_0451
+SW.2.7.1,Essential,JCVISYN3A_0478
+SW.2.7.1,Essential,JCVISYN3A_0511
+SW.2.7.1,Essential,JCVISYN3A_0636
+SW.2.7.1,Essential,JCVISYN3A_0639
+SW.2.7.1,Essential,JCVISYN3A_0691
+SW.2.7.1,Essential,JCVISYN3A_0778
+SW.2.7.1,Essential,JCVISYN3A_0797
+SW.2.7.1,Essential,JCVISYN3A_0835
+SW.2.7.1,Essential,JCVISYN3A_0870
+SW.2.7.1,Essential,JCVISYN3A_0877
+SW.2.7.1,Essential,JCVISYN3A_0881
+SW.2.7.1,Essential,JCVISYN3A_0621
+SW.2.7.1,Essential,JCVISYN3A_0513
+SW.2.7.1,Essential,JCVISYN3A_0651
+SW.2.7.1,Essential,JCVISYN3A_0163
+SW.2.7.1,Essential,JCVISYN3A_0413
+SW.2.7.1,Essential,JCVISYN3A_0535
+SW.2.7.1,Essential,JCVISYN3A_0796
+SW.2.7.1,Essential,JCVISYN3A_0795
+SW.2.7.1,Essential,JCVISYN3A_0791
+SW.2.7.1,Essential,JCVISYN3A_0793
+SW.2.7.1,Essential,JCVISYN3A_0304
+SW.2.7.1,Essential,JCVISYN3A_0147
+SW.2.7.1,Essential,JCVISYN3A_0234
+SW.2.7.1,Essential,JCVISYN3A_0837
+SW.2.7.1,Essential,JCVISYN3A_0201
+SW.2.7.1,Essential,JCVISYN3A_0001
+SW.2.7.1,Essential,JCVISYN3A_0609
+SW.2.7.1,Essential,JCVISYN3A_0834
+SW.2.7.1,Essential,JCVISYN3A_0406
+SW.2.7.1,Essential,JCVISYN3A_0608
+SW.2.7.1,Essential,JCVISYN3A_0541
+SW.2.7.1,Essential,JCVISYN3A_0542
+SW.2.7.1,Essential,JCVISYN3A_0002
+SW.2.7.1,Essential,JCVISYN3A_0047
+SW.2.7.1,Essential,JCVISYN3A_0447
+SW.2.7.1,Essential,JCVISYN3A_0643
+SW.2.7.1,Essential,JCVISYN3A_0642
+SW.2.7.1,Essential,JCVISYN3A_0836
+SW.2.7.1,Essential,JCVISYN3A_0641
+SW.2.7.1,Essential,JCVISYN3A_0348
+SW.2.7.1,Essential,JCVISYN3A_0213
+SW.2.7.1,Essential,JCVISYN3A_0420
+SW.2.7.1,Essential,JCVISYN3A_0616
+SW.2.7.1,Essential,JCVISYN3A_0131
+SW.2.7.1,Essential,JCVISYN3A_0049
+SW.2.7.1,Essential,JCVISYN3A_0684
+SW.2.7.1,Essential,JCVISYN3A_0536
+SW.2.7.1,Essential,JCVISYN3A_0039
+SW.2.7.1,Essential,JCVISYN3A_0429
+SW.2.7.1,Essential,JCVISYN3A_0150
+SW.2.7.1,Essential,JCVISYN3A_0607
+SW.2.7.1,Essential,JCVISYN3A_0688
+SW.2.7.1,Essential,JCVISYN3A_0687
+SW.2.7.1,Essential,JCVISYN3A_0689
+SW.2.7.1,Essential,JCVISYN3A_0218
+SW.2.7.1,Essential,JCVISYN3A_0405
+SW.2.7.1,Essential,JCVISYN3A_0203
+SW.2.7.1,Essential,JCVISYN3A_0253
+SW.2.7.1,Essential,JCVISYN3A_0543
+SW.2.7.1,Essential,JCVISYN3A_0007
+SW.2.7.1,Essential,JCVISYN3A_0006
+SW.2.7.1,Essential,JCVISYN3A_0044
+SW.2.7.1,Essential,JCVISYN3A_0544
+SW.2.7.1,Essential,JCVISYN3A_0350
+SW.2.7.1,Essential,JCVISYN3A_0519
+SW.2.7.1,Essential,JCVISYN3A_0649
+SW.2.7.1,Essential,JCVISYN3A_0200
+SW.2.7.1,Essential,JCVISYN3A_0441
+SW.2.7.1,Essential,JCVISYN3A_0442
+SW.2.7.1,Essential,JCVISYN3A_0686
+SW.2.7.1,Essential,JCVISYN3A_0685
+SW.2.7.1,Essential,JCVISYN3A_0634
+SW.2.7.1,Essential,JCVISYN3A_0820
+SW.2.7.1,Essential,JCVISYN3A_0690
+SW.2.7.1,Essential,JCVISYN3A_0650
+SW.2.7.1,Essential,JCVISYN3A_0787
+SW.2.7.1,Essential,JCVISYN3A_0387
+SW.2.7.1,Essential,JCVISYN3A_0378
+SW.2.7.1,Essential,JCVISYN3A_0259
+SW.2.7.1,Essential,JCVISYN3A_0109
+SW.2.7.1,Essential,JCVISYN3A_0772
+SW.2.7.1,Essential,JCVISYN3A_0139
+SW.2.7.1,Essential,JCVISYN3A_0107
+SW.2.7.1,Essential,JCVISYN3A_0840
+SW.2.7.1,Essential,JCVISYN3A_0377
+SW.2.7.1,Essential,JCVISYN3A_0453
+SW.2.7.1,Essential,JCVISYN3A_0452
+SW.2.7.1,Essential,JCVISYN3A_0220
+SW.2.7.1,Essential,JCVISYN3A_0445
+SW.2.7.1,Essential,JCVISYN3A_0606
+SW.2.7.1,Essential,JCVISYN3A_0729
+SW.2.7.1,Essential,JCVISYN3A_0875
+SW.2.7.1,Essential,JCVISYN3A_0529
+SW.2.7.1,Essential,JCVISYN3A_0528
+SW.2.7.1,Essential,JCVISYN3A_0428
+SW.2.7.1,Essential,JCVISYN3A_0512
+SW.2.7.1,Essential,JCVISYN3A_0419
+SW.2.7.1,Essential,JCVISYN3A_0614
+SW.2.7.1,Essential,JCVISYN3A_0611
+SW.2.7.1,Essential,JCVISYN3A_0303
+SW.2.7.1,Essential,JCVISYN3A_0344
+SW.2.7.1,Essential,JCVISYN3A_0282
+SW.2.7.1,Essential,JCVISYN3A_0500
+SW.2.7.1,Essential,JCVISYN3A_0426
+SW.2.7.1,Essential,JCVISYN3A_0427
+SW.2.7.1,Essential,JCVISYN3A_0425
+SW.2.7.1,Essential,JCVISYN3A_0229
+SW.2.7.1,Essential,JCVISYN3A_0537
+SW.2.7.1,Essential,JCVISYN3A_0366
+SW.2.7.1,Essential,JCVISYN3A_0363
+SW.2.7.1,Essential,JCVISYN3A_0418
+SW.2.7.1,Essential,JCVISYN3A_0600
+SW.2.7.1,Essential,JCVISYN3A_0909
+SW.2.7.1,Essential,JCVISYN3A_0356
+SW.2.7.1,Essential,JCVISYN3A_0010
+SW.2.7.1,Essential,JCVISYN3A_0008
+SW.2.7.1,Essential,JCVISYN3A_0668
+SW.2.7.1,Essential,JCVISYN3A_0671
+SW.2.7.1,Essential,JCVISYN3A_0670
+SW.2.7.1,Essential,JCVISYN3A_0659
+SW.2.7.1,Essential,JCVISYN3A_0656
+SW.2.7.1,Essential,JCVISYN3A_0807
+SW.2.7.1,Essential,JCVISYN3A_0810
+SW.2.7.1,Essential,JCVISYN3A_0806
+SW.2.7.1,Essential,JCVISYN3A_0638
+SW.2.7.1,Essential,JCVISYN3A_0661
+SW.2.7.1,Essential,JCVISYN3A_0653
+SW.2.7.1,Essential,JCVISYN3A_0664
+SW.2.7.1,Essential,JCVISYN3A_0644
+SW.2.7.1,Essential,JCVISYN3A_0655
+SW.2.7.1,Essential,JCVISYN3A_0198
+SW.2.7.1,Essential,JCVISYN3A_0501
+SW.2.7.1,Essential,JCVISYN3A_0666
+SW.2.7.1,Essential,JCVISYN3A_0669
+SW.2.7.1,Essential,JCVISYN3A_0660
+SW.2.7.1,Essential,JCVISYN3A_0499
+SW.2.7.1,Essential,JCVISYN3A_0663
+SW.2.7.1,Essential,JCVISYN3A_0910
+SW.2.7.1,Essential,JCVISYN3A_0199
+SW.2.7.1,Essential,JCVISYN3A_0648
+SW.2.7.1,Essential,JCVISYN3A_0645
+SW.2.7.1,Essential,JCVISYN3A_0804
+SW.2.7.1,Essential,JCVISYN3A_0803
+SW.2.7.1,Essential,JCVISYN3A_0407
+SW.2.7.1,Essential,JCVISYN3A_0540
+SW.2.7.1,Essential,JCVISYN3A_0665
+SW.2.7.1,Essential,JCVISYN3A_0238
+SW.2.7.1,Essential,JCVISYN3A_0654
+SW.2.7.1,Essential,JCVISYN3A_0027
+SW.2.7.1,Essential,JCVISYN3A_0149
+SW.2.7.1,Essential,JCVISYN3A_0657
+SW.2.7.1,Essential,JCVISYN3A_0637
+SW.2.7.1,Essential,JCVISYN3A_0672
+SW.2.7.1,Essential,JCVISYN3A_0646
+SW.2.7.1,Essential,JCVISYN3A_0148
+SW.2.7.1,Essential,JCVISYN3A_0647
+SW.2.7.1,Essential,JCVISYN3A_0658
+SW.2.7.1,Essential,JCVISYN3A_0362
+SW.2.7.1,Essential,JCVISYN3A_0662
+SW.2.7.1,Essential,JCVISYN3A_0025
+SW.2.7.1,Essential,JCVISYN3A_0667
+SW.2.7.1,Essential,JCVISYN3A_0482
+SW.2.7.1,Essential,JCVISYN3A_0532
+SW.2.7.1,Essential,JCVISYN3A_0533
+SW.2.7.1,Essential,JCVISYN3A_0534
+SW.2.7.1,Essential,JCVISYN3A_0839
+SW.2.7.1,Essential,JCVISYN3A_0774
+SW.2.7.1,Essential,JCVISYN3A_0652
+SW.2.7.1,Essential,JCVISYN3A_0061
+SW.2.7.1,Essential,JCVISYN3A_0776
+SW.2.7.1,Essential,JCVISYN3A_0026
+SW.2.7.1,Essential,JCVISYN3A_0158
+SW.2.7.1,Essential,JCVISYN3A_0719
+SW.2.7.1,Essential,JCVISYN3A_0717
+SW.2.7.1,Essential,JCVISYN3A_0681
+SW.2.7.1,Essential,JCVISYN3A_0724
+SW.2.7.1,Essential,JCVISYN3A_0828
+SW.2.7.1,Essential,JCVISYN3A_0508
+SW.2.7.1,Essential,JCVISYN3A_0680
+SW.2.7.1,Essential,JCVISYN3A_0295
+SW.2.7.1,Essential,JCVISYN3A_0635
+SW.2.7.1,Essential,JCVISYN3A_0070
+SW.2.7.1,Essential,JCVISYN3A_0507
+SW.2.7.1,Essential,JCVISYN3A_0720
+SW.2.7.1,Essential,JCVISYN3A_0718
+SW.2.7.1,Essential,JCVISYN3A_0722
+SW.2.7.1,Essential,JCVISYN3A_0510
+SW.2.7.1,Essential,JCVISYN3A_0619
+SW.2.7.1,Essential,JCVISYN3A_0509
+SW.2.7.1,Essential,JCVISYN3A_0679
+SW.2.7.1,Essential,JCVISYN3A_0222
+SW.2.7.1,Essential,JCVISYN3A_0040
+SW.2.7.1,Essential,JCVISYN3A_0045
+SW.2.7.1,Essential,JCVISYN3A_0727
+SW.2.7.1,Essential,JCVISYN3A_0364
+SW.2.7.1,Essential,JCVISYN3A_0819
+SW.2.7.1,Essential,JCVISYN3A_0065
+SW.2.7.1,Essential,JCVISYN3A_0270
+SW.2.7.1,Essential,JCVISYN3A_0539
+SW.2.7.1,Essential,JCVISYN3A_0151
+SW.2.7.1,Essential,JCVISYN3A_0613
+SW.2.7.1,Essential,JCVISYN3A_0260
+SW.2.7.1,Essential,JCVISYN3A_0437
+SW.2.7.1,Essential,JCVISYN3A_0908
+SW.2.7.1,Essential,JCVISYN3A_0826
+SW.2.7.1,Essential,JCVISYN3A_0247
+SW.2.7.1,Essential,JCVISYN3A_0371
+SW.2.7.1,Essential,JCVISYN3A_0372
+SW.2.7.1,Essential,JCVISYN3A_0296
+SW.2.7.1,Essential,JCVISYN3A_0352
+SW.2.7.3,Quasi essential,JCVISYN3A_0034
+SW.2.7.3,Quasi essential,JCVISYN3A_0042
+SW.2.7.3,Quasi essential,JCVISYN3A_0060
+SW.2.7.3,Quasi essential,JCVISYN3A_0066
+SW.2.7.3,Quasi essential,JCVISYN3A_0108
+SW.2.7.3,Quasi essential,JCVISYN3A_0116
+SW.2.7.3,Quasi essential,JCVISYN3A_0127
+SW.2.7.3,Quasi essential,JCVISYN3A_0138
+SW.2.7.3,Quasi essential,JCVISYN3A_0154
+SW.2.7.3,Quasi essential,JCVISYN3A_0164
+SW.2.7.3,Quasi essential,JCVISYN3A_0239
+SW.2.7.3,Quasi essential,JCVISYN3A_0250
+SW.2.7.3,Quasi essential,JCVISYN3A_0315
+SW.2.7.3,Quasi essential,JCVISYN3A_0332
+SW.2.7.3,Quasi essential,JCVISYN3A_0338
+SW.2.7.3,Quasi essential,JCVISYN3A_0346
+SW.2.7.3,Quasi essential,JCVISYN3A_0353
+SW.2.7.3,Quasi essential,JCVISYN3A_0389
+SW.2.7.3,Quasi essential,JCVISYN3A_0400
+SW.2.7.3,Quasi essential,JCVISYN3A_0411
+SW.2.7.3,Quasi essential,JCVISYN3A_0421
+SW.2.7.3,Quasi essential,JCVISYN3A_0440
+SW.2.7.3,Quasi essential,JCVISYN3A_0479
+SW.2.7.3,Quasi essential,JCVISYN3A_0505
+SW.2.7.3,Quasi essential,JCVISYN3A_0516
+SW.2.7.3,Quasi essential,JCVISYN3A_0601
+SW.2.7.3,Quasi essential,JCVISYN3A_0615
+SW.2.7.3,Quasi essential,JCVISYN3A_0620
+SW.2.7.3,Quasi essential,JCVISYN3A_0728
+SW.2.7.3,Quasi essential,JCVISYN3A_0805
+SW.2.7.3,Quasi essential,JCVISYN3A_0827
+SW.2.7.3,Quasi essential,JCVISYN3A_0876
+SW.2.7.3,Quasi essential,JCVISYN3A_0878
+SW.2.7.3,Quasi essential,JCVISYN3A_0906
+SW.2.7.3,Quasi essential,JCVISYN3A_0230
+SW.2.7.3,Quasi essential,JCVISYN3A_0790
+SW.2.7.3,Quasi essential,JCVISYN3A_0114
+SW.2.7.3,Quasi essential,JCVISYN3A_0887
+SW.2.7.3,Quasi essential,JCVISYN3A_0347
+SW.2.7.3,Quasi essential,JCVISYN3A_0263
+SW.2.7.3,Quasi essential,JCVISYN3A_0410
+SW.2.7.3,Quasi essential,JCVISYN3A_0433
+SW.2.7.3,Quasi essential,JCVISYN3A_0733
+SW.2.7.3,Quasi essential,JCVISYN3A_0822
+SW.2.7.3,Quasi essential,JCVISYN3A_0097
+SW.2.7.3,Quasi essential,JCVISYN3A_0617
+SW.2.7.3,Quasi essential,JCVISYN3A_0523
+SW.2.7.3,Quasi essential,JCVISYN3A_0813
+SW.2.7.3,Quasi essential,JCVISYN3A_0115
+SW.2.7.3,Quasi essential,JCVISYN3A_0814
+SW.2.7.3,Quasi essential,JCVISYN3A_0886
+SW.2.7.3,Quasi essential,JCVISYN3A_0799
+SW.2.7.3,Quasi essential,JCVISYN3A_0821
+SW.2.7.3,Quasi essential,JCVISYN3A_0216
+SW.2.7.3,Quasi essential,JCVISYN3A_0132
+SW.2.7.1,Essential,JCVISYN3A_0297
+SW.2.7.3,Quasi essential,JCVISYN3A_0285
+SW.2.7.3,Quasi essential,JCVISYN3A_0394
+SW.2.7.3,Quasi essential,JCVISYN3A_0432
+SW.2.7.3,Quasi essential,JCVISYN3A_0081
+SW.2.7.3,Quasi essential,JCVISYN3A_0885
+SW.2.7.3,Quasi essential,JCVISYN3A_0525
+SW.2.7.3,Quasi essential,JCVISYN3A_0771
+SW.2.7.3,Quasi essential,JCVISYN3A_0169
+SW.2.7.3,Quasi essential,JCVISYN3A_0165
+SW.2.7.3,Quasi essential,JCVISYN3A_0166
+SW.2.7.3,Quasi essential,JCVISYN3A_0167
+SW.2.7.3,Quasi essential,JCVISYN3A_0168
+SW.2.7.3,Quasi essential,JCVISYN3A_0695
+SW.2.7.3,Quasi essential,JCVISYN3A_0227
+SW.2.7.3,Quasi essential,JCVISYN3A_0228
+SW.2.7.3,Quasi essential,JCVISYN3A_0214
+SW.2.7.3,Quasi essential,JCVISYN3A_0197
+SW.2.7.3,Quasi essential,JCVISYN3A_0196
+SW.2.7.3,Quasi essential,JCVISYN3A_0195
+SW.2.7.3,Quasi essential,JCVISYN3A_0142
+SW.2.7.3,Quasi essential,JCVISYN3A_0831
+SW.2.7.3,Quasi essential,JCVISYN3A_0747
+SW.2.7.3,Quasi essential,JCVISYN3A_0301
+SW.2.7.3,Quasi essential,JCVISYN3A_0838
+SW.2.7.3,Quasi essential,JCVISYN3A_0003
+SW.2.7.3,Quasi essential,JCVISYN3A_0775
+SW.2.7.3,Quasi essential,JCVISYN3A_0262
+SW.2.7.3,Quasi essential,JCVISYN3A_0800
+SW.2.7.3,Quasi essential,JCVISYN3A_0809
+SW.2.7.3,Quasi essential,JCVISYN3A_0137
+SW.2.7.3,Quasi essential,JCVISYN3A_0526
+SW.2.7.3,Quasi essential,JCVISYN3A_0128
+SW.2.7.3,Quasi essential,JCVISYN3A_0294
+SW.2.7.3,Quasi essential,JCVISYN3A_0082
+SW.2.7.3,Quasi essential,JCVISYN3A_0067
+SW.2.7.3,Quasi essential,JCVISYN3A_0068
+SW.2.7.3,Quasi essential,JCVISYN3A_0069
+SW.2.7.3,Quasi essential,JCVISYN3A_0202
+SW.2.7.3,Quasi essential,JCVISYN3A_0874
+SW.2.7.3,Quasi essential,JCVISYN3A_0524
+SW.2.7.3,Quasi essential,JCVISYN3A_0504
+SW.2.7.3,Quasi essential,JCVISYN3A_0415
+SW.2.7.3,Quasi essential,JCVISYN3A_0070
+SW.2.7.1,Essential,JCVISYN3A_0725
+SW.2.7.3,Quasi essential,JCVISYN3A_0706
+SW.2.7.3,Quasi essential,JCVISYN3A_0708
+SW.2.7.3,Quasi essential,JCVISYN3A_0240
+SW.2.7.3,Quasi essential,JCVISYN3A_0707
+SW.2.7.3,Quasi essential,JCVISYN3A_0316
+SW.2.7.3,Quasi essential,JCVISYN3A_0859
+SW.2.7.3,Quasi essential,JCVISYN3A_0144
+SW.2.7.3,Quasi essential,JCVISYN3A_0798
+SW.2.7.3,Quasi essential,JCVISYN3A_0817
+SW.2.7.3,Quasi essential,JCVISYN3A_0105
+SW.2.7.3,Quasi essential,JCVISYN3A_0872
+SW.2.7.3,Quasi essential,JCVISYN3A_0298
+SW.2.7.3,Quasi essential,JCVISYN3A_0299
+SW.2.7.3.1,Minimal growth disadvantage,JCVISYN3A_0094
+SW.2.7.3.1,Minimal growth disadvantage,JCVISYN3A_0235
+SW.2.7.3.1,Minimal growth disadvantage,JCVISYN3A_0376
+SW.2.7.3.1,Minimal growth disadvantage,JCVISYN3A_0401
+SW.2.7.3.1,Minimal growth disadvantage,JCVISYN3A_0409
+SW.2.7.3.1,Minimal growth disadvantage,JCVISYN3A_0503
+SW.2.7.3.1,Minimal growth disadvantage,JCVISYN3A_0730
+SW.2.7.3.1,Minimal growth disadvantage,JCVISYN3A_0777
+SW.2.7.3.1,Minimal growth disadvantage,JCVISYN3A_0726
+SW.2.7.3.1,Minimal growth disadvantage,JCVISYN3A_0264
+SW.2.7.3.1,Minimal growth disadvantage,JCVISYN3A_0517
+SW.2.7.3.1,Minimal growth disadvantage,JCVISYN3A_0640
+SW.2.7.3.2,Severe growth defect,JCVISYN3A_0029
+SW.2.7.3.2,Severe growth defect,JCVISYN3A_0033
+SW.2.7.3.2,Severe growth defect,JCVISYN3A_0145
+SW.2.7.3.2,Severe growth defect,JCVISYN3A_0248
+SW.2.7.3.2,Severe growth defect,JCVISYN3A_0325
+SW.2.7.3.2,Severe growth defect,JCVISYN3A_0398
+SW.2.7.3.2,Severe growth defect,JCVISYN3A_0399
+SW.2.7.3.2,Severe growth defect,JCVISYN3A_0448
+SW.2.7.3.2,Severe growth defect,JCVISYN3A_0493
+SW.2.7.3.2,Severe growth defect,JCVISYN3A_0530
+SW.2.7.3.2,Severe growth defect,JCVISYN3A_0693
+SW.2.7.3.2,Severe growth defect,JCVISYN3A_0696
+SW.2.7.3.2,Severe growth defect,JCVISYN3A_0830
+SW.2.7.1,Essential,JCVISYN3A_0076
+SW.2.7.1,Essential,JCVISYN3A_0287
+SW.2.7.3.2,Severe growth defect,JCVISYN3A_0792
+SW.2.7.3.2,Severe growth defect,JCVISYN3A_0789
+SW.2.7.3.2,Severe growth defect,JCVISYN3A_0794
+SW.2.7.3.2,Severe growth defect,JCVISYN3A_0113
+SW.2.7.3.2,Severe growth defect,JCVISYN3A_0545
+SW.2.7.1,Essential,JCVISYN3A_0612
+SW.2.7.3.2,Severe growth defect,JCVISYN3A_0314
+SW.2.7.3.2,Severe growth defect,JCVISYN3A_0345
+SW.2.7.3.2,Severe growth defect,JCVISYN3A_0391
+SW.2.7.3.2,Severe growth defect,JCVISYN3A_0403
+SW.2.7.3.2,Severe growth defect,JCVISYN3A_0360
+SW.2.7.3.2,Severe growth defect,JCVISYN3A_0390
+SW.2.7.3.2,Severe growth defect,JCVISYN3A_0302
+SW.2.7.1,Essential,JCVISYN3A_0126
+SW.2.7.1,Essential,JCVISYN3A_0288
+SW.2.7.3.2,Severe growth defect,JCVISYN3A_0475
+SW.2.7.3.2,Severe growth defect,JCVISYN3A_0818
+SW.2.7.3.2,Severe growth defect,JCVISYN3A_0518
+SW.2.7.1,Essential,JCVISYN3A_0064
+SW.2.7.1,Essential,JCVISYN3A_0012
+SW.2.7.3.2,Severe growth defect,JCVISYN3A_0380
+SW.2.7.3.2,Severe growth defect,JCVISYN3A_0773
+SW.2.7.1,Essential,JCVISYN3A_0300
+SW.2.7.1,Essential,JCVISYN3A_0117
+SW.2.7.3.2,Severe growth defect,JCVISYN3A_0141
+SW.2.7.3.2,Severe growth defect,JCVISYN3A_0832
+SW.2.7.3.2,Severe growth defect,JCVISYN3A_0779
+SW.2.7.3.2,Severe growth defect,JCVISYN3A_0694
+SW.2.7.3.2,Severe growth defect,JCVISYN3A_0233
+SW.2.7.3.2,Severe growth defect,JCVISYN3A_0221
+SW.2.7.3.2,Severe growth defect,JCVISYN3A_0129
+SW.2.7.3.2,Severe growth defect,JCVISYN3A_0289
+SW.2.7.3.2,Severe growth defect,JCVISYN3A_0291
+SW.2.7.3.2,Severe growth defect,JCVISYN3A_0283
+SW.2.7.3.2,Severe growth defect,JCVISYN3A_0257
+SW.2.7.3.2,Severe growth defect,JCVISYN3A_0011
+SW.2.7.3.2,Severe growth defect,JCVISYN3A_0009
+SW.2.7.3.2,Severe growth defect,JCVISYN3A_0359
+SW.2.7.3.2,Severe growth defect,JCVISYN3A_0365
+SW.2.7.3.2,Severe growth defect,JCVISYN3A_0327
+SW.2.7.3.2,Severe growth defect,JCVISYN3A_0328
+SW.2.7.3.2,Severe growth defect,JCVISYN3A_0095
+SW.2.7.1,Essential,JCVISYN3A_0624
+SW.2.7.3.2,Severe growth defect,JCVISYN3A_0140
+SW.2.7.1,Essential,JCVISYN3A_0308
+SW.2.7.3.2,Severe growth defect,JCVISYN3A_0271
+SW.2.7.3.2,Severe growth defect,JCVISYN3A_0079
+SW.2.7.3.2,Severe growth defect,JCVISYN3A_0402
+SW.2.7.3.2,Severe growth defect,JCVISYN3A_0431
+SW.2.7.3.2,Severe growth defect,JCVISYN3A_0215
+SW.2.7.2,Not essential,JCVISYN3A_0005
+SW.2.7.2,Not essential,JCVISYN3A_0077
+SW.2.7.2,Not essential,JCVISYN3A_0080
+SW.2.7.2,Not essential,JCVISYN3A_0286
+SW.2.7.2,Not essential,JCVISYN3A_0326
+SW.2.7.2,Not essential,JCVISYN3A_0375
+SW.2.7.2,Not essential,JCVISYN3A_0392
+SW.2.7.2,Not essential,JCVISYN3A_0416
+SW.2.7.2,Not essential,JCVISYN3A_0424
+SW.2.7.2,Not essential,JCVISYN3A_0444
+SW.2.7.2,Not essential,JCVISYN3A_0481
+SW.2.7.2,Not essential,JCVISYN3A_0495
+SW.2.7.2,Not essential,JCVISYN3A_0520
+SW.2.7.2,Not essential,JCVISYN3A_0527
+SW.2.7.2,Not essential,JCVISYN3A_0538
+SW.2.7.2,Not essential,JCVISYN3A_0546
+SW.2.7.2,Not essential,JCVISYN3A_0592
+SW.2.7.2,Not essential,JCVISYN3A_0593
+SW.2.7.2,Not essential,JCVISYN3A_0599
+SW.2.7.2,Not essential,JCVISYN3A_0602
+SW.2.7.2,Not essential,JCVISYN3A_0604
+SW.2.7.2,Not essential,JCVISYN3A_0605
+SW.2.7.2,Not essential,JCVISYN3A_0622
+SW.2.7.2,Not essential,JCVISYN3A_0623
+SW.2.7.2,Not essential,JCVISYN3A_0692
+SW.2.7.2,Not essential,JCVISYN3A_0697
+SW.2.7.2,Not essential,JCVISYN3A_0851
+SW.2.7.2,Not essential,JCVISYN3A_0852
+SW.2.7.2,Not essential,JCVISYN3A_0853
+SW.2.7.2,Not essential,JCVISYN3A_0907
+SW.2.7.2,Not essential,JCVISYN3A_0054
+SW.2.7.2,Not essential,JCVISYN3A_0879
+SW.2.7.2,Not essential,JCVISYN3A_0548
+SW.2.7.2,Not essential,JCVISYN3A_0515
+SW.2.7.2,Not essential,JCVISYN3A_0732
+SW.2.7.2,Not essential,JCVISYN3A_0330
+SW.2.7.2,Not essential,JCVISYN3A_0382
+SW.2.7.2,Not essential,JCVISYN3A_0063
+SW.2.7.2,Not essential,JCVISYN3A_0823
+SW.2.7.2,Not essential,JCVISYN3A_0522
+SW.2.7.2,Not essential,JCVISYN3A_0438
+SW.2.7.2,Not essential,JCVISYN3A_0133
+SW.2.7.2,Not essential,JCVISYN3A_0004
+SW.2.7.2,Not essential,JCVISYN3A_0435
+SW.2.7.2,Not essential,JCVISYN3A_0381
+SW.2.7.2,Not essential,JCVISYN3A_0610
+SW.2.7.2,Not essential,JCVISYN3A_0494
+SW.2.7.2,Not essential,JCVISYN3A_0305
+SW.2.7.2,Not essential,JCVISYN3A_0404
+SW.2.7.2,Not essential,JCVISYN3A_0046
+SW.2.7.2,Not essential,JCVISYN3A_0414
+SW.2.7.2,Not essential,JCVISYN3A_0549
+SW.2.7.2,Not essential,JCVISYN3A_0434
+SW.2.7.2,Not essential,JCVISYN3A_0361
+SW.2.7.2,Not essential,JCVISYN3A_0329
+SW.2.7.2,Not essential,JCVISYN3A_0833
+SW.2.7.2,Not essential,JCVISYN3A_0422
+SW.2.7.2,Not essential,JCVISYN3A_0521
+SW.2.7.2,Not essential,JCVISYN3A_0408
+SW.2.7.2,Not essential,JCVISYN3A_0290
+SW.2.7.2,Not essential,JCVISYN3A_0824
+SW.2.7.2,Not essential,JCVISYN3A_0825
+SW.2.7.2,Not essential,JCVISYN3A_0254
+SW.2.7.2,Not essential,JCVISYN3A_0106
+SW.2.7.2,Not essential,JCVISYN3A_0043
+SW.2.7.2,Not essential,JCVISYN3A_0430
+SW.2.7.2,Not essential,JCVISYN3A_0249
+SW.2.7.2,Not essential,JCVISYN3A_0873
+SW.1.2,Homeostasis,JCVISYN3A_0065
+SW.3.2.5,Translation,JCVISYN3A_0662
+SW.3.2.5,Translation,JCVISYN3A_0655
+SW.3.2.5,Translation,JCVISYN3A_0653
+SW.3.2.5.2,Ribosomal Proteins,JCVISYN3A_0656
+SW.4.6,Lipid metabolism,JCVISYN3A_0218
+SW.4.6,Lipid metabolism,JCVISYN3A_0115
+SW.4.3.2,Utilization of specific carbon sources,JCVISYN3A_0493
+SW.4.1,Amino acid acquisition,JCVISYN3A_0169
+SW.4.1,Amino acid acquisition,JCVISYN3A_0165
+SW.4.1,Amino acid acquisition,JCVISYN3A_0166
+SW.4.1,Amino acid acquisition,JCVISYN3A_0167
+SW.4.1,Amino acid acquisition,JCVISYN3A_0168
+SW.4.6,Lipid metabolism,JCVISYN3A_0421
+SW.2.7.1,Essential,JCVISYN3A_0443
+SW.4.9,Detoxification,JCVISYN3A_0443
+SW.4.9,Detoxification,JCVISYN3A_0728
+SW.4.9,Detoxification,JCVISYN3A_0066
+SW.4.9,Detoxification,JCVISYN3A_0077
+SW.4.9,Detoxification,JCVISYN3A_0710
+SW.4.9,Detoxification,JCVISYN3A_0907
+SW.2.7.1,Essential,JCVISYN3A_0710
+SW.4.9,Detoxification,JCVISYN3A_0400
+SW.1.1,Cell envelope and cell division,JCVISYN3A_0353
+SW.1.1,Cell envelope and cell division,JCVISYN3A_0239
+SW.3.2.4,Proteolysis,JCVISYN3A_0516
+SW.4.4,Cofactor acquisition,JCVISYN3A_0877
+SW.1.3.2,ECF transporters,JCVISYN3A_0877
+SW.3.2.5.7,tRNA,JCVISYN3A_0723
+SW.3.2.5.7,tRNA,JCVISYN3A_0423
+SW.3.2.5.7,tRNA,JCVISYN3A_0618
+SW.3.2.5.7,tRNA,JCVISYN3A_0071
+SW.3.2.5.7,tRNA,JCVISYN3A_0374
+SW.3.2.5.7,tRNA,JCVISYN3A_0678
+SW.3.2.5.7,tRNA,JCVISYN3A_0721
+SW.3.2.5.7,tRNA,JCVISYN3A_0506
+SW.3.2.5.7,tRNA,JCVISYN3A_0280
