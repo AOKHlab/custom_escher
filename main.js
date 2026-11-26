@@ -20,7 +20,7 @@ const colors = {
     'SW.3': d3.lch(47.36, 80.14, 257.55), // blue #1f77b4 250-280 crhoma 60?
     'SW.4': d3.lch(47.68, 80.45, 35.08) // red #d62728 25-45
 };
-Promise.all([d3.csv('categories.csv'), d3.csv("geneData.csv"), d3.csv('geneCategories.csv'), d3.csv('segments.csv'),d3.json('mutations.json'),d3.json('sequence.json')]).then(([categories, geneData, geneCategories, segments, mutationData, proteinCodes]) => {
+Promise.all([d3.csv('categories.csv'), d3.csv("geneData.csv"), d3.csv('geneCategories.csv'), d3.csv('segments.csv'),d3.json('mutationData.json'),d3.json('syn3A.json')]).then(([categories, geneData, geneCategories, segments, mutationData, proteinCodes]) => {
     //          #####Main Code######
     setSlope(geneData, shading);
     addSubstitutionData(geneData,proteinCodes,mutationData)
@@ -130,10 +130,7 @@ function drawVoronoiTree(rootNode, filterBy = null, shading) {
         }
     }
     rootNode.sum(weightAccessor)
-    drawHistogram(
-  rootNode.leaves().map(d => d.data.geneInfo),
-  "numberOfW"
-);
+    //drawHistogram(rootNode.leaves().map(d => d.data.geneInfo),"numberOfW");
     addColorLeafs(rootNode);
     const voronoiTreemap = d3.voronoiTreemap().clip([
         [0, 0],
@@ -354,6 +351,9 @@ function displayGeneInfo(geneInfo) {
     geneInfoContainer.append("p")
         .attr("class", "gene-info-content")
         .text(`# of W: ${geneInfo.numberOfW}`);
+    for (trp of geneInfo.mutations){
+        
+    }
     geneInfoContainer.append("p")
         .attr("class", "gene-info-content")
         .text(`Average copies per cell: ${Number(geneInfo.proteomics) === 0 && geneInfo.proteomics !== "" ? "Not in the found in JCVI proteome" : geneInfo.proteomics}`);
@@ -709,17 +709,35 @@ function addSubstitutionData(geneData, sequenceData, mutationData){
         const locus = gene.locus
         const hit = sequenceData.filter((d)=>d.locus_tag===locus)
         const len = hit.length
-        const sequence = gene.sequence
         const check1 = len !== 1
+        if (check1){
+            console.log(gene.sequence);
+            continue
+        }
+        const sequence = hit[0]?.sequence
+        gene.sequence = sequence
         const check2 = (sequence[0] !== "M")
-        if(check1 && check2){
-            console.log("Not 1 hit",hit,sequence,gene.id)}
-        else{gene.protein_id = hit[0].protein_id}
+        if(check2){
+            console.log("Not 1 hit",hit,sequence,gene.id)
+            continue
+        }
+        gene.protein_id = hit[0].protein_id
+        gene.sequence = sequence
+        let trp = 0
+        for (i of sequence){
+            if(i==="W"){trp++}
+        }
+        gene.numberOfW = trp;
     }
     for (const gene of geneData){
+         const numOfW = Number(gene.numberOfW)
         const proteinCode = gene.protein_id
+        if (numOfW === 0){
+            console.log(numOfW)
+            continue}
         const hits = mutationData.filter((d)=>d.protein_code===proteinCode)
         const len = hits.length
+        if (len !== numOfW){console.log('mismatched trp:', numOfW, len, gene)}
         const check1 = len === 0
         if(check1){
             console.log("Not hits",hits)
@@ -732,5 +750,6 @@ function addSubstitutionData(geneData, sequenceData, mutationData){
 // const geneData = await d3.csv('geneData.csv')
 // const categories = await d3.csv('categories.csv')
 // const geneCategories = await d3.csv('geneCategories.csv')
-// const sequenceData = await d3.json('sequence.json')
-// const mutationData = await d3.json('mutations.json')
+// const proteinCodes = await d3.json('Syn3A.json')
+// const mutationData = await d3.json('mutationData.json')
+//
