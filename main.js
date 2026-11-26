@@ -130,7 +130,7 @@ function drawVoronoiTree(rootNode, filterBy = null, shading) {
         }
     }
     rootNode.sum(weightAccessor)
-    //drawHistogram(rootNode.leaves().map(d => d.data.geneInfo),"numberOfW");
+    drawHistogram(rootNode.leaves().map(d => d.data.geneInfo),"numberOfW");
     addColorLeafs(rootNode);
     const voronoiTreemap = d3.voronoiTreemap().clip([
         [0, 0],
@@ -351,9 +351,6 @@ function displayGeneInfo(geneInfo) {
     geneInfoContainer.append("p")
         .attr("class", "gene-info-content")
         .text(`# of W: ${geneInfo.numberOfW}`);
-    for (trp of geneInfo.mutations){
-        
-    }
     geneInfoContainer.append("p")
         .attr("class", "gene-info-content")
         .text(`Average copies per cell: ${Number(geneInfo.proteomics) === 0 && geneInfo.proteomics !== "" ? "Not in the found in JCVI proteome" : geneInfo.proteomics}`);
